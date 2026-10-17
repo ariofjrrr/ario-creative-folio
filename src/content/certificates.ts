@@ -21,4 +21,17 @@ export const certificates: Certificate[] = [
     verification: "001070555",
     placeholder: false,
   },
+  {
+    id: "gold-medal-physics-nhc-2024",
+    title: "Medali Emas Olimpiade Fisika — NHC 2024",
+    category: "Awards",
+    issuer: "Festival Olimpiade Sains Nasional (FOSNAS)",
+    year: "2024",
+    description:
+      "Meraih Medali Emas pada ajang National Heroes Competition (NHC) 2024 dalam bidang Fisika, tingkat perguruan tinggi, dengan predikat A+. Kompetisi tingkat nasional ini diselenggarakan pada 3 November 2024 di Sumatera Utara.",
+    pdf: "/certificates/piag-fisika-nhc-2024.pdf",
+    verification: "1632470/BHM-FOSNAS/NHC-P/XI/2024",
+    placeholder: false,
+  },
+
 ];
