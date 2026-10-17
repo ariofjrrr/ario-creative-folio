@@ -33,7 +33,7 @@ function About() {
             I'm {site.name}, a digital creator interested in writing, visual communication, technology, and building digital projects.
           </p>
           <p className="text-muted-foreground">
-            This site gathers what I make and what I'm learning along the way - written works, design pieces, websites, and the documentation of projects I've been part of. I see each piece as part of an ongoing practice rather than a finished statement.
+            This site gathers what I make and what I'm learning along the way, written works, design pieces, websites, and the documentation of projects I've been part of. I see each piece as part of an ongoing practice rather than a finished statement.
           </p>
           <p className="text-muted-foreground">
             I value work that is clear, purposeful, and made with care, and I'm always open to collaborating with people who feel the same.
