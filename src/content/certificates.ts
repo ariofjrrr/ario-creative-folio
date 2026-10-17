@@ -9,5 +9,12 @@ export const certCategories: ("All" | CertCategory)[] = [
  * issuer, year and registration number are left empty until confirmed.
  */
 export const certificates: Certificate[] = [
-  { id: "haki-iot-rice-dryer", title: "HKI - Modul Mesin Pengering Padi Berbasis IoT", category: "Intellectual Property", issuer: "", year: "2025", description: "", placeholder: true },
+  { id: "haki-iot-rice-dryer", 
+   title: "HKI - Modul Mesin Pengering Padi Berbasis IoT", 
+   category: "Intellectual Property", 
+   issuer: "", 
+   year: "2025", 
+   description: "",
+   image: "/certificates/haki-iot-rice-dryer.jpg",
+   placeholder: true },
 ];
