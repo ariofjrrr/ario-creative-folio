@@ -25,7 +25,7 @@ const areas = [
 function About() {
   return (
     <>
-      <PageHeader index="02 — About" title="About me." />
+      <PageHeader index="02 - About" title="About me." />
       <section className="container-page grid gap-12 md:grid-cols-12">
         <img src={site.portrait} alt={`Portrait of ${site.name}`} loading="lazy" width={896} height={1152} className="aspect-[4/5] w-full object-cover grayscale md:col-span-4" />
         <div className="space-y-6 text-lg leading-relaxed md:col-span-7 md:col-start-6">
