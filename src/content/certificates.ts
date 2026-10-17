@@ -23,7 +23,7 @@ export const certificates: Certificate[] = [
   },
   {
     id: "gold-medal-physics-nhc-2024",
-    title: "Medali Emas Olimpiade Fisika — NHC 2024",
+    title: "Medali Emas Olimpiade Fisika - NHC 2024",
     category: "Awards",
     issuer: "Festival Olimpiade Sains Nasional (FOSNAS)",
     year: "2024",
