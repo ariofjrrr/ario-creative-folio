@@ -5,9 +5,9 @@ import { site } from "@/content/site";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About — Ario Fajar Dharmawan" },
+      { title: "About - AFD" },
       { name: "description", content: "About Ario Fajar Dharmawan, a digital creator interested in writing, visual communication, technology and digital projects." },
-      { property: "og:title", content: "About — Ario Fajar Dharmawan" },
+      { property: "og:title", content: "About - AFD" },
       { property: "og:description", content: "A digital creator working across writing, visual communication, and technology." },
     ],
   }),
