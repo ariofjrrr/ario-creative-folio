@@ -3,7 +3,7 @@
  * Leave a value as "" to hide it everywhere on the site.
  * PLACEHOLDER: fill in your real contact details.
  */
-import portrait from "@/assets/portrait.jpg";
+import portrait from "@/assets/portrait.png";
 
 export const site = {
   name: "Ario Fajar Dharmawan",
@@ -12,11 +12,11 @@ export const site = {
   // PLACEHOLDER photo — replace src/assets/portrait.jpg with your own portrait.
   portrait,
   contact: {
-    email: "", // e.g. "hello@domain.com"
+    email: "ariofajar970@gmail.com", // e.g. "hello@domain.com"
     linkedin: "", // full URL
     instagram: "", // full URL
     github: "", // full URL
-    whatsapp: "", // international number, digits only, e.g. "628123456789"
+    whatsapp: "6289523894988", // international number, digits only, e.g. "628123456789"
   },
 };
 
