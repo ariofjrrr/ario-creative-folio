@@ -43,7 +43,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Ario Fajar Dharmawan — Personal Portfolio" },
+      { title: "Ario Fajar Dharmawan - Personal Portfolio" },
       { name: "description", content: "Writing, visual design, digital experiences, and creative projects by Ario Fajar Dharmawan." },
       { name: "author", content: "Ario Fajar Dharmawan" },
       { property: "og:type", content: "website" },
