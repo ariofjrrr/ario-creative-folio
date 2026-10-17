@@ -8,3 +8,4 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+- Site content (works, writing, certificates, contact links) lives in src/content/*.ts, separate from components; empty fields are hidden in UI so placeholders never show invented facts.
