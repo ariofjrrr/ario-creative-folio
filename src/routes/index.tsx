@@ -30,7 +30,7 @@ function Home() {
               Turning Ideas Into Meaningful Works<span className="text-accent">.</span>
             </h1>
             <p className="mt-8 max-w-md text-lg text-muted-foreground">
-              Writing, visual design, digital experiences, and creative projects — collected in one place.
+              Writing, visual design, digital experiences, and creative projects - collected in one place.
             </p>
             <div className="mt-10 flex flex-wrap gap-3">
               <Link to="/portfolio" className="bg-primary px-6 py-3.5 text-sm font-medium text-primary-foreground transition-colors hover:bg-accent">Explore My Works</Link>
@@ -38,7 +38,7 @@ function Home() {
             </div>
           </div>
           <div className="grid grid-cols-3 border-t pt-3">
-            {["Writing", "Design", "Web"].map((t, i) => <span key={t} className="eyebrow">0{i + 1} — {t}</span>)}
+            {["Writing", "Design", "Web"].map((t, i) => <span key={t} className="eyebrow">0{i + 1} - {t}</span>)}
           </div>
         </div>
         <figure className="fade-up md:col-span-5" style={{ animationDelay: "120ms" }}>
