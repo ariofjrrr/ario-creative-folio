@@ -12,7 +12,7 @@ export const writings: Writing[] = [
     "Sebuah karya nonfiksi populer yang menelusuri bagaimana hukum, adat, keluarga, pendidikan, dan kekuasaan membentuk kehidupan perempuan dari masa lalu hingga masa kini. Melalui catatan sejarah dan refleksi sosial, buku ini mempertanyakan hal-hal yang pernah dianggap wajar, perubahan yang telah terjadi, serta batas-batas yang masih tersisa.",
   excerpt:
     "Kekuasaan tidak selalu datang sebagai perintah. Kadang ia datang sebagai kebiasaan.",
-  cover: "/wanita-kehilangan-kendali.jpg",
+  cover: "/wanita-kehilangan-kendali.png",
   pdf: "/sungguh-beruntung-wanita-hari-ini.pdf",
   link: "",
 },
