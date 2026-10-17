@@ -29,7 +29,7 @@ export const certificates: Certificate[] = [
     year: "2024",
     description:
       "Meraih Medali Emas pada ajang National Heroes Competition (NHC) 2024 dalam bidang Fisika, tingkat perguruan tinggi, dengan predikat A+. Kompetisi tingkat nasional ini diselenggarakan pada 3 November 2024 di Sumatera Utara.",
-    pdf: "/certificates/piag-fisika-nhc-2024.pdf",
+    pdf: "/piag-fisika-nhc-2024.pdf",
     verification: "1632470/BHM-FOSNAS/NHC-P/XI/2024",
     placeholder: false,
   },
