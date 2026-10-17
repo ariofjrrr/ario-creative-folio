@@ -3,7 +3,7 @@ import portrait from "@/assets/portrait.png";
 export const site = {
   name: "Ario Fajar Dharmawan",
   short: "AFD",
-  year: 2026,
+ // year: 2026,
 
   portrait,
   contact: {
