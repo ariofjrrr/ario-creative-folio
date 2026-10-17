@@ -6,7 +6,7 @@ import { WorkCard } from "@/components/site/WorkCard";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Ario Fajar Dharmawan - Turning Ideas Into Meaningful Works" },
+      { title: "Ario Fajar Dharmawan" },
       { name: "description", content: "Personal portfolio of Ario Fajar Dharmawan: writing, visual design, digital experiences, and creative projects." },
       { property: "og:title", content: "Ario Fajar Dharmawan - Personal Portfolio" },
       { property: "og:description", content: "Writing, visual design, digital experiences, and creative projects - collected in one place." },
