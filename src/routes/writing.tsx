@@ -37,7 +37,7 @@ function WritingPage() {
   return (
     <>
       <PageHeader
-        index="05 — Writing"
+        index="05 - Writing"
         title="Writing & publications."
         intro="Manuscripts, essays, articles and published work."
       />
