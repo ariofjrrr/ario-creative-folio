@@ -15,6 +15,6 @@ export const certificates: Certificate[] = [
    issuer: "", 
    year: "2025", 
    description: "",
-   image: "/src/assets/haki-iot-rice-dryer.jpg",
+   image: "main/src/assets/haki-iot-rice-dryer.jpg",
    placeholder: true },
 ];
