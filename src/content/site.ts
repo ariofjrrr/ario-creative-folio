@@ -14,7 +14,7 @@ export const site = {
   contact: {
     email: "ariofajar970@gmail.com", // e.g. "hello@domain.com"
     linkedin: "", // full URL
-    instagram: "", // full URL
+    instagram: "https://www.instagram.com/ariofjrrr/", // full URL
     github: "", // full URL
     whatsapp: "6289523894988", // international number, digits only, e.g. "628123456789"
   },
