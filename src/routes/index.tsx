@@ -6,10 +6,10 @@ import { WorkCard } from "@/components/site/WorkCard";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Ario Fajar Dharmawan — Turning Ideas Into Meaningful Works" },
+      { title: "Ario Fajar Dharmawan - Turning Ideas Into Meaningful Works" },
       { name: "description", content: "Personal portfolio of Ario Fajar Dharmawan: writing, visual design, digital experiences, and creative projects." },
-      { property: "og:title", content: "Ario Fajar Dharmawan — Personal Portfolio" },
-      { property: "og:description", content: "Writing, visual design, digital experiences, and creative projects — collected in one place." },
+      { property: "og:title", content: "Ario Fajar Dharmawan - Personal Portfolio" },
+      { property: "og:description", content: "Writing, visual design, digital experiences, and creative projects - collected in one place." },
     ],
   }),
   component: Home,
@@ -21,7 +21,7 @@ function Home() {
       <section className="container-page grid gap-12 pb-20 pt-12 md:grid-cols-12 md:pt-20">
         <div className="fade-up md:col-span-7 md:flex md:flex-col md:justify-between">
           <div className="flex justify-between border-b pb-3">
-            <span className="eyebrow">Personal Portfolio · {site.year}</span>
+            <span className="eyebrow">Personal Portfolio {site.year}</span>
             <span className="eyebrow hidden sm:inline">Indonesia</span>
           </div>
           <div className="py-10 md:py-0">
