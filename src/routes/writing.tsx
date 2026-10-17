@@ -11,7 +11,7 @@ export const Route = createFileRoute("/writing")({
   head: () => ({
     meta: [
       {
-        title: "Writing & Publications — Ario Fajar Dharmawan",
+        title: "Writing & Publications - Ario Fajar Dharmawan",
       },
       {
         name: "description",
@@ -20,7 +20,7 @@ export const Route = createFileRoute("/writing")({
       },
       {
         property: "og:title",
-        content: "Writing & Publications — Ario Fajar Dharmawan",
+        content: "Writing & Publications - Ario Fajar Dharmawan",
       },
       {
         property: "og:description",
