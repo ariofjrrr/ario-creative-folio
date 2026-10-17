@@ -11,7 +11,7 @@ export const certCategories: ("All" | CertCategory)[] = [
 export const certificates: Certificate[] = [
   {
     id: "haki-iot-rice-dryer",
-    title: "Modul Mesin Pengering Padi Berbasis IoT",
+    title: "HKI - Modul Mesin Pengering Padi Berbasis IoT",
     category: "Intellectual Property",
     issuer: "Kementerian Hukum Republik Indonesia",
     year: "2025",
