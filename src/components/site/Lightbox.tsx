@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 
 /** Full-screen preview for an image or PDF. Closes with Esc or the button. */
-export function Lightbox({ src, pdf, title, onClose, children }: { src?: string; pdf?: string; title: string; onClose: () => void; children?: React.ReactNode }) {
+export function Lightbox({ src, pdf, title, onClose, children }: { src?: string | undefined; pdf?: string | undefined; title: string; onClose: () => void; children?: React.ReactNode }) {
   useEffect(() => {
     const k = (e: KeyboardEvent) => e.key === "Escape" && onClose();
     window.addEventListener("keydown", k);

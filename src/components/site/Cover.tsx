@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils";
 
 /** Image cover, or a typographic fallback when no image is set. */
-export function Cover({ src, title, label, className, dark }: { src?: string; title: string; label?: string; className?: string; dark?: boolean }) {
+export function Cover({ src, title, label, className, dark }: { src?: string | undefined; title: string; label?: string | undefined; className?: string; dark?: boolean }) {
   if (src) {
     return <img src={src} alt={title} loading="lazy" className={cn("h-full w-full object-cover", className)} />;
   }
