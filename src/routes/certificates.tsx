@@ -34,10 +34,15 @@ function Certificates() {
               {list.map((c, i) => (
                 <button key={c.id} onClick={() => setOpen(c)} className="group fade-up text-left" style={{ animationDelay: `${i * 60}ms` }}>
                 <div className="aspect-[1.414/1] overflow-hidden border">
-                  <div className="h-full transition-transform duration-500 group-hover:scale-[1.03]">
-                    <Cover src={c.image} title={c.title} label={c.category} />
+                  <div className="h-full w-full transition-transform duration-500 group-hover:scale-[1.03]">
+                  <Cover
+                    src={c.image}
+                    title={c.title}
+                    label={c.category}
+                    className="h-full w-full"
+                    />
                   </div>
-                </div>                  
+                </div>
                   <h3 className="mt-4 font-semibold tracking-tight">{c.title}</h3>
                   <p className="mt-1 text-sm text-muted-foreground">{[c.issuer, c.year].filter(Boolean).join(" · ") || c.category}</p>
                 </button>
