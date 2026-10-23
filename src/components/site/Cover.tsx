@@ -1,8 +1,6 @@
 
-import { useState } from "react";
 import { cn } from "@/lib/utils";
 
-/** Image cover, or a typographic fallback when no image is set. */
 export function Cover({
   src,
   title,
@@ -16,20 +14,21 @@ export function Cover({
   className?: string;
   dark?: boolean;
 }) {
-  const [imageError, setImageError] = useState(false);
-
-  if (src && !imageError) {
+  if (src) {
     return (
-      <img
-        src={src}
-        alt={title}
-        loading="lazy"
-        onError={() => setImageError(true)}
+      <div
         className={cn(
-          "block h-full w-full object-contain bg-neutral-50 dark:bg-neutral-900",
+          "flex h-full w-full items-center justify-center overflow-hidden bg-neutral-50 dark:bg-neutral-900",
           className
         )}
-      />
+      >
+        <img
+          src={src}
+          alt={title}
+          loading="eager"
+          className="block h-full w-full object-contain"
+        />
+      </div>
     );
   }
 
@@ -39,10 +38,9 @@ export function Cover({
         "flex h-full w-full flex-col justify-between p-5",
         dark
           ? "bg-ink text-ink-foreground"
-          : "bg-cover text-foreground",
-        className
+          : "bg-cover text-foreground"
       )}
-      aria-label={title}
+      aria-hidden="true"
     >
       <span className="eyebrow">{label}</span>
       <span className="text-2xl font-semibold leading-tight tracking-tight md:text-3xl">
