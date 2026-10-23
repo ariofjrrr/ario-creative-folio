@@ -35,12 +35,12 @@ function Certificates() {
                 <button key={c.id} onClick={() => setOpen(c)} className="group fade-up text-left" style={{ animationDelay: `${i * 60}ms` }}>
                 <div className="aspect-[1.414/1] overflow-hidden border">
                   <div className="h-full w-full transition-transform duration-500 group-hover:scale-[1.03]">
-                  <Cover
+                  <img
                     src={c.image}
-                    title={c.title}
-                    label={c.category}
-                    className="h-full w-full"
-                    />
+                    alt={c.title}
+                    className="h-full w-full object-contain"
+                    onError={(e) => console.log("Gagal memuat:", c.image, e)}
+                  />
                   </div>
                 </div>
                   <h3 className="mt-4 font-semibold tracking-tight">{c.title}</h3>
