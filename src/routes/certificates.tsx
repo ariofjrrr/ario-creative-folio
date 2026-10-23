@@ -34,7 +34,10 @@ function Certificates() {
               {list.map((c, i) => (
                 <button key={c.id} onClick={() => setOpen(c)} className="group fade-up text-left" style={{ animationDelay: `${i * 60}ms` }}>
                   <div className="aspect-[1.414/1] overflow-hidden border">
-                    <div className="h-full transition-transform duration-500 group-hover:scale-[1.03]"><Cover src={c.image} title={c.title} label={c.category} /></div>
+                    <div className="h-full transition-transform duration-500 group-hover:scale-[1.03]">
+                    {/* Sekarang komponen ini akan menampilkan gambar secara utuh (contain) */}
+                      <Cover src={c.image} title={c.title} label={c.category} />
+                    </div>
                   </div>
                   <h3 className="mt-4 font-semibold tracking-tight">{c.title}</h3>
                   <p className="mt-1 text-sm text-muted-foreground">{[c.issuer, c.year].filter(Boolean).join(" · ") || c.category}</p>
