@@ -38,8 +38,14 @@ function Certificates() {
                   <img
                     src={c.image}
                     alt={c.title}
-                    className="h-full w-full object-contain"
-                    onError={(e) => console.log("Gagal memuat:", c.image, e)}
+                    style={{
+                      display: "block",
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "contain",
+                      minHeight: "100px",
+                      background: "#f0f0f0",
+                    }}
                   />
                   </div>
                 </div>
