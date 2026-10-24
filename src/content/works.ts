@@ -86,10 +86,6 @@ export const works: Work[] = [
     },
   ],
 },
-
-  { slug: "bem-berdampak", title: "BEM Berdampak", category: "Projects", year: "", summary: "Dokumentasi kegiatan dan luaran proyek.", placeholder: true },
-  { slug: "selected-graphic-designs", title: "Selected Graphic Designs", category: "Graphic Design", year: "", summary: "Kumpulan desain grafis.", placeholder: true },
-  { slug: "iot-rice-dryer-module", title: "IoT-Based Rice Dryer Module", category: "Projects", year: "", summary: "Luaran modul alat pengering padi berbasis IoT yang memiliki HAKI.", placeholder: true },
 ];
 
 export const getWork = (slug: string) => works.find((w) => w.slug === slug);
