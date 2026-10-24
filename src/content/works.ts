@@ -52,6 +52,39 @@ export const works: Work[] = [
   ],
 },
 
+{
+  slug: "ak-kids-profile",
+  title: "AK KIDS — Website Profil",
+  category: "Web Development",
+  year: "2026",
+  summary:
+    "Pengembangan website profil AK KIDS untuk memperkenalkan layanan dan menyediakan informasi lembaga secara digital.",
+
+  background:
+    "AK KIDS merupakan pusat layanan pendukung tumbuh kembang anak yang berlokasi di Singosari, Kabupaten Malang. Website profil ini dikembangkan sebagai media informasi digital untuk memperkenalkan AK KIDS beserta layanan yang tersedia kepada masyarakat.",
+
+  goals:
+    "• Menyediakan media profil AK KIDS yang dapat diakses secara daring.\n• Memperkenalkan layanan AK KIDS melalui informasi yang terstruktur.\n• Memudahkan pengunjung mengenali jenis layanan yang tersedia.\n• Menghadirkan tampilan yang ramah anak, informatif, dan mudah dijelajahi.",
+
+  role:
+    "Merancang dan mengembangkan website profil AK KIDS sebagai media informasi digital, dengan fokus pada penyajian profil lembaga, informasi layanan, dan pengalaman pengguna.",
+
+  process:
+    "1. Menyusun struktur informasi berdasarkan profil dan layanan AK KIDS.\n2. Mengembangkan susunan halaman untuk memperkenalkan lembaga dan layanannya.\n3. Menata tampilan visual agar sesuai dengan karakter layanan anak.\n4. Menyediakan akses menuju website yang telah dipublikasikan secara daring.",
+
+  outcome:
+    "Website profil AK KIDS berhasil dipublikasikan dan dapat diakses secara daring. Website ini menjadi media digital untuk memperkenalkan profil serta layanan AK KIDS kepada masyarakat.",
+
+  placeholder: false,
+
+  links: [
+    {
+      label: "Live Preview",
+      href: "https://akkidsprofile.vercel.app/",
+    },
+  ],
+},
+
   { slug: "bem-berdampak", title: "BEM Berdampak", category: "Projects", year: "", summary: "Dokumentasi kegiatan dan luaran proyek.", placeholder: true },
   { slug: "selected-graphic-designs", title: "Selected Graphic Designs", category: "Graphic Design", year: "", summary: "Kumpulan desain grafis.", placeholder: true },
   { slug: "iot-rice-dryer-module", title: "IoT-Based Rice Dryer Module", category: "Projects", year: "", summary: "Luaran modul alat pengering padi berbasis IoT yang memiliki HAKI.", placeholder: true },
