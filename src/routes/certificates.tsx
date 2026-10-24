@@ -25,7 +25,7 @@ function Certificates() {
 
   return (
     <>
-      <PageHeader index="04 — Certificates" title="Certificates & achievements." />
+      <PageHeader index="04 - Certificates" title="Certificates & achievements." />
       <section className="container-page">
         <FilterBar options={certCategories} value={cat} onChange={setCat} />
         <div className="mt-12">
