@@ -10,7 +10,12 @@ export const workCategories: ("All Works" | WorkCategory)[] = [
  */
 export const works: Work[] = [
   { slug: "wanita-kehilangan-kendali", title: "Wanita Kehilangan Kendali", category: "Writing", year: "", summary: "Proyek penulisan buku.", placeholder: true },
-  { slug: "pos-paud-cempaka", title: "Pos PAUD Cempaka", category: "Web Development", year: "", summary: "Proyek pengembangan website profil.", url: "https://ppcempaka.vercel.app/", placeholder: true },
+  { slug: "pos-paud-cempaka", title: "Pos PAUD Cempaka", category: "Web Development", year: "", summary: "Proyek pengembangan website profil.", placeholder: true, links: [
+    {
+      label: "Lihat Website",
+      href: "https://ppcempaka.vercel.app/",
+    },
+  ], },
   { slug: "bem-berdampak", title: "BEM Berdampak", category: "Projects", year: "", summary: "Dokumentasi kegiatan dan luaran proyek.", placeholder: true },
   { slug: "selected-graphic-designs", title: "Selected Graphic Designs", category: "Graphic Design", year: "", summary: "Kumpulan desain grafis.", placeholder: true },
   { slug: "iot-rice-dryer-module", title: "IoT-Based Rice Dryer Module", category: "Projects", year: "", summary: "Luaran modul alat pengering padi berbasis IoT yang memiliki HAKI.", placeholder: true },
