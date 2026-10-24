@@ -11,7 +11,7 @@ export const Route = createFileRoute("/writing")({
   head: () => ({
     meta: [
       {
-        title: "Writing & Publications - Ario Fajar Dharmawan",
+        title: "Writing - AFD",
       },
       {
         name: "description",
