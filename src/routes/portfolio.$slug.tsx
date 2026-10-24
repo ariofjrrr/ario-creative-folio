@@ -168,54 +168,6 @@ function WorkDetail() {
         </section>
       )}
 
-      {/* Gallery */}
-      {work.gallery && work.gallery.length > 0 && (
-        <section className="container-page mt-20">
-          <div className="flex items-end justify-between gap-4">
-            <div>
-              <p className="eyebrow">04 / Selected screens</p>
-              <h2 className="mt-4 text-2xl font-semibold tracking-tight">
-                Inside the project.
-              </h2>
-            </div>
-
-            <p className="hidden text-sm text-muted-foreground sm:block">
-              Click an image to enlarge
-            </p>
-          </div>
-
-          <div className="mt-8 grid gap-5 sm:grid-cols-2">
-            {work.gallery.map((image, index) => (
-              <button
-                key={image}
-                type="button"
-                onClick={() => setPreview(image)}
-                className="group overflow-hidden border text-left"
-                aria-label={`Enlarge project screenshot ${index + 1}`}
-              >
-                <div className="aspect-[4/3] overflow-hidden bg-neutral-100 dark:bg-neutral-900">
-                  <img
-                    src={image}
-                    alt={`${work.title} — screenshot ${index + 1}`}
-                    loading="lazy"
-                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
-                  />
-                </div>
-
-                <div className="flex items-center justify-between gap-3 p-4">
-                  <span className="text-sm">
-                    Screen {String(index + 1).padStart(2, "0")}
-                  </span>
-                  <span className="text-sm text-muted-foreground">
-                    Enlarge ↗
-                  </span>
-                </div>
-              </button>
-            ))}
-          </div>
-        </section>
-      )}
-
       {/* Outcome */}
       {sections.slice(4).map(([heading, content]) => (
         <section
