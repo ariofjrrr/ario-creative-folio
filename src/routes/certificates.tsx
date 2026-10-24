@@ -9,7 +9,7 @@ import { Lightbox } from "@/components/site/Lightbox";
 export const Route = createFileRoute("/certificates")({
   head: () => ({
     meta: [
-      { title: "Certificates & Achievements — Ario Fajar Dharmawan" },
+      { title: "Certificates & Achievements - AFD" },
       { name: "description", content: "Certificates, awards, intellectual property and training records of Ario Fajar Dharmawan." },
       { property: "og:title", content: "Certificates & Achievements — Ario Fajar Dharmawan" },
       { property: "og:description", content: "Certificates, awards, intellectual property and training." },
