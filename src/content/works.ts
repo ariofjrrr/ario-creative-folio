@@ -17,7 +17,7 @@ export const works: Work[] = [
   category: "Web Development",
   year: "2026",
   summary:
-    "Pengembangan website profil POS PAUD CEMPAKA sebagai media informasi digital yang memperkenalkan identitas lembaga, program pendidikan, tenaga pendidik, serta informasi pendaftaran kepada masyarakat.",
+    "Pengembangan website profil POS PAUD CEMPAKA sebagai media informasi digital.",
 
   background:
     "POS PAUD CEMPAKA merupakan lembaga pendidikan anak usia dini yang membutuhkan media profil digital untuk memperkenalkan lembaga dan menyajikan informasi kepada orang tua serta masyarakat. Website ini dikembangkan dengan pendekatan visual yang ramah anak, informatif, dan mudah dijelajahi.",
