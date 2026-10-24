@@ -13,7 +13,7 @@ export const Route = createFileRoute("/portfolio/$slug")({
   head: ({ loaderData }) => ({
     meta: loaderData
       ? [
-          { title: `${loaderData.work.title} — Ario Fajar Dharmawan` },
+          { title: `${loaderData.work.title} - AFD` },
           { name: "description", content: loaderData.work.summary },
           { property: "og:title", content: loaderData.work.title },
           { property: "og:description", content: loaderData.work.summary },
