@@ -35,6 +35,22 @@ export const works: Work[] = [
     "Website profil POS PAUD CEMPAKA berhasil dipublikasikan secara daring dan dapat diakses melalui browser. Website menyajikan informasi lembaga dalam satu tempat dengan struktur halaman yang terorganisasi dan pendekatan visual yang ramah bagi orang tua serta masyarakat.",
 
   placeholder: false,
+  techStack: [
+    "React",
+    "Vite",
+    "TypeScript",
+    "Tailwind CSS",
+    "shadcn/ui",
+    "Vercel",
+  ],
+  
+  cover: "/projects/paud-cempaka/cover.jpg",
+
+  gallery: [
+    "/projects/paud-cempaka/homepage.jpg",
+    "/projects/paud-cempaka/programs.jpg",
+    "/projects/paud-cempaka/gallery.jpg",
+  ],
 
   links: [
     {
