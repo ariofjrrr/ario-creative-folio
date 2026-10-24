@@ -13,26 +13,26 @@ export const works: Work[] = [
   
 {
   slug: "pos-paud-cempaka",
-  title: "Pos PAUD Cempaka",
+  title: "POS PAUD Cempaka",
   category: "Web Development",
   year: "2026",
   summary:
-    "Pengembangan website profil Pos PAUD Cempaka sebagai media informasi digital yang memperkenalkan identitas lembaga, program pendidikan, tenaga pendidik, serta informasi pendaftaran kepada masyarakat.",
+    "Pengembangan website profil POS PAUD Cempaka sebagai media informasi digital yang memperkenalkan identitas lembaga, program pendidikan, tenaga pendidik, serta informasi pendaftaran kepada masyarakat.",
 
   background:
-    "Pos PAUD Cempaka merupakan lembaga pendidikan anak usia dini yang membutuhkan media profil digital untuk memperkenalkan lembaga dan menyajikan informasi kepada orang tua serta masyarakat. Website ini dikembangkan dengan pendekatan visual yang ramah anak, informatif, dan mudah dijelajahi.",
+    "POS PAUD Cempaka merupakan lembaga pendidikan anak usia dini yang membutuhkan media profil digital untuk memperkenalkan lembaga dan menyajikan informasi kepada orang tua serta masyarakat. Website ini dikembangkan dengan pendekatan visual yang ramah anak, informatif, dan mudah dijelajahi.",
 
   goals:
     "• Membangun media profil lembaga yang dapat diakses secara daring.\n• Menyajikan informasi mengenai profil, program, tenaga pendidik, dan kegiatan PAUD.\n• Mempermudah pengunjung menemukan informasi penting melalui navigasi yang terstruktur.\n• Menghadirkan tampilan yang ramah anak dengan desain yang bersih dan nyaman dibaca.",
 
   role:
-    "Berperan dalam pengembangan website profil Pos PAUD Cempaka, mulai dari penyusunan struktur halaman, implementasi antarmuka, pengaturan komponen visual, hingga integrasi informasi lembaga ke dalam website.",
+    "Berperan dalam pengembangan website profil POS PAUD Cempaka, mulai dari penyusunan struktur halaman, implementasi antarmuka, pengaturan komponen visual, hingga integrasi informasi lembaga ke dalam website.",
 
   process:
     "1. Analisis kebutuhan informasi yang perlu ditampilkan pada website profil.\n\n2. Penyusunan struktur halaman dan navigasi agar informasi mudah ditemukan.\n\n3. Implementasi antarmuka menggunakan React, Vite, TypeScript, dan komponen UI yang digunakan dalam proyek.\n\n4. Pengembangan bagian profil lembaga, program, galeri, tenaga pendidik, testimoni, pendaftaran, dan kontak.\n\n5. Penyesuaian tampilan visual serta pemeriksaan halaman sebelum website dipublikasikan.",
 
   outcome:
-    "Website profil Pos PAUD Cempaka berhasil dipublikasikan secara daring dan dapat diakses melalui browser. Website menyajikan informasi lembaga dalam satu tempat dengan struktur halaman yang terorganisasi dan pendekatan visual yang ramah bagi orang tua serta masyarakat.",
+    "Website profil POS PAUD Cempaka berhasil dipublikasikan secara daring dan dapat diakses melalui browser. Website menyajikan informasi lembaga dalam satu tempat dengan struktur halaman yang terorganisasi dan pendekatan visual yang ramah bagi orang tua serta masyarakat.",
 
   placeholder: false,
 
