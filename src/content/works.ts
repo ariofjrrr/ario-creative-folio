@@ -9,8 +9,6 @@ export const workCategories: ("All Works" | WorkCategory)[] = [
  * empty until real details are provided. Empty fields are hidden on the page.
  */
 export const works: Work[] = [
-  { slug: "wanita-kehilangan-kendali", title: "Wanita Kehilangan Kendali", category: "Writing", year: "", summary: "Proyek penulisan buku.", placeholder: true },
-  
 {
   slug: "pos-paud-cempaka",
   title: "POS PAUD CEMPAKA",
@@ -45,12 +43,6 @@ export const works: Work[] = [
   ],
   
   cover: "/cover.png",
-
-  gallery: [
-    "/homepage.png",
-    "/programs.png",
-    "/contact.jpg",
-  ],
 
   links: [
     {
