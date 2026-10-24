@@ -29,7 +29,7 @@ export const works: Work[] = [
     "Berperan dalam pengembangan website profil POS PAUD CEMPAKA, mulai dari penyusunan struktur halaman, implementasi antarmuka, pengaturan komponen visual, hingga integrasi informasi lembaga ke dalam website.",
 
   process:
-    "1. Analisis kebutuhan informasi yang perlu ditampilkan pada website profil.\n\n2. Penyusunan struktur halaman dan navigasi agar informasi mudah ditemukan.\n\n3. Implementasi antarmuka menggunakan React, Vite, TypeScript, dan komponen UI yang digunakan dalam proyek.\n\n4. Pengembangan bagian profil lembaga, program, galeri, tenaga pendidik, testimoni, pendaftaran, dan kontak.\n\n5. Penyesuaian tampilan visual serta pemeriksaan halaman sebelum website dipublikasikan.",
+    "1. Analisis kebutuhan informasi yang perlu ditampilkan pada website profil.\n2. Penyusunan struktur halaman dan navigasi agar informasi mudah ditemukan.\n3. Implementasi antarmuka menggunakan React, Vite, TypeScript, dan komponen UI yang digunakan dalam proyek.\n4. Pengembangan bagian profil lembaga, program, galeri, tenaga pendidik, testimoni, pendaftaran, dan kontak.\n5. Penyesuaian tampilan visual serta pemeriksaan halaman sebelum website dipublikasikan.",
 
   outcome:
     "Website profil POS PAUD CEMPAKA berhasil dipublikasikan secara daring dan dapat diakses melalui browser. Website menyajikan informasi lembaga dalam satu tempat dengan struktur halaman yang terorganisasi dan pendekatan visual yang ramah bagi orang tua serta masyarakat.",
