@@ -14,7 +14,6 @@ export interface Work {
   outcome?: string;
   gallery?: string[];
   links?: { label: string; href: string }[];
-  url?: string;
   placeholder?: boolean;
 }
 
