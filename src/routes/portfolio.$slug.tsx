@@ -30,64 +30,249 @@ export const Route = createFileRoute("/portfolio/$slug")({
   component: WorkDetail,
 });
 
+
 function WorkDetail() {
   const { work } = Route.useLoaderData();
   const [preview, setPreview] = useState<string | null>(null);
+
   const sections = [
     ["Background", work.background],
-    ["Goals", work.goals],
+    ["Project Goals", work.goals],
     ["Role & Contribution", work.role],
-    ["Process", work.process],
+    ["Development Process", work.process],
     ["Outcome", work.outcome],
-  ].filter(([, v]) => v) as [string, string][];
+  ].filter(([, value]) => value) as [string, string][];
 
   return (
-    <article className="fade-up">
+    <article className="fade-up pb-24">
+      {/* Header */}
       <div className="container-page pt-12">
-        <Link to="/portfolio" className="eyebrow hover:text-foreground">← All works</Link>
-        <div className="mt-8 grid gap-6 border-b pb-10 md:grid-cols-12">
-          <h1 className="text-4xl font-semibold tracking-tighter md:col-span-8 md:text-6xl">{work.title}</h1>
-          <dl className="grid grid-cols-2 gap-4 text-sm md:col-span-4 md:self-end">
-            <div><dt className="eyebrow">Category</dt><dd className="mt-1">{work.category}</dd></div>
-            <div><dt className="eyebrow">Year</dt><dd className="mt-1">{work.year || "—"}</dd></div>
+        <Link
+          to="/portfolio"
+          className="eyebrow hover:text-foreground"
+        >
+          ← All works
+        </Link>
+
+        <div className="mt-10 grid gap-8 border-b pb-10 md:grid-cols-12">
+          <div className="md:col-span-8">
+            <p className="eyebrow mb-4">
+              {work.category} / Selected project
+            </p>
+
+            <h1 className="max-w-3xl text-4xl font-semibold tracking-tighter md:text-6xl">
+              {work.title}
+            </h1>
+
+            <p className="mt-5 max-w-2xl leading-relaxed text-muted-foreground">
+              {work.summary}
+            </p>
+
+            {work.links?.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-7 inline-flex items-center gap-3 border px-5 py-3 text-sm transition-colors hover:border-accent hover:text-accent"
+              >
+                {link.label}
+                <span aria-hidden="true">↗</span>
+              </a>
+            ))}
+          </div>
+
+          <dl className="grid grid-cols-2 gap-5 self-end text-sm md:col-span-4">
+            <div className="border-t pt-3">
+              <dt className="eyebrow">Category</dt>
+              <dd className="mt-2">{work.category}</dd>
+            </div>
+
+            <div className="border-t pt-3">
+              <dt className="eyebrow">Year</dt>
+              <dd className="mt-2">{work.year || "—"}</dd>
+            </div>
           </dl>
         </div>
       </div>
-      <div className="container-page mt-10 aspect-[16/8] overflow-hidden">
-        <Cover src={work.cover} title={work.title} label={work.category} dark />
-      </div>
-      <div className="container-page mt-16 grid gap-12 md:grid-cols-12">
-        <p className="text-xl leading-relaxed md:col-span-4">{work.summary}</p>
-        <div className="space-y-10 md:col-span-7 md:col-start-6">
-          {sections.length === 0 && (
-            <p className="border border-dashed p-6 text-sm text-muted-foreground">Project details are being prepared and will be added soon.</p>
-          )}
-          {sections.map(([h, v]) => (
-            <section key={h}>
-              <h2 className="eyebrow">{h}</h2>
-              <p className="mt-3 whitespace-pre-line leading-relaxed">{v}</p>
-            </section>
-          ))}
-          {work.links && work.links.length > 0 && (
-            <div className="flex flex-wrap gap-3">
-              {work.links.map((l) => <a key={l.href} href={l.href} target="_blank" rel="noreferrer" className="border px-4 py-2 text-sm hover:border-accent hover:text-accent">{l.label} ↗</a>)}
-            </div>
-          )}
+
+      {/* Project cover */}
+      <div className="container-page mt-10">
+        <div className="aspect-[16/9] overflow-hidden border bg-neutral-50 dark:bg-neutral-900 md:aspect-[16/7]">
+          <Cover
+            src={work.cover}
+            title={work.title}
+            label={work.category}
+            dark
+          />
         </div>
       </div>
+
+      {/* Overview */}
+      <div className="container-page mt-20 grid gap-8 md:grid-cols-12">
+        <div className="md:col-span-4">
+          <p className="eyebrow">01 / Project overview</p>
+          <h2 className="mt-4 text-2xl font-semibold tracking-tight">
+            The idea behind the project.
+          </h2>
+        </div>
+
+        <div className="space-y-8 md:col-span-7 md:col-start-6">
+          {sections.slice(0, 2).map(([heading, content]) => (
+            <section key={heading}>
+              <h3 className="eyebrow">{heading}</h3>
+              <p className="mt-3 whitespace-pre-line leading-8 text-muted-foreground">
+                {content}
+              </p>
+            </section>
+          ))}
+        </div>
+      </div>
+
+      {/* Contribution and process */}
+      <div className="container-page mt-20 border-y py-12">
+        <p className="eyebrow">02 / Execution</p>
+
+        <div className="mt-8 grid gap-10 md:grid-cols-2">
+          {sections.slice(2, 4).map(([heading, content]) => (
+            <section key={heading}>
+              <h2 className="text-xl font-semibold tracking-tight">
+                {heading}
+              </h2>
+              <p className="mt-4 whitespace-pre-line leading-8 text-muted-foreground">
+                {content}
+              </p>
+            </section>
+          ))}
+        </div>
+      </div>
+
+      {/* Tech stack */}
+      {work.techStack && work.techStack.length > 0 && (
+        <section className="container-page mt-20">
+          <p className="eyebrow">03 / Tools & technology</p>
+          <h2 className="mt-4 text-2xl font-semibold tracking-tight">
+            Built with the right tools.
+          </h2>
+
+          <div className="mt-7 flex flex-wrap gap-3">
+            {work.techStack.map((tech) => (
+              <span
+                key={tech}
+                className="border px-4 py-2 text-sm text-muted-foreground"
+              >
+                {tech}
+              </span>
+            ))}
+          </div>
+        </section>
+      )}
+
+      {/* Gallery */}
       {work.gallery && work.gallery.length > 0 && (
         <section className="container-page mt-20">
-          <h2 className="eyebrow mb-6">Documentation</h2>
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {work.gallery.map((g) => (
-              <button key={g} onClick={() => setPreview(g)} className="aspect-[4/3] overflow-hidden" aria-label="Enlarge image">
-                <img src={g} alt="" loading="lazy" className="h-full w-full object-cover transition-transform hover:scale-[1.03]" />
+          <div className="flex items-end justify-between gap-4">
+            <div>
+              <p className="eyebrow">04 / Selected screens</p>
+              <h2 className="mt-4 text-2xl font-semibold tracking-tight">
+                Inside the project.
+              </h2>
+            </div>
+
+            <p className="hidden text-sm text-muted-foreground sm:block">
+              Click an image to enlarge
+            </p>
+          </div>
+
+          <div className="mt-8 grid gap-5 sm:grid-cols-2">
+            {work.gallery.map((image, index) => (
+              <button
+                key={image}
+                type="button"
+                onClick={() => setPreview(image)}
+                className="group overflow-hidden border text-left"
+                aria-label={`Enlarge project screenshot ${index + 1}`}
+              >
+                <div className="aspect-[4/3] overflow-hidden bg-neutral-100 dark:bg-neutral-900">
+                  <img
+                    src={image}
+                    alt={`${work.title} — screenshot ${index + 1}`}
+                    loading="lazy"
+                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                  />
+                </div>
+
+                <div className="flex items-center justify-between gap-3 p-4">
+                  <span className="text-sm">
+                    Screen {String(index + 1).padStart(2, "0")}
+                  </span>
+                  <span className="text-sm text-muted-foreground">
+                    Enlarge ↗
+                  </span>
+                </div>
               </button>
             ))}
           </div>
         </section>
       )}
-      {preview && <Lightbox src={preview} title={work.title} onClose={() => setPreview(null)} />}
+
+      {/* Outcome */}
+      {sections.slice(4).map(([heading, content]) => (
+        <section
+          key={heading}
+          className="container-page mt-20 border-t pt-10"
+        >
+          <p className="eyebrow">05 / Project conclusion</p>
+          <h2 className="mt-4 text-2xl font-semibold tracking-tight">
+            {heading}
+          </h2>
+          <p className="mt-4 max-w-3xl whitespace-pre-line leading-8 text-muted-foreground">
+            {content}
+          </p>
+        </section>
+      ))}
+
+      {/* Final call to action */}
+      <div className="container-page mt-20">
+        <div className="flex flex-col justify-between gap-6 border p-7 md:flex-row md:items-center md:p-10">
+          <div>
+            <p className="eyebrow">Explore the live project</p>
+            <h2 className="mt-3 text-2xl font-semibold tracking-tight">
+              See it in action.
+            </h2>
+            <p className="mt-2 text-sm text-muted-foreground">
+              Visit the published website to explore the result.
+            </p>
+          </div>
+
+          {work.links?.map((link) => (
+            <a
+              key={link.href}
+              href={link.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex shrink-0 items-center justify-center gap-3 border px-5 py-3 text-sm transition-colors hover:border-accent hover:text-accent"
+            >
+              {link.label} ↗
+            </a>
+          ))}
+        </div>
+
+        <Link
+          to="/portfolio"
+          className="mt-8 inline-block text-sm text-muted-foreground hover:text-foreground"
+        >
+          ← Explore other projects
+        </Link>
+      </div>
+
+      {preview && (
+        <Lightbox
+          src={preview}
+          title={work.title}
+          onClose={() => setPreview(null)}
+        />
+      )}
     </article>
   );
 }
