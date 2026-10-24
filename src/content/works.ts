@@ -11,7 +11,7 @@ export const workCategories: ("All Works" | WorkCategory)[] = [
 export const works: Work[] = [
 {
   slug: "pos-paud-cempaka",
-  title: "POS PAUD CEMPAKA",
+  title: "POS PAUD CEMPAKA - Website Profile",
   category: "Web Development",
   year: "2026",
   summary:
@@ -54,7 +54,7 @@ export const works: Work[] = [
 
 {
   slug: "ak-kids-profile",
-  title: "AK KIDS — Website Profil",
+  title: "AK KIDS - Website Profile",
   category: "Web Development",
   year: "2026",
   summary:
@@ -76,6 +76,8 @@ export const works: Work[] = [
     "Website profil AK KIDS berhasil dipublikasikan dan dapat diakses secara daring. Website ini menjadi media digital untuk memperkenalkan profil serta layanan AK KIDS kepada masyarakat.",
 
   placeholder: false,
+
+  cover: "/coverak.png",
 
   links: [
     {
