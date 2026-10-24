@@ -44,12 +44,12 @@ export const works: Work[] = [
     "Vercel",
   ],
   
-  cover: "/projects/paud-cempaka/cover.jpg",
+  cover: "/cover.png",
 
   gallery: [
-    "/projects/paud-cempaka/homepage.jpg",
-    "/projects/paud-cempaka/programs.jpg",
-    "/projects/paud-cempaka/gallery.jpg",
+    "/homepage.png",
+    "/programs.png",
+    "/contact.jpg",
   ],
 
   links: [
