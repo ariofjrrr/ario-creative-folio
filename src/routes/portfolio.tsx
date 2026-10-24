@@ -10,7 +10,7 @@ import { EmptyState, FilterBar, PageHeader } from "@/components/site/FilterBar";
 export const Route = createFileRoute("/portfolio")({
   head: () => ({
     meta: [
-      { title: "Portfolio — Ario Fajar Dharmawan" },
+      { title: "Portfolio - AFD" },
       {
         name: "description",
         content:
