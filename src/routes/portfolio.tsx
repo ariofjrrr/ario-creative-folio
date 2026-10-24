@@ -82,7 +82,7 @@ function Portfolio() {
   return (
     <>
       <PageHeader
-        index="03 — Portfolio"
+        index="03 - Portfolio"
         title="Selected works."
         intro="A collection of writing, design, web and project work."
       />
