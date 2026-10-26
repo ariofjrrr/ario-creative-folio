@@ -4,7 +4,7 @@ import { site, socialLinks } from "@/content/site";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact — Ario Fajar Dharmawan" },
+      { title: "Contact - Ario Fajar Dharmawan" },
       { name: "description", content: "Open to creative collaborations, freelance opportunities, and meaningful projects." },
       { property: "og:title", content: "Contact — Ario Fajar Dharmawan" },
       { property: "og:description", content: "Have a project in mind? Let's talk." },
