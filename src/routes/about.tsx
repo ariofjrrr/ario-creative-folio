@@ -11,213 +11,149 @@ export const Route = createFileRoute("/about")({
       {
         name: "description",
         content:
-          "Get to know Ario Fajar Dharmawan, his interests in writing, visual communication, technology, and digital projects.",
-      },
-      { property: "og:title", content: "About - AFD" },
-      {
-        property: "og:description",
-        content:
-          "A personal introduction to my creative practice, interests, and ongoing work.",
+          "The person behind AFD — exploring creativity, communication, and technology.",
       },
     ],
   }),
   component: About,
 });
 
-const content = {
+const translations = {
   ID: {
-    eyebrow: "Tentang Saya",
-    title: "Mengenal saya.",
-    intro:
-      "Saya adalah seseorang yang tertarik pada persimpangan antara kreativitas, komunikasi, dan teknologi.",
+    label: "Sedikit tentang saya",
+    headline: "Menciptakan sesuatu, satu ide dalam satu waktu.",
     paragraphs: [
-      "Saya menikmati proses mengubah ide menjadi sesuatu yang dapat dilihat, dibaca, digunakan, atau dibagikan. Ketertarikan tersebut membawa saya mengeksplorasi berbagai bidang, mulai dari menulis, desain grafis, pengembangan web, hingga komunikasi digital.",
-      "Bagi saya, setiap proyek memiliki proses dan ceritanya sendiri. Ada gagasan yang perlu dirangkai melalui tulisan, pesan yang perlu disampaikan melalui visual, dan kebutuhan yang dapat dijawab melalui teknologi.",
-      "Website ini menjadi ruang untuk mengumpulkan karya, mendokumentasikan proses, dan menunjukkan hal-hal yang sedang saya pelajari. Bukan sekadar hasil akhir, tetapi juga perjalanan di baliknya.",
+      "Saya Ario Fajar Dharmawan. Saya tertarik pada bagaimana ide dapat berkembang menjadi karya, bagaimana visual menyampaikan pesan, dan bagaimana teknologi membuka kemungkinan baru.",
+      "Saya mengeksplorasi berbagai medium, mulai dari tulisan dan desain hingga pengembangan website. Setiap bidang memberi cara pandang yang berbeda dalam memahami dan menyelesaikan sesuatu.",
+      "Di sini, saya mengumpulkan sebagian dari proses tersebut. Karya yang sudah selesai, hal-hal yang sedang dipelajari, dan ide yang masih terus berkembang.",
     ],
-    approachLabel: "Cara Saya Berkarya",
-    approachTitle: "Ide yang baik perlu diwujudkan dengan tujuan.",
-    approachText:
-      "Saya menghargai proses yang terarah, komunikasi yang jelas, dan detail yang dikerjakan dengan cermat. Saya percaya bahwa karya yang baik bukan hanya terlihat menarik, tetapi juga memiliki fungsi dan alasan untuk dibuat.",
-    areasLabel: "Bidang yang Saya Minati",
-    areas: [
-      ["Penulisan Kreatif", "Narasi, esai, dan pengembangan naskah."],
-      ["Desain Grafis", "Komunikasi visual untuk media cetak dan digital."],
-      ["Pengembangan Web", "Membangun website yang fungsional dan mudah digunakan."],
-      ["Komunikasi Digital", "Menyusun pesan dan konten untuk audiens yang tepat."],
-      ["Riset & Dokumentasi", "Mencatat kegiatan, proses, dan hasil sebuah proyek."],
-    ],
-    closing: "Punya ide atau ingin berkolaborasi?",
-    contact: "Mari terhubung",
+    interests: "Hal yang saya eksplorasi",
+    closing: "Selalu ada ruang untuk ide berikutnya.",
+    contact: "Hubungi saya",
   },
   EN: {
-    eyebrow: "About Me",
-    title: "A little about me.",
-    intro:
-      "I'm interested in the intersection of creativity, communication, and technology.",
+    label: "A little about me",
+    headline: "Making things, one idea at a time.",
     paragraphs: [
-      "I enjoy turning ideas into something that can be seen, read, used, or shared. This curiosity has led me to explore different fields, from writing and graphic design to web development and digital communication.",
-      "I see every project as a process with its own story. Some ideas take shape through writing, some messages are better expressed visually, and some needs can be addressed through technology.",
-      "This website is a space to bring my work together, document the process, and share what I'm learning along the way. It is not only about the final result, but also the journey behind it.",
+      "I'm Ario Fajar Dharmawan. I'm interested in how ideas become tangible work, how visuals communicate messages, and how technology creates new possibilities.",
+      "I explore different mediums, from writing and design to web development. Each field offers a different perspective on understanding and solving things.",
+      "This space brings together parts of that process: finished work, things I'm learning, and ideas that are still taking shape.",
     ],
-    approachLabel: "My Approach",
-    approachTitle: "Good ideas deserve thoughtful execution.",
-    approachText:
-      "I value a clear process, meaningful communication, and attention to detail. To me, good work should not only look appealing but also serve a purpose and have a reason to exist.",
-    areasLabel: "Areas of Interest",
-    areas: [
-      ["Creative Writing", "Narratives, essays, and manuscript development."],
-      ["Graphic Design", "Visual communication for print and digital media."],
-      ["Web Development", "Building functional and user-friendly websites."],
-      ["Digital Communication", "Creating messages and content for the right audience."],
-      ["Research & Documentation", "Recording activities, processes, and project outcomes."],
-    ],
-    closing: "Have an idea or want to collaborate?",
+    interests: "Things I explore",
+    closing: "There's always room for the next idea.",
     contact: "Get in touch",
   },
 };
 
+const interests = [
+  "Creative Writing",
+  "Graphic Design",
+  "Web Development",
+  "Digital Communication",
+  "Research & Documentation",
+];
+
 function About() {
   const [language, setLanguage] = useState<"ID" | "EN">("ID");
-  const t = content[language];
+  const t = translations[language];
 
   return (
     <>
-      <PageHeader index="02 - About" title={t.title} />
+      <PageHeader index="02 / ABOUT" title="About." />
 
-      {/* Language Switcher */}
-      <div className="container-page flex justify-end">
-        <div
-          className="inline-flex items-center gap-1 border p-1 text-xs"
-          aria-label="Choose language"
-        >
-          {(["ID", "EN"] as const).map((lang) => (
+      <section className="container-page">
+        <div className="mb-8 flex items-center justify-between">
+          <p className="eyebrow">{t.label}</p>
+
+          <div className="flex items-center gap-2 font-mono text-xs">
             <button
-              key={lang}
               type="button"
-              onClick={() => setLanguage(lang)}
-              aria-pressed={language === lang}
-              className={`px-4 py-2 transition-colors ${
-                language === lang
-                  ? "bg-foreground text-background"
-                  : "text-muted-foreground hover:text-foreground"
-              }`}
+              onClick={() => setLanguage("ID")}
+              aria-pressed={language === "ID"}
+              className={
+                language === "ID"
+                  ? "text-foreground"
+                  : "text-muted-foreground transition-colors hover:text-foreground"
+              }
             >
-              {lang === "ID" ? "Indonesia" : "English"}
+              ID
             </button>
-          ))}
+            <span className="text-muted-foreground">/</span>
+            <button
+              type="button"
+              onClick={() => setLanguage("EN")}
+              aria-pressed={language === "EN"}
+              className={
+                language === "EN"
+                  ? "text-foreground"
+                  : "text-muted-foreground transition-colors hover:text-foreground"
+              }
+            >
+              EN
+            </button>
+          </div>
         </div>
-      </div>
 
-      {/* Introduction */}
-      <section className="container-page mt-10 grid gap-10 md:grid-cols-12 md:gap-12">
-        <div className="md:col-span-4">
-          <div className="overflow-hidden bg-muted">
+        <div className="grid gap-10 md:grid-cols-12 md:gap-14">
+          <div className="md:col-span-5">
             <img
               src={site.portrait}
               alt={`Portrait of ${site.name}`}
-              loading="lazy"
               width={896}
               height={1152}
-              className="aspect-[4/5] w-full object-cover grayscale transition duration-700 hover:grayscale-0"
+              loading="lazy"
+              className="aspect-[4/5] w-full object-cover grayscale"
             />
-          </div>
-          <p className="mt-3 text-xs tracking-wide text-muted-foreground">
-            {site.name} / Personal Portfolio
-          </p>
-        </div>
-
-        <div className="flex flex-col justify-center md:col-span-7 md:col-start-6">
-          <p className="eyebrow mb-5">{t.eyebrow}</p>
-
-          <h2 className="max-w-2xl text-3xl font-medium leading-tight tracking-tight md:text-4xl">
-            {t.intro}
-          </h2>
-
-          <div className="mt-8 space-y-5 text-base leading-relaxed text-muted-foreground">
-            {t.paragraphs.map((paragraph, index) => (
-              <p key={index}>{paragraph}</p>
-            ))}
+            <div className="mt-3 flex justify-between text-xs text-muted-foreground">
+              <span>{site.name}</span>
+              <span>AFD — 2026</span>
+            </div>
           </div>
 
-          <Link
-            to="/contact"
-            className="mt-8 inline-flex w-fit items-center gap-3 border-b border-foreground pb-2 text-sm font-medium transition-colors hover:border-accent hover:text-accent"
-          >
-            {t.contact}
-            <span aria-hidden="true">↗</span>
-          </Link>
+          <div className="flex flex-col justify-center md:col-span-6 md:col-start-7">
+            <h2 className="max-w-xl text-4xl font-medium leading-[1.12] tracking-tight md:text-5xl lg:text-6xl">
+              {t.headline}
+            </h2>
+
+            <div className="mt-9 max-w-lg space-y-5 text-sm leading-7 text-muted-foreground md:text-base">
+              {t.paragraphs.map((paragraph, index) => (
+                <p key={index}>{paragraph}</p>
+              ))}
+            </div>
+
+            <Link
+              to="/contact"
+              className="mt-9 inline-flex w-fit items-center gap-3 border-b border-foreground pb-2 text-sm transition-colors hover:border-accent hover:text-accent"
+            >
+              {t.contact} <span>↗</span>
+            </Link>
+          </div>
         </div>
       </section>
 
-      {/* Approach */}
-      <section className="container-page mt-28 border-y py-12 md:py-16">
-        <div className="grid gap-6 md:grid-cols-12">
-          <p className="eyebrow md:col-span-3">{t.approachLabel}</p>
+      <section className="container-page mb-20 mt-28">
+        <div className="grid gap-8 border-t pt-8 md:grid-cols-12">
+          <p className="eyebrow md:col-span-4">{t.interests}</p>
 
-          <div className="md:col-span-8 md:col-start-5">
-            <h2 className="max-w-2xl text-3xl font-medium leading-tight tracking-tight md:text-4xl">
-              {t.approachTitle}
-            </h2>
-            <p className="mt-6 max-w-2xl text-base leading-relaxed text-muted-foreground">
-              {t.approachText}
+          <div className="md:col-span-7 md:col-start-6">
+            {interests.map((interest, index) => (
+              <div
+                key={interest}
+                className="flex items-center justify-between gap-4 border-b py-5"
+              >
+                <span className="text-lg font-medium tracking-tight md:text-xl">
+                  {interest}
+                </span>
+                <span className="font-mono text-xs text-muted-foreground">
+                  0{index + 1}
+                </span>
+              </div>
+            ))}
+
+            <p className="mt-12 max-w-md text-2xl font-medium leading-snug tracking-tight md:text-3xl">
+              {t.closing}
             </p>
           </div>
-        </div>
-      </section>
-
-      {/* Areas of Interest */}
-      <section className="container-page mt-28">
-        <div className="mb-10 flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
-          <div>
-            <p className="eyebrow mb-4">03 / {t.areasLabel}</p>
-            <h2 className="text-3xl font-medium tracking-tight md:text-4xl">
-              {t.areasLabel}.
-            </h2>
-          </div>
-          <p className="max-w-sm text-sm leading-relaxed text-muted-foreground">
-            {language === "ID"
-              ? "Beberapa bidang yang menjadi bagian dari eksplorasi dan proses kreatif saya."
-              : "A few fields that shape my exploration and creative practice."}
-          </p>
-        </div>
-
-        <ul className="border-t">
-          {t.areas.map(([title, description], index) => (
-            <li
-              key={title}
-              className="grid gap-3 border-b py-7 md:grid-cols-[4rem_1fr_1fr] md:items-center md:gap-6"
-            >
-              <span className="font-mono text-xs text-muted-foreground">
-                0{index + 1}
-              </span>
-
-              <h3 className="text-xl font-medium tracking-tight md:text-2xl">
-                {title}
-              </h3>
-
-              <p className="text-sm leading-relaxed text-muted-foreground">
-                {description}
-              </p>
-            </li>
-          ))}
-        </ul>
-      </section>
-
-      {/* Closing */}
-      <section className="container-page mb-20 mt-28">
-        <div className="flex flex-col gap-6 border-t pt-10 md:flex-row md:items-end md:justify-between">
-          <h2 className="max-w-xl text-3xl font-medium tracking-tight md:text-4xl">
-            {t.closing}
-          </h2>
-
-          <Link
-            to="/contact"
-            className="inline-flex w-fit items-center gap-3 border-b border-foreground pb-2 text-sm font-medium transition-colors hover:border-accent hover:text-accent"
-          >
-            {t.contact}
-            <span aria-hidden="true">↗</span>
-          </Link>
         </div>
       </section>
     </>
