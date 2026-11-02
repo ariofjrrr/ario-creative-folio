@@ -139,9 +139,7 @@ export const works: Work[] = [
     "Menghasilkan desain carousel Instagram dengan alur informasi yang terstruktur dan tampilan visual yang konsisten.",
 
   placeholder: false,
-  cover: "/cover-carousel.png",
-
-  links: [],
+  cover: "/cover-carousel.pdf",
 },
 ];
 
