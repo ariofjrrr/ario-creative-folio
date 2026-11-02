@@ -54,9 +54,13 @@ export function Lightbox({
           type="button"
           autoFocus
           onClick={onClose}
-          className="shrink-0 border border-white/30 px-4 py-2 text-xs uppercase tracking-wider text-white transition-colors hover:border-white hover:bg-white hover:text-black"
+          aria-label="Close preview"
+          className="group flex shrink-0 items-center gap-2 text-xs uppercase tracking-[0.18em] text-white/60 transition-colors duration-300 hover:text-white"
         >
-          Close ✕
+        <span>Close</span>
+        <span className="text-base leading-none transition-transform duration-300 group-hover:rotate-90">
+          ×
+        </span>
         </button>
       </header>
 
