@@ -2,7 +2,6 @@
 import { useEffect } from "react";
 import type { ReactNode } from "react";
 
-/** Full-screen preview for an image or PDF. Closes with Esc or the button. */
 export function Lightbox({
   src,
   pdf,
@@ -37,47 +36,50 @@ export function Lightbox({
       role="dialog"
       aria-modal="true"
       aria-label={title}
-      className="fixed inset-0 z-50 flex flex-col overflow-hidden bg-ink/95 text-ink-foreground fade-up"
+      className="fixed inset-0 z-50 flex flex-col bg-black/90 text-white backdrop-blur-sm fade-up"
       onClick={onClose}
     >
-      <div className="container-page flex shrink-0 items-center justify-between gap-4 py-4">
-        <p className="min-w-0 truncate text-sm font-medium">{title}</p>
+      {/* Header */}
+      <div className="flex shrink-0 items-center justify-between gap-4 px-5 py-4 md:px-8">
+        <p className="min-w-0 truncate text-sm font-medium">
+          {title}
+        </p>
+
         <button
+          type="button"
           autoFocus
           onClick={onClose}
-          className="eyebrow shrink-0 text-ink-foreground hover:text-accent"
+          className="shrink-0 text-xs uppercase tracking-wider text-white/70 transition-colors hover:text-white"
         >
           Close ✕
         </button>
       </div>
 
+      {/* Preview */}
       <div
-        className="container-page grid min-h-0 min-w-0 flex-1 gap-8 overflow-y-auto overflow-x-hidden pb-8 md:grid-cols-[minmax(0,1fr)_20rem]"
+        className="flex min-h-0 flex-1 items-center justify-center overflow-auto px-4 pb-6 md:px-8"
         onClick={(e) => e.stopPropagation()}
       >
-        
-<div className="flex min-h-0 min-w-0 items-center justify-center overflow-hidden">
-  {pdf ? (
-    <iframe
-      src={pdf}
-      title={title}
-      className="h-[75vh] w-full border-0 bg-background"
-    />
-  ) : src ? (
-    <img
-      src={src}
-      alt={title}
-      className="max-h-[75vh] max-w-full object-contain"
-    />
-  ) : (
-    <p className="text-sm opacity-70">
-      No document uploaded yet.
-    </p>
-  )}
-</div>
+        {pdf ? (
+          <iframe
+            src={pdf}
+            title={title}
+            className="h-full min-h-[70vh] w-full border-0 bg-white"
+          />
+        ) : src ? (
+          <img
+            src={src}
+            alt={title}
+            className="max-h-full max-w-full object-contain"
+          />
+        ) : (
+          <p className="text-sm text-white/60">
+            No document uploaded yet.
+          </p>
+        )}
 
         {children && (
-          <aside className="min-w-0 text-sm">
+          <aside className="ml-6 max-w-xs shrink-0 text-sm">
             {children}
           </aside>
         )}
