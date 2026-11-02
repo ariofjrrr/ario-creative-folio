@@ -126,15 +126,9 @@ function WorkDetail() {
             <button
               key={image}
               type="button"
-              onClick={() => { console.log("Gambar diklik:", image); setPreview(image); }}
-              className="group overflow-hidden border bg-neutral-50 dark:bg-neutral-900"
-              aria-label={`View design ${index + 1}`} >
-              <img src={image}
-                alt={`${work.title} - Design ${index + 1}`}
-                loading="lazy"
-                className="h-auto w-full object-contain transition-transform duration-500 group-hover:scale-[1.02]"
-              />
-            </button>
+              onClick={() => setPreview(image)}
+              className="group cursor-zoom-in overflow-hidden border bg-neutral-50 dark:bg-neutral-900"
+            >
           ))}
         </div>
       </section>
