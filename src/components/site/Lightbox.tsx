@@ -65,7 +65,7 @@ export function Lightbox({
         className="flex min-h-0 flex-1 items-center justify-center overflow-hidden p-6 md:p-8"
         onClick={(event) => event.stopPropagation()}
       >
-        <div className="flex h-full w-full items-center justify-center gap-8">
+        <div className="mx-auto flex h-full w-full max-w-6xl items-center justify-center gap-6">
           {/* Image / PDF */}
           <div className="flex h-full min-w-0 flex-1 items-center justify-center">
             {pdf ? (
@@ -89,7 +89,7 @@ export function Lightbox({
 
           {/* Information */}
           {children && (
-            <aside className="hidden w-80 shrink-0 self-center border-l border-white/15 pl-6 text-sm md:block">
+            <aside className="hidden w-72 shrink-0 self-center border-l border-white/15 pl-5 text-sm md:block">
               {children}
             </aside>
           )}
