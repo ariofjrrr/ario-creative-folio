@@ -89,7 +89,7 @@ function About() {
         </div>
 
         {/* Profile */}
-        <div className="grid items-start gap-8 md:grid-cols-[minmax(220px,0.8fr)_1.2fr] lg:gap-16">
+        <div className="grid items-start gap-8 md:grid-cols-[280px_minmax(0,1fr)] lg:grid-cols-[320px_minmax(0,1fr)] lg:gap-14">
           <div>
             <img
               src={site.portrait}
@@ -97,7 +97,7 @@ function About() {
               width={896}
               height={1152}
               loading="lazy"
-              className="aspect-[4/5] w-full object-cover grayscale"
+              className="aspect-[4/5] w-full max-w-[320px] object-cover grayscale"
             />
 
             <div className="mt-3 flex justify-between text-xs text-muted-foreground">
