@@ -160,6 +160,25 @@ gallery: [
 
   placeholder: false,
   cover: "/cover-carousel.pdf",
+
+gallery: [
+  {
+    src: "/carousel-01.png",
+    title: "Carousel 01 - Cover",
+  },
+  {
+    src: "/carousel-02.png",
+    title: "Carousel 01 - Slide 02",
+  },
+  {
+    src: "/carousel-03.png",
+    title: "Carousel 01 - Slide 03",
+  },
+  {
+    src: "/carousel-04.png",
+    title: "Carousel 01 - Slide 04",
+  },
+],
 },
 ];
 
