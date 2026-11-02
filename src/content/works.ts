@@ -112,7 +112,12 @@ export const works: Work[] = [
   placeholder: false,
   cover: "/cover-feed.png",
 
-  links: [],
+gallery: [
+  "/feed-01.png",
+  "/feed-02.png",
+  "/feed-03.png",
+  "/feed-04.png",
+  ],
 },
 
 {
