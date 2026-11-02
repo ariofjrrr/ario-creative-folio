@@ -120,8 +120,20 @@ gallery: [
   {
     src: "/feed-02.png",
     title: "Ads Creative Kidspro",
-  },],
-},
+  },
+  {
+    src: "/feed-03.png",
+    title: "AK KIDS Information Media",
+  },
+  {
+    src: "/feed-04.png",
+    title: "Anti-Corruption Campaign",
+  },
+  {
+    src: "/feed-05.png",
+    title: "National Teacher's Day Campaign",
+  },
+],},
 
 {
   slug: "instagram-carousel-design",
