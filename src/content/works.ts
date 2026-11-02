@@ -159,7 +159,7 @@ gallery: [
     "Menghasilkan desain carousel Instagram dengan alur informasi yang terstruktur dan tampilan visual yang konsisten.",
 
   placeholder: false,
-  cover: "/cover-carousel.pdf",
+  cover: "/cover-carousel.png",
 
 gallery: [
   {
