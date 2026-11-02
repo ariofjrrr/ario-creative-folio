@@ -1,4 +1,59 @@
 
+import { useState } from "react";
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { PageHeader } from "@/components/site/FilterBar";
+import { site } from "@/content/site";
+
+export const Route = createFileRoute("/about")({
+  head: () => ({
+    meta: [
+      { title: "About - AFD" },
+      {
+        name: "description",
+        content:
+          "The person behind AFD — exploring creativity, communication, and technology.",
+      },
+    ],
+  }),
+  component: About,
+});
+
+const translations = {
+  ID: {
+    label: "Sedikit tentang saya",
+    headline: "Menciptakan sesuatu, satu ide dalam satu waktu.",
+    paragraphs: [
+      "Saya Ario Fajar Dharmawan. Saya tertarik pada bagaimana ide dapat berkembang menjadi karya, bagaimana visual menyampaikan pesan, dan bagaimana teknologi membuka kemungkinan baru.",
+      "Saya mengeksplorasi berbagai medium, mulai dari tulisan dan desain hingga pengembangan website. Setiap bidang memberi cara pandang yang berbeda dalam memahami dan menyelesaikan sesuatu.",
+      "Di sini, saya mengumpulkan sebagian dari proses tersebut. Karya yang sudah selesai, hal-hal yang sedang dipelajari, dan ide yang masih terus berkembang.",
+    ],
+    interests: "Hal yang saya eksplorasi",
+    closing: "Selalu ada ruang untuk ide berikutnya.",
+    contact: "Hubungi saya",
+  },
+  EN: {
+    label: "A little about me",
+    headline: "Making things, one idea at a time.",
+    paragraphs: [
+      "I'm Ario Fajar Dharmawan. I'm interested in how ideas become tangible work, how visuals communicate messages, and how technology creates new possibilities.",
+      "I explore different mediums, from writing and design to web development. Each field offers a different perspective on understanding and solving things.",
+      "This space brings together parts of that process: finished work, things I'm learning, and ideas that are still taking shape.",
+    ],
+    interests: "Things I explore",
+    closing: "There's always room for the next idea.",
+    contact: "Get in touch",
+  },
+};
+
+const interests = [
+  "Creative Writing",
+  "Graphic Design",
+  "Web Development",
+  "Digital Communication",
+  "Research & Documentation",
+];
+
+
 function About() {
   const [language, setLanguage] = useState<"ID" | "EN">("ID");
   const t = translations[language];
