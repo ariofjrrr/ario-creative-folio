@@ -115,11 +115,11 @@ export const works: Work[] = [
 gallery: [
   {
     src: "/feed-01.png",
-    tittle: "Ads Creative Joytalk",   
+    title: "Ads Creative Joytalk",   
   },
   {
     src: "/feed-02.png",
-    tittle: "Ads Creative Kidspro",
+    title: "Ads Creative Kidspro",
   },
   {"/feed-03.png"},
   {"/feed-04.png"},
