@@ -1,4 +1,6 @@
+
 import { useEffect } from "react";
+import { createPortal } from "react-dom";
 import type { ReactNode } from "react";
 
 export function Lightbox({
@@ -16,37 +18,33 @@ export function Lightbox({
 }) {
   useEffect(() => {
     const previousOverflow = document.body.style.overflow;
-    const previousPosition = document.body.style.position;
-    const previousWidth = document.body.style.width;
 
     const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.key === "Escape") onClose();
+      if (event.key === "Escape") {
+        onClose();
+      }
     };
 
     document.body.style.overflow = "hidden";
-    document.body.style.position = "fixed";
-    document.body.style.width = "100%";
-
     window.addEventListener("keydown", handleKeyDown);
 
     return () => {
       document.body.style.overflow = previousOverflow;
-      document.body.style.position = previousPosition;
-      document.body.style.width = previousWidth;
-
       window.removeEventListener("keydown", handleKeyDown);
     };
   }, [onClose]);
 
-  return (
+  if (typeof document === "undefined") return null;
+
+  return createPortal(
     <div
       role="dialog"
       aria-modal="true"
       aria-label={title}
-      className="fixed inset-0 z-[9999] flex h-[100dvh] w-screen flex-col overflow-hidden bg-black/95 text-white"
+      className="fixed inset-0 z-[99999] flex h-dvh w-screen flex-col overflow-hidden bg-black/95 text-white"
       onClick={onClose}
     >
-      {/* Fixed Header */}
+      {/* Header */}
       <header className="relative z-10 flex h-16 shrink-0 items-center justify-between border-b border-white/15 px-5 md:px-8">
         <p className="min-w-0 truncate pr-4 text-sm font-medium">
           {title}
@@ -62,41 +60,42 @@ export function Lightbox({
         </button>
       </header>
 
-      {/* Centered Preview Content */}
+      {/* Preview Content */}
       <main
-        className="flex min-h-0 flex-1 items-center justify-center overflow-y-auto p-4 md:p-8"
+        className="flex min-h-0 flex-1 items-center justify-center overflow-hidden p-6 md:p-8"
         onClick={(event) => event.stopPropagation()}
       >
-        <div className="mx-auto grid w-full max-w-7xl grid-cols-1 items-center gap-8 lg:grid-cols-[minmax(0,1fr)_20rem]">
-          {/* Image */}
-          <div className="flex min-h-0 min-w-0 items-center justify-center">
+        <div className="flex h-full w-full items-center justify-center gap-8">
+          {/* Image / PDF */}
+          <div className="flex h-full min-w-0 flex-1 items-center justify-center">
             {pdf ? (
               <iframe
                 src={pdf}
                 title={title}
-                className="h-[70dvh] w-full border-0 bg-white"
+                className="h-full w-full border-0"
               />
             ) : src ? (
               <img
                 src={src}
                 alt={title}
-                className="block h-auto w-auto max-h-[calc(100dvh-10rem)] max-w-full object-contain my-8"
+                className="block max-h-full max-w-full object-contain"
               />
             ) : (
-              <p className="text-sm text-white/60">
-                No document uploaded yet.
+              <p className="text-sm text-white/50">
+                Preview tidak tersedia.
               </p>
             )}
           </div>
 
-          {/* Project Information */}
+          {/* Information */}
           {children && (
-            <aside className="min-w-0 border-t border-white/20 pt-6 text-sm lg:border-l lg:border-t-0 lg:pl-6 lg:pt-0">
+            <aside className="hidden w-80 shrink-0 self-center border-l border-white/15 pl-6 text-sm md:block">
               {children}
             </aside>
           )}
         </div>
       </main>
-    </div>
+    </div>,
+    document.body
   );
 }
