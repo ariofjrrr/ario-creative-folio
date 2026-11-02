@@ -120,11 +120,7 @@ gallery: [
   {
     src: "/feed-02.png",
     title: "Ads Creative Kidspro",
-  },
-  {"/feed-03.png"},
-  {"/feed-04.png"},
-  {"/feed-05.png"},
-  ],
+  },],
 },
 
 {
