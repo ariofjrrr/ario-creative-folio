@@ -86,6 +86,63 @@ export const works: Work[] = [
     },
   ],
 },
+  {
+  slug: "instagram-feed-design",
+  title: "Instagram Feed Design",
+  category: "Graphic Design",
+  year: "2026",
+  summary:
+    "Kumpulan desain feed Instagram untuk menyampaikan informasi dan membangun identitas visual melalui konten media sosial.",
+
+  background:
+    "Konten feed Instagram dirancang sebagai media komunikasi visual untuk menyampaikan informasi kepada audiens secara menarik, terstruktur, dan mudah dipahami.",
+
+  goals:
+    "• Menyampaikan informasi melalui desain visual yang komunikatif.\n• Menjaga konsistensi elemen visual dalam konten media sosial.\n• Menyesuaikan tata letak, tipografi, dan warna dengan kebutuhan konten.",
+
+  role:
+    "Berperan dalam proses desain grafis, meliputi penyusunan tata letak, pemilihan tipografi, pengaturan warna, dan pengolahan elemen visual.",
+
+  process:
+    "1. Memahami tujuan dan informasi yang akan disampaikan.\n2. Menentukan konsep visual sesuai kebutuhan konten.\n3. Menyusun komposisi, tipografi, warna, dan elemen grafis.\n4. Menyesuaikan desain agar informasi mudah dibaca pada perangkat digital.",
+
+  outcome:
+    "Menghasilkan desain feed Instagram yang terstruktur dan komunikatif untuk mendukung penyampaian informasi melalui media sosial.",
+
+  placeholder: false,
+  cover: "/cover-feed.png",
+
+  links: [],
+},
+
+{
+  slug: "instagram-carousel-design",
+  title: "Instagram Carousel Design",
+  category: "Graphic Design",
+  year: "2026",
+  summary:
+    "Kumpulan desain carousel Instagram yang menyajikan informasi dalam rangkaian slide dengan alur visual yang terstruktur.",
+
+  background:
+    "Carousel Instagram digunakan untuk menyampaikan informasi yang lebih mendalam melalui beberapa slide yang saling terhubung, sehingga audiens dapat mengikuti isi konten secara bertahap.",
+
+  goals:
+    "• Menyusun informasi menjadi rangkaian slide yang runtut.\n• Menjaga konsistensi desain dari slide pertama hingga terakhir.\n• Menciptakan hierarki visual yang membantu audiens memahami isi konten.",
+
+  role:
+    "Berperan dalam perancangan desain carousel, mulai dari penyusunan tata letak dan hierarki informasi hingga pengembangan elemen visual antarslide.",
+
+  process:
+    "1. Mengidentifikasi pesan utama dan urutan informasi.\n2. Menyusun struktur konten untuk setiap slide.\n3. Mengembangkan desain visual dengan tipografi, warna, dan elemen grafis yang konsisten.\n4. Memastikan keterhubungan antarslide dan keterbacaan informasi.",
+
+  outcome:
+    "Menghasilkan desain carousel Instagram dengan alur informasi yang terstruktur dan tampilan visual yang konsisten.",
+
+  placeholder: false,
+  cover: "/cover-carousel.png",
+
+  links: [],
+},
 ];
 
 export const getWork = (slug: string) => works.find((w) => w.slug === slug);
