@@ -126,7 +126,10 @@ function WorkDetail() {
         <button
           key={image}
           type="button"
-          onClick={() => setPreview(image)}
+          onClick={() => {
+  console.log("Gambar diklik:", image);
+  setPreview(image);
+}}
           className="group overflow-hidden border bg-neutral-50 dark:bg-neutral-900"
           aria-label={`View design ${index + 1}`}
         >
