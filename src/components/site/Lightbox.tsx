@@ -18,16 +18,16 @@ export function Lightbox({
   useEffect(() => {
     const previousOverflow = document.body.style.overflow;
 
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === "Escape") onClose();
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") onClose();
     };
 
-    window.addEventListener("keydown", handleKeyDown);
     document.body.style.overflow = "hidden";
+    window.addEventListener("keydown", handleKeyDown);
 
     return () => {
-      window.removeEventListener("keydown", handleKeyDown);
       document.body.style.overflow = previousOverflow;
+      window.removeEventListener("keydown", handleKeyDown);
     };
   }, [onClose]);
 
@@ -36,41 +36,36 @@ export function Lightbox({
       role="dialog"
       aria-modal="true"
       aria-label={title}
-      className="fixed inset-0 z-50 flex flex-col bg-black/90 text-white backdrop-blur-sm fade-up"
+      className="fixed inset-0 z-[9999] flex flex-col bg-black/95 text-white"
       onClick={onClose}
     >
-      {/* Header */}
-      <div className="flex shrink-0 items-center justify-between gap-4 px-5 py-4 md:px-8">
-        <p className="min-w-0 truncate text-sm font-medium">
-          {title}
-        </p>
+      <div className="flex shrink-0 items-center justify-between px-5 py-4 md:px-8">
+        <p className="truncate text-sm font-medium">{title}</p>
 
         <button
           type="button"
-          autoFocus
           onClick={onClose}
-          className="shrink-0 text-xs uppercase tracking-wider text-white/70 transition-colors hover:text-white"
+          className="text-xs uppercase tracking-wider text-white/70 hover:text-white"
         >
           Close ✕
         </button>
       </div>
 
-      {/* Preview */}
       <div
-        className="flex min-h-0 flex-1 items-center justify-center overflow-auto px-4 pb-6 md:px-8"
-        onClick={(e) => e.stopPropagation()}
+        className="flex min-h-0 flex-1 items-center justify-center overflow-auto p-4"
+        onClick={(event) => event.stopPropagation()}
       >
         {pdf ? (
           <iframe
             src={pdf}
             title={title}
-            className="h-full min-h-[70vh] w-full border-0 bg-white"
+            className="h-full w-full border-0 bg-white"
           />
         ) : src ? (
           <img
             src={src}
             alt={title}
-            className="max-h-full max-w-full object-contain"
+            className="block max-h-[calc(100vh-100px)] max-w-[95vw] object-contain"
           />
         ) : (
           <p className="text-sm text-white/60">
