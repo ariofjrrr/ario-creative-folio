@@ -117,6 +117,7 @@ gallery: [
   "/feed-02.png",
   "/feed-03.png",
   "/feed-04.png",
+  "/feed-05.png",
   ],
 },
 
