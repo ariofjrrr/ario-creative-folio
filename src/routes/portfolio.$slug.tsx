@@ -139,7 +139,7 @@ function WorkDetail() {
         <button
           key={image.src}
           type="button"
-          onClick={() => setPreview(image.src)}
+          onClick={() => setPreview(image)}
           className="group fade-up text-left"
           aria-label={`Preview ${image.title}`}
           style={{ animationDelay: `${index * 60}ms` }}
