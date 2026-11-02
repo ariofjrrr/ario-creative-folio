@@ -43,7 +43,10 @@ export const Route = createFileRoute("/portfolio/$slug")({
 
 function WorkDetail() {
   const { work } = Route.useLoaderData();
-  const [preview, setPreview] = useState<string | null>(null);
+  const [preview, setPreview] = useState<{
+  src: string;
+  title: string;
+} | null>(null);
 
   const sections = [
     ["Background", work.background],
