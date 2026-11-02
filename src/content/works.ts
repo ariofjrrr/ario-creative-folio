@@ -178,6 +178,10 @@ gallery: [
     src: "/carousel-04.png",
     title: "Carousel 01 - Slide 04",
   },
+  {
+    src: "/carousel-05.png",
+    title: "Carousel 01 - Slide 05",
+  },
 ],
 },
 ];
