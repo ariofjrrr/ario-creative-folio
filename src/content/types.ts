@@ -12,7 +12,10 @@ export interface Work {
   role?: string;
   process?: string;
   outcome?: string;
-  gallery?: string[];
+  gallery?: {
+    src: string;
+    title: string;
+  }[];
   links?: { label: string; href: string }[];
   placeholder?: boolean;
 }
