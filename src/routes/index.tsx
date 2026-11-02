@@ -17,7 +17,7 @@ export const Route = createFileRoute("/")({
 
 function Home() {
   return (
-      <section className="container-page grid gap-12 pb-20 pt-12 md:grid-cols-12 md:pt-20">
+      <section className="container-page grid gap-10 pb-20 pt-5 md:grid-cols-12 md:pt-8">
         <div className="fade-up md:col-span-7 md:flex md:flex-col md:justify-between">
           <div className="flex justify-between border-b pb-3">
             <span className="eyebrow">Personal Portfolio {site.year}</span>
