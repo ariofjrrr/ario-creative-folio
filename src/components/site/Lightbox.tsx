@@ -65,7 +65,7 @@ export function Lightbox({
           <img
             src={src}
             alt={title}
-            className="block max-h-[calc(100vh-100px)] max-w-[95vw] object-contain"
+            className="block h-auto w-auto max-h-[85vh] max-w-[90vw] object-contain"
           />
         ) : (
           <p className="text-sm text-white/60">
