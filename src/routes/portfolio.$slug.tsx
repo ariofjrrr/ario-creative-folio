@@ -288,11 +288,11 @@ function WorkDetail() {
 
       {/* Image Preview */}
       {preview && (
-  <Lightbox
-    src={preview.src}
-    title={preview.title}
-    onClose={() => setPreview(null)}
-  >
+        <Lightbox
+          src={preview.src}
+          title={preview.title}
+          onClose={() => setPreview(null)}
+        >
         </Lightbox>
       )}
     </article>
