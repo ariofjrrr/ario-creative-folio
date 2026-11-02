@@ -115,60 +115,55 @@ function WorkDetail() {
         </div>
       </div>
 
-      {/* Project Gallery */}
-      {work.gallery && work.gallery.length > 0 && (
-        <section className="container-page mt-20">
-          <div className="mb-8">
-            <p className="eyebrow">01 / Selected designs</p>
+      
+{/* Project Gallery */}
+{work.gallery && work.gallery.length > 0 && (
+  <section className="container-page mt-20">
+    <div className="mb-8">
+      <p className="eyebrow">01 / Selected designs</p>
 
-            <h2 className="mt-4 text-2xl font-semibold tracking-tight">
-              Design gallery.
-            </h2>
+      <h2 className="mt-4 text-2xl font-semibold tracking-tight">
+        Design gallery.
+      </h2>
 
-            <p className="mt-3 text-sm text-muted-foreground">
-              A collection of selected visual works from this project.
-            </p>
+      <p className="mt-3 text-sm text-muted-foreground">
+        A collection of selected visual works from this project.
+      </p>
+    </div>
+
+    <div className="grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
+      {work.gallery.map((image, index) => (
+        <button
+          key={image.src}
+          type="button"
+          onClick={() => setPreview(image.src)}
+          className="group fade-up text-left"
+          aria-label={`Preview ${image.title}`}
+          style={{ animationDelay: `${index * 60}ms` }}
+        >
+          <div className="aspect-[1.414/1] overflow-hidden border bg-neutral-100 dark:bg-neutral-900">
+            <div className="h-full w-full transition-transform duration-500 group-hover:scale-[1.03]">
+              <img
+                src={image.src}
+                alt={`${work.title} - ${image.title}`}
+                loading="lazy"
+                className="block h-full w-full object-contain"
+              />
+            </div>
           </div>
 
-          <div className="grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
-            {work.gallery.map((image, index) => (
-              <button
-                key={image}
-                type="button"
-                onClick={() => setPreview(image)}
-                className="group fade-up text-left"
-                aria-label={`Preview design ${index + 1}`}
-                style={{ animationDelay: `${index * 60}ms` }}
-              >
-                <div className="aspect-[1.414/1] overflow-hidden border bg-neutral-100 dark:bg-neutral-900">
-                  <div className="h-full w-full transition-transform duration-500 group-hover:scale-[1.03]">
-                    <img
-                      src={image}
-                      alt={`${work.title} - Design ${index + 1}`}
-                      loading="lazy"
-                      style={{
-                        display: "block",
-                        width: "100%",
-                        height: "100%",
-                        objectFit: "contain",
-                        minHeight: "100px",
-                      }}
-                    />
-                  </div>
-                </div>
+          <h3 className="mt-4 font-semibold tracking-tight">
+            {image.title}
+          </h3>
 
-                <h3 className="mt-4 font-semibold tracking-tight">
-                  Design {String(index + 1).padStart(2, "0")}
-                </h3>
-
-                <p className="mt-1 text-sm text-muted-foreground">
-                  {work.title}
-                </p>
-              </button>
-            ))}
-          </div>
-        </section>
-      )}
+          <p className="mt-1 text-sm text-muted-foreground">
+            {work.title}
+          </p>
+        </button>
+      ))}
+    </div>
+  </section>
+)}
 
       {/* Overview */}
       <div className="container-page mt-20 grid gap-8 md:grid-cols-12">
