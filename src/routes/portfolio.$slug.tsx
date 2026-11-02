@@ -108,6 +108,40 @@ function WorkDetail() {
         </div>
       </div>
 
+      {/* Project Gallery */}
+{work.gallery && work.gallery.length > 0 && (
+  <section className="container-page mt-20">
+    <div className="mb-8">
+      <p className="eyebrow">01 / Selected designs</p>
+      <h2 className="mt-4 text-2xl font-semibold tracking-tight">
+        Design gallery.
+      </h2>
+      <p className="mt-3 text-sm text-muted-foreground">
+        A collection of selected visual works from this project.
+      </p>
+    </div>
+
+    <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
+      {work.gallery.map((image, index) => (
+        <button
+          key={image}
+          type="button"
+          onClick={() => setPreview(image)}
+          className="group overflow-hidden border bg-neutral-50 dark:bg-neutral-900"
+          aria-label={`View design ${index + 1}`}
+        >
+          <img
+            src={image}
+            alt={`${work.title} - Design ${index + 1}`}
+            loading="lazy"
+            className="h-auto w-full object-contain transition-transform duration-500 group-hover:scale-[1.02]"
+          />
+        </button>
+      ))}
+    </div>
+  </section>
+)}
+
       {/* Overview */}
       <div className="container-page mt-20 grid gap-8 md:grid-cols-12">
         <div className="md:col-span-4">
