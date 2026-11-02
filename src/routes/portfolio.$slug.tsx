@@ -295,29 +295,6 @@ function WorkDetail() {
           title={work.title}
           onClose={() => setPreview(null)}
         >
-          <dl className="space-y-4">
-            <div>
-              <dt className="eyebrow">Project</dt>
-              <dd className="mt-1">{work.title}</dd>
-            </div>
-
-            <div>
-              <dt className="eyebrow">Category</dt>
-              <dd className="mt-1">{work.category}</dd>
-            </div>
-
-            <div>
-              <dt className="eyebrow">Year</dt>
-              <dd className="mt-1">{work.year || "—"}</dd>
-            </div>
-
-            <div>
-              <dt className="eyebrow">Description</dt>
-              <dd className="mt-1 text-white/70">
-                Selected visual design from this project.
-              </dd>
-            </div>
-          </dl>
         </Lightbox>
       )}
     </article>
