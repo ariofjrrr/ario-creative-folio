@@ -59,6 +59,7 @@ function About() {
   const t = translations[language];
 
   return (
+    <>
       <PageHeader index="02 / ABOUT" title="About." />
 
       <section className="container-page">
