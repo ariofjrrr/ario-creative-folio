@@ -136,7 +136,7 @@ function About() {
 
       <main className="container-page pt-0 pb-10 md:pb-14">
         {/* INTRO HEADER */}
-        <div className="mb-4 flex items-center justify-between border-b border-foreground/15 pb-2 md:mb-5">
+        <div className="mb-2 flex items-center justify-between border-b border-foreground/12 pb-1 md:mb-3">
           <p className="eyebrow">{t.eyebrow}</p>
 
           <div
