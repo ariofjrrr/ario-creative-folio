@@ -24,7 +24,7 @@ function Home() {
         {/* Metadata */}
         <div className="flex items-center justify-between border-b border-foreground/15 pb-4">
           <span className="eyebrow">
-            Personal Portfolio
+            Personal Portfolio {}
           </span>
           <span className="eyebrow">Indonesia</span>
         </div>
