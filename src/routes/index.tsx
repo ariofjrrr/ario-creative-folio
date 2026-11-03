@@ -104,18 +104,18 @@ function Home() {
           {disciplines.map((item, index) => (
             <div
               key={item.number}
-              className={`flex items-start gap-4 py-5 sm:py-6 ${
+              className={`flex items-start gap-3 py-3 sm:py-4 ${
                 index !== 2
                   ? "border-b border-foreground/15 sm:border-b-0 sm:border-r"
                   : ""
-              } ${index > 0 ? "sm:pl-6" : ""}`}
+              } ${index > 0 ? "sm:pl-5" : ""}`}
             >
               <span className="mt-1 font-mono text-xs text-muted-foreground">
                 {item.number}
               </span>
               <div>
                 <p className="text-sm font-medium">{item.title}</p>
-                <p className="mt-1 text-xs text-muted-foreground">
+                <p className="mt-0.5 text-xs text-muted-foreground">
                   {item.detail}
                 </p>
               </div>
