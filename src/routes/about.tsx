@@ -7,11 +7,20 @@ import { site } from "@/content/site";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About - AFD" },
+      { title: "About — Ario Fajar Dharmawan" },
       {
         name: "description",
         content:
-          "The person behind AFD — exploring creativity, communication, and technology.",
+          "Get to know Ario Fajar Dharmawan through his creative interests in writing, visual design, digital communication, and web development.",
+      },
+      {
+        property: "og:title",
+        content: "About — Ario Fajar Dharmawan",
+      },
+      {
+        property: "og:description",
+        content:
+          "A personal introduction to the ideas, interests, and creative work behind AFD.",
       },
     ],
   }),
@@ -20,43 +29,81 @@ export const Route = createFileRoute("/about")({
 
 const translations = {
   ID: {
-    label: "Sedikit tentang saya",
-    headline: "Ide menarik layak diwujudkan menjadi sesuatu.",
+    eyebrow: "Sedikit tentang saya",
+    intro: "Halo, saya",
+    headline: "Mengubah ide menjadi sesuatu yang berarti.",
     paragraphs: [
-      "Saya Ario Fajar Dharmawan. Saya tertarik pada proses di balik sebuah karya: bagaimana ide terbentuk, bagaimana visual menyampaikan pesan, dan bagaimana teknologi membuka kemungkinan baru.",
-      "Saya mengeksplorasi berbagai medium, mulai dari penulisan dan desain visual hingga pengembangan website. Ketiganya memberi ruang bagi saya untuk bereksperimen, belajar, dan menyampaikan gagasan dengan cara yang berbeda.",
-      "Halaman ini menjadi ruang untuk mengenal sebagian perjalanan tersebut melalui karya, proyek, dan hal-hal yang terus saya pelajari.",
+      "Saya Ario Fajar Dharmawan. Saya memiliki ketertarikan pada dunia kreatif, komunikasi, dan teknologi, terutama pada bagaimana sebuah ide dapat berkembang menjadi karya yang memiliki tujuan dan makna.",
+      "Saya mengeksplorasi berbagai medium, mulai dari penulisan, desain grafis, hingga pengembangan website. Bagi saya, setiap medium memiliki cara tersendiri untuk menyampaikan gagasan, memecahkan masalah, dan menciptakan pengalaman.",
+      "Melalui berbagai proyek dan proses belajar, saya terus mengembangkan perspektif, mencoba hal baru, dan menemukan cara untuk menghubungkan kreativitas dengan teknologi.",
     ],
-    interests: "Bidang yang saya eksplorasi",
-    interestDescription:
-      "Beberapa bidang yang menjadi bagian dari proses kreatif dan pengembangan diri saya.",
-    closing: "Mari mulai sesuatu yang bermakna.",
+    work: "Lihat karya",
     contact: "Hubungi saya",
-    viewWork: "Lihat karya",
+    sectionLabel: "Bidang eksplorasi",
+    sectionTitle: "Beragam minat, satu ruang untuk berkarya.",
+    sectionDescription:
+      "Beberapa bidang yang menjadi bagian dari perjalanan kreatif dan pengembangan kemampuan saya.",
+    closingLabel: "What's next?",
+    closingTitle: "Selalu ada ide baru untuk diwujudkan.",
+    closingDescription:
+      "Terbuka untuk kolaborasi kreatif, kesempatan profesional, dan percakapan menarik.",
+    based: "Domisili",
+    focus: "Ketertarikan",
+    basedValue: "Malang, Indonesia",
+    focusValue: "Creative & Digital",
   },
   EN: {
-    label: "A little about me",
-    headline: "Good ideas deserve to become something meaningful.",
+    eyebrow: "A little about me",
+    intro: "Hello, I'm",
+    headline: "Turning ideas into something meaningful.",
     paragraphs: [
-      "I'm Ario Fajar Dharmawan. I'm interested in the process behind creative work: how ideas take shape, how visuals communicate messages, and how technology opens new possibilities.",
-      "I explore different mediums, from writing and visual design to web development. Each gives me room to experiment, learn, and communicate ideas in different ways.",
-      "This page offers a glimpse into that journey through selected works, projects, and things I'm continuously learning.",
+      "I'm Ario Fajar Dharmawan. I'm interested in creativity, communication, and technology, especially in how ideas can grow into work with purpose and meaning.",
+      "I explore different mediums, from writing and graphic design to web development. Each medium offers its own way to communicate ideas, solve problems, and create experiences.",
+      "Through different projects and continuous learning, I keep developing my perspective, trying new things, and finding ways to connect creativity with technology.",
     ],
-    interests: "Areas of exploration",
-    interestDescription:
-      "A few fields that are part of my creative process and personal development.",
-    closing: "Let's create something meaningful.",
+    work: "Explore my work",
     contact: "Get in touch",
-    viewWork: "View my work",
+    sectionLabel: "Areas of exploration",
+    sectionTitle: "Different interests, one space to create.",
+    sectionDescription:
+      "Some of the fields that shape my creative journey and ongoing development.",
+    closingLabel: "What's next?",
+    closingTitle: "There's always a new idea to bring to life.",
+    closingDescription:
+      "Open to creative collaborations, professional opportunities, and meaningful conversations.",
+    based: "Based in",
+    focus: "Interests",
+    basedValue: "Malang, Indonesia",
+    focusValue: "Creative & Digital",
   },
 };
 
 const interests = [
-  "Creative Writing",
-  "Graphic Design",
-  "Web Development",
-  "Digital Communication",
-  "Research & Documentation",
+  {
+    number: "01",
+    title: "Creative Writing",
+    detail: "Ideas, storytelling & written expression",
+  },
+  {
+    number: "02",
+    title: "Graphic Design",
+    detail: "Visual communication & creative direction",
+  },
+  {
+    number: "03",
+    title: "Web Development",
+    detail: "Websites & digital experiences",
+  },
+  {
+    number: "04",
+    title: "Digital Communication",
+    detail: "Content & audience engagement",
+  },
+  {
+    number: "05",
+    title: "Research & Documentation",
+    detail: "Exploration, information & knowledge",
+  },
 ];
 
 function About() {
@@ -67,32 +114,37 @@ function About() {
     <>
       <PageHeader index="02 / ABOUT" title="About." />
 
-      <main className="container-page pb-12 md:pb-16">
-        {/* INTRO */}
+      <main className="container-page pb-14 md:pb-20">
+        {/* INTRO HEADER */}
         <div className="mb-8 flex items-center justify-between border-b border-foreground/15 pb-3 md:mb-10">
-          <p className="eyebrow">{t.label}</p>
+          <p className="eyebrow">{t.eyebrow}</p>
 
-          <div className="flex items-center gap-3 font-mono text-xs">
+          <div
+            className="flex items-center gap-3 font-mono text-xs"
+            aria-label="Language selection"
+          >
             <button
               type="button"
               onClick={() => setLanguage("ID")}
               aria-pressed={language === "ID"}
               className={`transition-colors ${
                 language === "ID"
-                  ? "text-foreground"
+                  ? "font-semibold text-foreground"
                   : "text-muted-foreground hover:text-foreground"
               }`}
             >
               ID
             </button>
-            <span className="text-muted-foreground/50">/</span>
+
+            <span className="text-muted-foreground/40">/</span>
+
             <button
               type="button"
               onClick={() => setLanguage("EN")}
               aria-pressed={language === "EN"}
               className={`transition-colors ${
                 language === "EN"
-                  ? "text-foreground"
+                  ? "font-semibold text-foreground"
                   : "text-muted-foreground hover:text-foreground"
               }`}
             >
@@ -101,86 +153,117 @@ function About() {
           </div>
         </div>
 
-        {/* PROFILE */}
-        <section className="grid items-start gap-8 md:grid-cols-[260px_minmax(0,1fr)] md:gap-10 lg:grid-cols-[300px_minmax(0,1fr)] lg:gap-14">
-          <figure className="mx-auto w-full max-w-[300px] md:mx-0">
+        {/* MAIN PROFILE */}
+        <section className="grid items-start gap-9 md:grid-cols-[minmax(0,0.78fr)_minmax(0,1.22fr)] md:gap-10 lg:gap-16">
+          {/* PORTRAIT */}
+          <figure className="mx-auto w-full max-w-[320px] md:mx-0">
             <div className="overflow-hidden bg-muted">
               <img
                 src={site.portrait}
                 alt={`Portrait of ${site.name}`}
                 width={896}
                 height={1152}
-                loading="lazy"
-                className="aspect-[4/5] w-full object-cover object-center grayscale"
+                className="aspect-[4/5] w-full object-cover object-center grayscale transition-transform duration-700 hover:scale-[1.025]"
               />
             </div>
 
-            <figcaption className="mt-2 flex justify-between border-t border-foreground/15 pt-2 text-xs text-muted-foreground">
+            <figcaption className="mt-2 flex items-center justify-between border-t border-foreground/15 pt-2 text-xs text-muted-foreground">
               <span>{site.short}</span>
               <span>Portfolio / {site.year}</span>
             </figcaption>
           </figure>
 
-          <div className="pt-0 md:pt-2 lg:pt-3">
-            <p className="eyebrow mb-4">The Person Behind AFD</p>
+          {/* INTRODUCTION */}
+          <div className="flex min-w-0 flex-col pt-0 md:pt-1 lg:pt-3">
+            <p className="eyebrow mb-4">{t.intro}</p>
 
-            <h2 className="max-w-2xl text-[2rem] font-semibold leading-[1.1] tracking-[-0.045em] sm:text-4xl lg:text-[3.25rem]">
+            <h2 className="max-w-2xl text-[2.25rem] font-semibold leading-[1.06] tracking-[-0.055em] sm:text-5xl lg:text-[3.75rem]">
               {t.headline}
               <span className="text-accent">.</span>
             </h2>
 
-            <div className="mt-6 max-w-[570px] space-y-4 text-sm leading-7 text-muted-foreground sm:text-base">
+            <div className="mt-6 max-w-[590px] space-y-4 text-sm leading-7 text-muted-foreground sm:text-base sm:leading-8">
               {t.paragraphs.map((paragraph, index) => (
-                <p key={index}>{paragraph}</p>
+                <p key={`${language}-${index}`}>{paragraph}</p>
               ))}
             </div>
 
             <div className="mt-7 flex flex-wrap items-center gap-x-6 gap-y-3">
               <Link
                 to="/portfolio"
-                className="inline-flex items-center gap-2 border-b border-foreground/30 pb-2 text-sm font-medium transition-colors hover:border-accent hover:text-accent"
+                className="inline-flex items-center gap-3 border-b border-foreground/40 pb-2 text-sm font-medium transition-colors hover:border-accent hover:text-accent"
               >
-                {t.viewWork} <span>↗</span>
+                {t.work}
+                <span>↗</span>
               </Link>
 
               <Link
                 to="/contact"
                 className="inline-flex items-center gap-2 text-sm font-medium text-muted-foreground transition-colors hover:text-accent"
               >
-                {t.contact} <span>↗</span>
+                {t.contact}
+                <span>↗</span>
               </Link>
+            </div>
+
+            {/* PROFILE INFORMATION */}
+            <div className="mt-9 grid max-w-[590px] grid-cols-2 gap-5 border-t border-foreground/15 pt-5">
+              <div>
+                <p className="eyebrow mb-2">{t.based}</p>
+                <p className="text-sm font-medium">{t.basedValue}</p>
+              </div>
+
+              <div>
+                <p className="eyebrow mb-2">{t.focus}</p>
+                <p className="text-sm font-medium">{t.focusValue}</p>
+              </div>
             </div>
           </div>
         </section>
 
-        {/* AREAS OF INTEREST */}
-        <section className="mt-16 border-t border-foreground/15 pt-7 md:mt-20">
-          <div className="grid gap-7 md:grid-cols-[0.8fr_1.2fr] md:gap-12 lg:gap-16">
+        {/* INTERESTS */}
+        <section className="mt-16 border-t border-foreground/15 pt-7 md:mt-24 md:pt-9">
+          <div className="grid gap-8 md:grid-cols-[0.85fr_1.15fr] md:gap-12 lg:gap-16">
             <div>
-              <p className="eyebrow">01 / {t.interests}</p>
+              <p className="eyebrow">01 / {t.sectionLabel}</p>
 
-              <h2 className="mt-3 max-w-xs text-2xl font-semibold leading-tight tracking-tight sm:text-3xl">
-                Different interests, one creative process.
+              <h2 className="mt-4 max-w-sm text-2xl font-semibold leading-[1.15] tracking-tight sm:text-3xl">
+                {t.sectionTitle}
                 <span className="text-accent">.</span>
               </h2>
 
-              <p className="mt-3 max-w-xs text-sm leading-6 text-muted-foreground">
-                {t.interestDescription}
+              <p className="mt-4 max-w-xs text-sm leading-7 text-muted-foreground">
+                {t.sectionDescription}
               </p>
             </div>
 
             <div>
-              {interests.map((interest, index) => (
+              {interests.map((interest) => (
                 <div
-                  key={interest}
-                  className="flex items-center justify-between gap-5 border-b border-foreground/15 py-4 first:border-t"
+                  key={interest.number}
+                  className="group flex items-center justify-between gap-4 border-b border-foreground/15 py-4 first:border-t"
                 >
-                  <span className="text-sm font-medium tracking-tight sm:text-base">
-                    {interest}
-                  </span>
+                  <div className="flex min-w-0 items-start gap-4">
+                    <span className="mt-1 font-mono text-[11px] text-muted-foreground">
+                      {interest.number}
+                    </span>
 
-                  <span className="font-mono text-xs text-muted-foreground">
-                    0{index + 1}
+                    <div className="min-w-0">
+                      <h3 className="text-sm font-medium tracking-tight transition-colors group-hover:text-accent sm:text-base">
+                        {interest.title}
+                      </h3>
+
+                      <p className="mt-1 text-xs leading-5 text-muted-foreground">
+                        {interest.detail}
+                      </p>
+                    </div>
+                  </div>
+
+                  <span
+                    aria-hidden="true"
+                    className="shrink-0 text-sm text-muted-foreground transition-all group-hover:translate-x-1 group-hover:text-accent"
+                  >
+                    ↗
                   </span>
                 </div>
               ))}
@@ -189,29 +272,28 @@ function About() {
         </section>
 
         {/* CLOSING */}
-        <section className="mt-16 border-t border-foreground/15 pt-7 md:mt-20">
-          <div className="grid gap-6 md:grid-cols-[1.2fr_0.8fr] md:items-end md:gap-10">
+        <section className="mt-16 border-t border-foreground/15 pt-7 md:mt-24 md:pt-9">
+          <div className="grid gap-7 md:grid-cols-[1.2fr_0.8fr] md:items-end md:gap-12">
             <div>
-              <p className="eyebrow mb-3">02 / Let's Connect</p>
+              <p className="eyebrow mb-4">02 / {t.closingLabel}</p>
 
-              <h2 className="max-w-xl text-2xl font-semibold leading-tight tracking-tight sm:text-3xl lg:text-4xl">
+              <h2 className="max-w-xl text-3xl font-semibold leading-[1.1] tracking-[-0.04em] sm:text-4xl lg:text-5xl">
                 {t.closing}
                 <span className="text-accent">.</span>
               </h2>
             </div>
 
-            <div className="md:justify-self-end">
-              <p className="max-w-[300px] text-sm leading-7 text-muted-foreground">
-                {language === "ID"
-                  ? "Terbuka untuk kolaborasi kreatif, kesempatan, dan ide-ide menarik."
-                  : "Open to creative collaborations, opportunities, and interesting ideas."}
+            <div className="md:justify-self-end md:max-w-[300px]">
+              <p className="text-sm leading-7 text-muted-foreground">
+                {t.closingDescription}
               </p>
 
               <Link
                 to="/contact"
-                className="mt-5 inline-flex items-center gap-3 border-b border-foreground/30 pb-2 text-sm font-medium transition-colors hover:border-accent hover:text-accent"
+                className="mt-6 inline-flex items-center gap-3 bg-primary px-5 py-3.5 text-sm font-medium text-primary-foreground transition-colors hover:bg-accent"
               >
-                {t.contact} <span>↗</span>
+                {t.contact}
+                <span>↗</span>
               </Link>
             </div>
           </div>
