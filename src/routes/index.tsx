@@ -31,7 +31,7 @@ function Home() {
         </div>
 
         {/* Main Hero */}
-        <div className="grid items-center gap-10 py-10 md:grid-cols-12 md:gap-8 lg:gap-12 lg:py-14">
+        <div className="grid items-stretch gap-10 py-10 md:grid-cols-12 md:gap-8 lg:gap-12 lg:py-14">
           {/* Text */}
           <div className="fade-up md:col-span-7">
             <p className="text-sm font-medium tracking-wide text-muted-foreground">
@@ -76,29 +76,29 @@ function Home() {
           </div>
 
           {/* Portrait */}
-          <figure
-            className="fade-up mx-auto w-full max-w-[390px] md:col-span-5 md:ml-auto"
-            style={{ animationDelay: "150ms" }}
-          >
-            <div className="relative">
-              <img
-                src={site.portrait}
-                alt={`Portrait of ${site.name}`}
-                width={700}
-                height={900}
-                className="aspect-[4/5] w-full object-cover grayscale"
-              />
+<figure
+  className="fade-up mx-auto flex w-full max-w-[390px] flex-col md:col-span-5 md:ml-auto md:mr-0 md:h-full"
+  style={{ animationDelay: "150ms" }}
+>
+  <div className="relative h-[420px] w-full flex-1 overflow-hidden md:h-full md:min-h-0">
+    <img
+      src={site.portrait}
+      alt={`Portrait of ${site.name}`}
+      width={700}
+      height={900}
+      className="absolute inset-0 h-full w-full object-cover object-center grayscale"
+    />
 
-              <span className="absolute bottom-4 right-4 bg-background px-3 py-2 font-mono text-[10px] tracking-widest text-foreground">
-                AFD / {site.year}
-              </span>
-            </div>
+    <span className="absolute bottom-4 right-4 bg-background px-3 py-2 font-mono text-[10px] tracking-widest text-foreground">
+      AFD / {site.year}
+    </span>
+  </div>
 
-            <figcaption className="mt-4 flex items-center justify-between border-t border-foreground/15 pt-3">
-              <span className="eyebrow">{site.short}</span>
-              <span className="eyebrow">Personal Portrait</span>
-            </figcaption>
-          </figure>
+  <figcaption className="mt-3 flex items-center justify-between border-t border-foreground/15 pt-3">
+    <span className="eyebrow">{site.short}</span>
+    <span className="eyebrow">Personal Portrait</span>
+  </figcaption>
+</figure>
         </div>
 
         {/* Expertise Strip */}
