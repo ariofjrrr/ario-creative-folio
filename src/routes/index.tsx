@@ -24,7 +24,7 @@ function Home() {
         {/* Metadata */}
         <div className="flex items-center justify-between border-b border-foreground/15 pb-4">
           <span className="eyebrow">
-            Personal Portfolio / {site.year}
+            Personal Portfolio
           </span>
           <span className="eyebrow">Indonesia</span>
         </div>
@@ -43,7 +43,7 @@ function Home() {
 
             <p className="mt-7 max-w-md text-base leading-7 text-muted-foreground">
               Writing, visual design, digital experiences, and creative
-              projects — collected in one place.
+              projects - collected in one place.
             </p>
 
             <div className="mt-8 flex flex-wrap items-center gap-3">
