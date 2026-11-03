@@ -29,9 +29,12 @@ const translations = {
     ],
     interests: "Hal yang saya eksplorasi",
     interestDescription:
-      "Bidang yang saya eksplorasi dan kembangkan melalui berbagai karya dan proyek.",
-    closing: "Selalu ada ruang untuk ide berikutnya.",
+      "Beberapa bidang yang menjadi ruang eksplorasi, tempat saya belajar, bereksperimen, dan mengembangkan ide menjadi karya.",
+    closingLabel: "Mari terhubung",
+    closing: "Punya ide untuk diwujudkan bersama?",
     contact: "Hubungi saya",
+    location: "Indonesia",
+    role: "Creative & Digital Exploration",
   },
   EN: {
     label: "A little about me",
@@ -43,18 +46,41 @@ const translations = {
     ],
     interests: "Things I explore",
     interestDescription:
-      "Fields I explore and develop through different works and projects.",
-    closing: "There's always room for the next idea.",
+      "A few fields that give me room to learn, experiment, and develop ideas into meaningful work.",
+    closingLabel: "Let's connect",
+    closing: "Have an idea to bring to life together?",
     contact: "Get in touch",
+    location: "Indonesia",
+    role: "Creative & Digital Exploration",
   },
 };
 
 const interests = [
-  "Creative Writing",
-  "Graphic Design",
-  "Web Development",
-  "Digital Communication",
-  "Research & Documentation",
+  {
+    number: "01",
+    title: "Creative Writing",
+    description: "Ideas, narratives, and written expression",
+  },
+  {
+    number: "02",
+    title: "Graphic Design",
+    description: "Visual identity and communication",
+  },
+  {
+    number: "03",
+    title: "Web Development",
+    description: "Websites and digital experiences",
+  },
+  {
+    number: "04",
+    title: "Digital Communication",
+    description: "Content and creative communication",
+  },
+  {
+    number: "05",
+    title: "Research & Documentation",
+    description: "Information, exploration, and documentation",
+  },
 ];
 
 function About() {
@@ -65,9 +91,9 @@ function About() {
     <>
       <PageHeader index="02 / ABOUT" title="About." />
 
-      <section className="container-page pb-16 md:pb-20">
-        {/* INTRO & LANGUAGE */}
-        <div className="mb-8 flex items-center justify-between border-b border-foreground/15 pb-3 md:mb-10">
+      <main className="container-page pb-12 md:pb-16">
+        {/* INTRO BAR */}
+        <div className="mb-8 flex items-center justify-between border-b border-foreground/15 pb-3 md:mb-9">
           <p className="eyebrow">{t.label}</p>
 
           <div className="flex items-center gap-3 font-mono text-xs">
@@ -77,7 +103,7 @@ function About() {
               aria-pressed={language === "ID"}
               className={`transition-colors ${
                 language === "ID"
-                  ? "text-foreground"
+                  ? "font-semibold text-foreground"
                   : "text-muted-foreground hover:text-foreground"
               }`}
             >
@@ -92,7 +118,7 @@ function About() {
               aria-pressed={language === "EN"}
               className={`transition-colors ${
                 language === "EN"
-                  ? "text-foreground"
+                  ? "font-semibold text-foreground"
                   : "text-muted-foreground hover:text-foreground"
               }`}
             >
@@ -102,7 +128,8 @@ function About() {
         </div>
 
         {/* PROFILE */}
-        <div className="grid items-start gap-8 md:grid-cols-[260px_minmax(0,1fr)] md:gap-10 lg:grid-cols-[300px_minmax(0,1fr)] lg:gap-16">
+        <section className="grid items-start gap-8 md:grid-cols-[260px_minmax(0,1fr)] md:gap-10 lg:grid-cols-[300px_minmax(0,1fr)] lg:gap-16">
+          {/* PORTRAIT */}
           <figure className="mx-auto w-full max-w-[300px] md:mx-0">
             <div className="overflow-hidden bg-muted">
               <img
@@ -111,19 +138,23 @@ function About() {
                 width={896}
                 height={1152}
                 loading="lazy"
-                className="aspect-[4/5] w-full object-cover object-center grayscale"
+                className="aspect-[4/5] w-full object-cover object-center grayscale transition-transform duration-700 hover:scale-[1.02]"
               />
             </div>
 
-            <figcaption className="mt-2 flex justify-between border-t border-foreground/15 pt-2 text-xs text-muted-foreground">
+            <figcaption className="mt-2 flex items-center justify-between border-t border-foreground/15 pt-2 text-xs text-muted-foreground">
               <span>{site.short}</span>
               <span>Portfolio / {site.year}</span>
             </figcaption>
           </figure>
 
-          <div className="pt-0 md:pt-2 lg:pt-4">
+          {/* BIO */}
+          <div className="flex flex-col pt-0 md:pt-2 lg:pt-4">
+            <p className="eyebrow mb-4">The Person Behind AFD</p>
+
             <h2 className="max-w-2xl text-[2rem] font-semibold leading-[1.1] tracking-[-0.045em] sm:text-4xl lg:text-[3.25rem]">
               {t.headline}
+              <span className="text-accent">.</span>
             </h2>
 
             <div className="mt-6 max-w-[570px] space-y-4 text-sm leading-7 text-muted-foreground sm:text-base">
@@ -134,61 +165,103 @@ function About() {
 
             <Link
               to="/contact"
-              className="mt-7 inline-flex items-center gap-3 border-b border-foreground/30 pb-2 text-sm font-medium transition-colors hover:border-accent hover:text-accent"
+              className="mt-7 inline-flex w-fit items-center gap-3 border-b border-foreground/30 pb-2 text-sm font-medium transition-colors hover:border-accent hover:text-accent"
             >
               {t.contact}
               <span>↗</span>
             </Link>
+
+            {/* PROFILE DETAILS */}
+            <div className="mt-8 grid max-w-[570px] grid-cols-2 gap-5 border-t border-foreground/15 pt-5">
+              <div>
+                <p className="eyebrow mb-2">Based in</p>
+                <p className="text-sm font-medium">{t.location}</p>
+              </div>
+
+              <div>
+                <p className="eyebrow mb-2">Focus</p>
+                <p className="text-sm font-medium">{t.role}</p>
+              </div>
+            </div>
           </div>
-        </div>
+        </section>
 
         {/* INTERESTS */}
-        <div className="mt-16 grid gap-7 border-t border-foreground/15 pt-7 md:mt-20 md:grid-cols-[0.8fr_1.2fr] md:gap-12 lg:gap-16">
-          <div>
-            <p className="eyebrow">01 / {t.interests}</p>
+        <section className="mt-16 border-t border-foreground/15 pt-7 md:mt-20">
+          <div className="grid gap-7 md:grid-cols-[0.8fr_1.2fr] md:gap-12 lg:gap-16">
+            <div>
+              <p className="eyebrow">01 / {t.interests}</p>
 
-            <p className="mt-3 max-w-xs text-sm leading-6 text-muted-foreground">
-              {t.interestDescription}
-            </p>
+              <h2 className="mt-3 max-w-xs text-2xl font-semibold leading-tight tracking-tight sm:text-3xl">
+                Areas of exploration<span className="text-accent">.</span>
+              </h2>
+
+              <p className="mt-3 max-w-xs text-sm leading-6 text-muted-foreground">
+                {t.interestDescription}
+              </p>
+            </div>
+
+            <div>
+              {interests.map((interest) => (
+                <div
+                  key={interest.number}
+                  className="group flex items-center justify-between gap-5 border-b border-foreground/15 py-4 first:border-t"
+                >
+                  <div className="flex items-center gap-4">
+                    <span className="font-mono text-[11px] text-muted-foreground">
+                      {interest.number}
+                    </span>
+
+                    <div>
+                      <p className="text-sm font-medium tracking-tight transition-colors group-hover:text-accent sm:text-base">
+                        {interest.title}
+                      </p>
+
+                      <p className="mt-1 text-xs text-muted-foreground">
+                        {interest.description}
+                      </p>
+                    </div>
+                  </div>
+
+                  <span className="text-sm text-muted-foreground transition-transform group-hover:translate-x-1 group-hover:text-accent">
+                    ↗
+                  </span>
+                </div>
+              ))}
+            </div>
           </div>
-
-          <div>
-            {interests.map((interest, index) => (
-              <div
-                key={interest}
-                className="flex items-center justify-between gap-5 border-b border-foreground/15 py-4 first:border-t"
-              >
-                <span className="text-sm font-medium tracking-tight sm:text-base">
-                  {interest}
-                </span>
-
-                <span className="font-mono text-xs text-muted-foreground">
-                  0{index + 1}
-                </span>
-              </div>
-            ))}
-          </div>
-        </div>
+        </section>
 
         {/* CLOSING */}
-        <div className="mt-16 flex flex-col gap-5 border-t border-foreground/15 pt-7 sm:flex-row sm:items-end sm:justify-between md:mt-20">
-          <div>
-            <p className="eyebrow mb-3">02 / Next Chapter</p>
-            <h2 className="max-w-lg text-2xl font-semibold leading-tight tracking-tight sm:text-3xl">
-              {t.closing}
-              <span className="text-accent">.</span>
-            </h2>
-          </div>
+        <section className="mt-16 border-t border-foreground/15 pt-7 md:mt-20">
+          <div className="grid gap-6 md:grid-cols-[1.2fr_0.8fr] md:items-end md:gap-10">
+            <div>
+              <p className="eyebrow mb-3">02 / {t.closingLabel}</p>
 
-          <Link
-            to="/contact"
-            className="inline-flex w-fit items-center gap-3 border-b border-foreground/30 pb-2 text-sm font-medium transition-colors hover:border-accent hover:text-accent"
-          >
-            {t.contact}
-            <span>↗</span>
-          </Link>
-        </div>
-      </section>
+              <h2 className="max-w-xl text-2xl font-semibold leading-tight tracking-tight sm:text-3xl lg:text-4xl">
+                {t.closing}
+                <span className="text-accent">.</span>
+              </h2>
+            </div>
+
+            <div className="md:justify-self-end">
+              <p className="max-w-[300px] text-sm leading-7 text-muted-foreground">
+                {language === "ID"
+                  ? "Terbuka untuk kolaborasi kreatif, kesempatan, dan ide-ide menarik."
+                  : "Open to creative collaborations, opportunities, and interesting ideas."}
+              </p>
+
+              <Link
+                to="/contact"
+                className="mt-5 inline-flex items-center gap-3 border-b border-foreground/30 pb-2 text-sm font-medium transition-colors hover:border-accent hover:text-accent"
+              >
+                {t.contact}
+                <span>↗</span>
+              </Link>
+            </div>
+          </div>
+        </section>
+      </main>
     </>
   );
 }
