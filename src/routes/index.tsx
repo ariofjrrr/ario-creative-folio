@@ -20,7 +20,7 @@ function Home() {
   return (
     <>
       {/* HERO */}
-      <section className="container-page pb-8 pt-6 md:pb-10 md:pt-8">
+      <section className="container-page pb-2 pt-6 md:pb-3 md:pt-8">
         {/* Metadata */}
         <div className="flex items-center justify-between border-b border-foreground/15 pb-4">
           <span className="eyebrow">
@@ -105,7 +105,7 @@ function Home() {
       </section>
 
       {/* SELECTED WORKS */}
-      <section className="container-page pb-14 pt-6 md:pb-20 md:pt-8">
+      <section className="container-page pb-14 pt-3 md:pb-20 md:pt-4">
         <div className="mb-10 flex items-end justify-between border-b border-foreground/15 pb-5">
           <div>
             <p className="eyebrow mb-3">01 / Selected Projects</p>
