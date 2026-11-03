@@ -41,7 +41,7 @@ function Home() {
           </div>
         </div>
         <figure className="fade-up md:col-span-5" style={{ animationDelay: "120ms" }}>
-          <img src={site.portrait} alt={`Portrait of ${site.name}`} width={896} height={1152} className="aspect-[4/5] w-full max-w-sm mx-auto object-cover grayscale" />
+          <img src={site.portrait} alt={`Portrait of ${site.name}`} width={700} height={900} className="aspect-[4/5] w-full max-w-sm mx-auto object-cover grayscale" />
           <figcaption className="eyebrow mt-3 flex justify-between"><span>{site.short}</span><span>Portrait</span></figcaption>
         </figure>
       </section>
