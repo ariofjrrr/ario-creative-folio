@@ -11,7 +11,7 @@ export const Route = createFileRoute("/about")({
       {
         name: "description",
         content:
-          "Get to know Ario Fajar Dharmawan through his creative interests in writing, visual design, digital communication, and web development.",
+          "Mengenal Ario Fajar Dharmawan, minat kreatifnya dalam penulisan, desain grafis, komunikasi digital, dan pengembangan web.",
       },
       {
         property: "og:title",
@@ -20,7 +20,7 @@ export const Route = createFileRoute("/about")({
       {
         property: "og:description",
         content:
-          "A personal introduction to the ideas, interests, and creative work behind AFD.",
+          "Tentang ide, minat, dan karya kreatif Ario Fajar Dharmawan.",
       },
     ],
   }),
@@ -29,41 +29,67 @@ export const Route = createFileRoute("/about")({
 
 const translations = {
   ID: {
+    pageIndex: "02 / TENTANG",
+    pageTitle: "Tentang.",
     eyebrow: "Sedikit tentang saya",
     intro: "Halo, saya",
     headline: "Mengubah ide menjadi sesuatu yang berarti.",
     paragraphs: [
       "Saya Ario Fajar Dharmawan. Saya memiliki ketertarikan pada dunia kreatif, komunikasi, dan teknologi, terutama pada bagaimana sebuah ide dapat berkembang menjadi karya yang memiliki tujuan dan makna.",
-      "Saya mengeksplorasi berbagai medium, mulai dari penulisan, desain grafis, hingga pengembangan website. Bagi saya, setiap medium memiliki cara tersendiri untuk menyampaikan gagasan, memecahkan masalah, dan menciptakan pengalaman.",
+      "Saya mengeksplorasi berbagai bidang, mulai dari penulisan, desain grafis, hingga pengembangan website. Setiap bidang memiliki cara tersendiri untuk menyampaikan gagasan, memecahkan masalah, dan menciptakan pengalaman.",
       "Melalui berbagai proyek dan proses belajar, saya terus mengembangkan perspektif, mencoba hal baru, dan menemukan cara untuk menghubungkan kreativitas dengan teknologi.",
     ],
     work: "Lihat karya",
     contact: "Hubungi saya",
-    sectionLabel: "Bidang eksplorasi",
+    sectionLabel: "Bidang yang diminati",
     sectionTitle: "Beragam minat, satu ruang untuk berkarya.",
     sectionDescription:
       "Beberapa bidang yang menjadi bagian dari perjalanan kreatif dan pengembangan kemampuan saya.",
-    closingLabel: "What's next?",
+    closingLabel: "Selanjutnya",
     closingTitle: "Selalu ada ide baru untuk diwujudkan.",
     closingDescription:
       "Terbuka untuk kolaborasi kreatif, kesempatan profesional, dan percakapan menarik.",
     based: "Domisili",
-    focus: "Ketertarikan",
+    focus: "Bidang minat",
     basedValue: "Malang, Indonesia",
-    focusValue: "Creative & Digital",
+    focusValue: "Kreativitas & Digital",
+    interests: [
+      {
+        title: "Penulisan Kreatif",
+        detail: "Gagasan, cerita, dan ekspresi melalui tulisan",
+      },
+      {
+        title: "Desain Grafis",
+        detail: "Komunikasi visual dan pengolahan ide",
+      },
+      {
+        title: "Pengembangan Web",
+        detail: "Pembuatan website dan pengalaman digital",
+      },
+      {
+        title: "Komunikasi Digital",
+        detail: "Konten dan komunikasi dengan audiens",
+      },
+      {
+        title: "Riset & Dokumentasi",
+        detail: "Eksplorasi informasi dan pengelolaan pengetahuan",
+      },
+    ],
   },
   EN: {
+    pageIndex: "02 / ABOUT",
+    pageTitle: "About.",
     eyebrow: "A little about me",
     intro: "Hello, I'm",
     headline: "Turning ideas into something meaningful.",
     paragraphs: [
       "I'm Ario Fajar Dharmawan. I'm interested in creativity, communication, and technology, especially in how ideas can grow into work with purpose and meaning.",
-      "I explore different mediums, from writing and graphic design to web development. Each medium offers its own way to communicate ideas, solve problems, and create experiences.",
+      "I explore different fields, from writing and graphic design to web development. Each field offers its own way to communicate ideas, solve problems, and create experiences.",
       "Through different projects and continuous learning, I keep developing my perspective, trying new things, and finding ways to connect creativity with technology.",
     ],
     work: "Explore my work",
     contact: "Get in touch",
-    sectionLabel: "Areas of exploration",
+    sectionLabel: "Areas of interest",
     sectionTitle: "Different interests, one space to create.",
     sectionDescription:
       "Some of the fields that shape my creative journey and ongoing development.",
@@ -72,39 +98,33 @@ const translations = {
     closingDescription:
       "Open to creative collaborations, professional opportunities, and meaningful conversations.",
     based: "Based in",
-    focus: "Interests",
+    focus: "Areas of interest",
     basedValue: "Malang, Indonesia",
     focusValue: "Creative & Digital",
+    interests: [
+      {
+        title: "Creative Writing",
+        detail: "Ideas, storytelling, and written expression",
+      },
+      {
+        title: "Graphic Design",
+        detail: "Visual communication and developing ideas",
+      },
+      {
+        title: "Web Development",
+        detail: "Website creation and digital experiences",
+      },
+      {
+        title: "Digital Communication",
+        detail: "Content and audience engagement",
+      },
+      {
+        title: "Research & Documentation",
+        detail: "Information exploration and knowledge management",
+      },
+    ],
   },
 };
-
-const interests = [
-  {
-    number: "01",
-    title: "Creative Writing",
-    detail: "Ideas, storytelling & written expression",
-  },
-  {
-    number: "02",
-    title: "Graphic Design",
-    detail: "Visual communication & creative direction",
-  },
-  {
-    number: "03",
-    title: "Web Development",
-    detail: "Websites & digital experiences",
-  },
-  {
-    number: "04",
-    title: "Digital Communication",
-    detail: "Content & audience engagement",
-  },
-  {
-    number: "05",
-    title: "Research & Documentation",
-    detail: "Exploration, information & knowledge",
-  },
-];
 
 function About() {
   const [language, setLanguage] = useState<"ID" | "EN">("ID");
@@ -112,11 +132,11 @@ function About() {
 
   return (
     <>
-      <PageHeader index="02 / ABOUT" title="About." />
+      <PageHeader index={t.pageIndex} title={t.pageTitle} />
 
-      <main className="container-page pb-14 md:pb-20">
+      <main className="container-page pb-10 md:pb-14">
         {/* INTRO HEADER */}
-        <div className="mb-8 flex items-center justify-between border-b border-foreground/15 pb-3 md:mb-10">
+        <div className="mb-6 flex items-center justify-between border-b border-foreground/15 pb-3 md:mb-7">
           <p className="eyebrow">{t.eyebrow}</p>
 
           <div
@@ -154,8 +174,7 @@ function About() {
         </div>
 
         {/* MAIN PROFILE */}
-        <section className="grid items-start gap-9 md:grid-cols-[minmax(0,0.78fr)_minmax(0,1.22fr)] md:gap-10 lg:gap-16">
-          {/* PORTRAIT */}
+        <section className="grid items-start gap-7 md:grid-cols-[minmax(0,0.78fr)_minmax(0,1.22fr)] md:gap-9 lg:gap-14">
           <figure className="mx-auto w-full max-w-[320px] md:mx-0">
             <div className="overflow-hidden bg-muted">
               <img
@@ -173,22 +192,21 @@ function About() {
             </figcaption>
           </figure>
 
-          {/* INTRODUCTION */}
-          <div className="flex min-w-0 flex-col pt-0 md:pt-1 lg:pt-3">
-            <p className="eyebrow mb-4">{t.intro}</p>
+          <div className="flex min-w-0 flex-col pt-0 md:pt-1">
+            <p className="eyebrow mb-3">{t.intro}</p>
 
-            <h2 className="max-w-2xl text-[2.25rem] font-semibold leading-[1.06] tracking-[-0.055em] sm:text-5xl lg:text-[3.75rem]">
+            <h2 className="max-w-2xl text-[2.25rem] font-semibold leading-[1.06] tracking-[-0.055em] sm:text-5xl lg:text-[3.5rem]">
               {t.headline}
               <span className="text-accent">.</span>
             </h2>
 
-            <div className="mt-6 max-w-[590px] space-y-4 text-sm leading-7 text-muted-foreground sm:text-base sm:leading-8">
+            <div className="mt-5 max-w-[590px] space-y-3 text-sm leading-7 text-muted-foreground sm:text-base sm:leading-7">
               {t.paragraphs.map((paragraph, index) => (
                 <p key={`${language}-${index}`}>{paragraph}</p>
               ))}
             </div>
 
-            <div className="mt-7 flex flex-wrap items-center gap-x-6 gap-y-3">
+            <div className="mt-5 flex flex-wrap items-center gap-x-6 gap-y-3">
               <Link
                 to="/portfolio"
                 className="inline-flex items-center gap-3 border-b border-foreground/40 pb-2 text-sm font-medium transition-colors hover:border-accent hover:text-accent"
@@ -207,14 +225,14 @@ function About() {
             </div>
 
             {/* PROFILE INFORMATION */}
-            <div className="mt-9 grid max-w-[590px] grid-cols-2 gap-5 border-t border-foreground/15 pt-5">
+            <div className="mt-7 grid max-w-[590px] grid-cols-2 gap-5 border-t border-foreground/15 pt-4">
               <div>
-                <p className="eyebrow mb-2">{t.based}</p>
+                <p className="eyebrow mb-1.5">{t.based}</p>
                 <p className="text-sm font-medium">{t.basedValue}</p>
               </div>
 
               <div>
-                <p className="eyebrow mb-2">{t.focus}</p>
+                <p className="eyebrow mb-1.5">{t.focus}</p>
                 <p className="text-sm font-medium">{t.focusValue}</p>
               </div>
             </div>
@@ -222,30 +240,30 @@ function About() {
         </section>
 
         {/* INTERESTS */}
-        <section className="mt-16 border-t border-foreground/15 pt-7 md:mt-24 md:pt-9">
-          <div className="grid gap-8 md:grid-cols-[0.85fr_1.15fr] md:gap-12 lg:gap-16">
+        <section className="mt-11 border-t border-foreground/15 pt-6 md:mt-14 md:pt-7">
+          <div className="grid gap-6 md:grid-cols-[0.85fr_1.15fr] md:gap-10 lg:gap-14">
             <div>
               <p className="eyebrow">01 / {t.sectionLabel}</p>
 
-              <h2 className="mt-4 max-w-sm text-2xl font-semibold leading-[1.15] tracking-tight sm:text-3xl">
+              <h2 className="mt-3 max-w-sm text-2xl font-semibold leading-[1.15] tracking-tight sm:text-3xl">
                 {t.sectionTitle}
                 <span className="text-accent">.</span>
               </h2>
 
-              <p className="mt-4 max-w-xs text-sm leading-7 text-muted-foreground">
+              <p className="mt-3 max-w-xs text-sm leading-6 text-muted-foreground">
                 {t.sectionDescription}
               </p>
             </div>
 
             <div>
-              {interests.map((interest) => (
+              {t.interests.map((interest, index) => (
                 <div
-                  key={interest.number}
-                  className="group flex items-center justify-between gap-4 border-b border-foreground/15 py-4 first:border-t"
+                  key={interest.title}
+                  className="group flex items-center justify-between gap-4 border-b border-foreground/15 py-3 first:border-t"
                 >
                   <div className="flex min-w-0 items-start gap-4">
                     <span className="mt-1 font-mono text-[11px] text-muted-foreground">
-                      {interest.number}
+                      {String(index + 1).padStart(2, "0")}
                     </span>
 
                     <div className="min-w-0">
@@ -272,25 +290,25 @@ function About() {
         </section>
 
         {/* CLOSING */}
-        <section className="mt-16 border-t border-foreground/15 pt-7 md:mt-24 md:pt-9">
-          <div className="grid gap-7 md:grid-cols-[1.2fr_0.8fr] md:items-end md:gap-12">
+        <section className="mt-11 border-t border-foreground/15 pt-6 md:mt-14 md:pt-7">
+          <div className="grid gap-5 md:grid-cols-[1.2fr_0.8fr] md:items-end md:gap-10">
             <div>
-              <p className="eyebrow mb-4">02 / {t.closingLabel}</p>
+              <p className="eyebrow mb-3">02 / {t.closingLabel}</p>
 
               <h2 className="max-w-xl text-3xl font-semibold leading-[1.1] tracking-[-0.04em] sm:text-4xl lg:text-5xl">
-                {t.closing}
+                {t.closingTitle}
                 <span className="text-accent">.</span>
               </h2>
             </div>
 
             <div className="md:justify-self-end md:max-w-[300px]">
-              <p className="text-sm leading-7 text-muted-foreground">
+              <p className="text-sm leading-6 text-muted-foreground">
                 {t.closingDescription}
               </p>
 
               <Link
                 to="/contact"
-                className="mt-6 inline-flex items-center gap-3 bg-primary px-5 py-3.5 text-sm font-medium text-primary-foreground transition-colors hover:bg-accent"
+                className="mt-4 inline-flex items-center gap-3 bg-primary px-5 py-3 text-sm font-medium text-primary-foreground transition-colors hover:bg-accent"
               >
                 {t.contact}
                 <span>↗</span>
