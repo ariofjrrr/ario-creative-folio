@@ -33,7 +33,7 @@ const translations = {
     pageTitle: "Tentang.",
     eyebrow: "Sedikit tentang saya",
     intro: "Halo, saya",
-    headline: "Mengubah ide menjadi sesuatu yang berarti.",
+    headline: "Mengubah ide menjadi sesuatu yang berarti",
     paragraphs: [
       "Saya Ario Fajar Dharmawan. Saya memiliki ketertarikan pada dunia kreatif, komunikasi, dan teknologi, terutama pada bagaimana sebuah ide dapat berkembang menjadi karya yang memiliki tujuan dan makna.",
       "Saya mengeksplorasi berbagai bidang, mulai dari penulisan, desain grafis, hingga pengembangan website. Setiap bidang memiliki cara tersendiri untuk menyampaikan gagasan, memecahkan masalah, dan menciptakan pengalaman.",
@@ -42,11 +42,11 @@ const translations = {
     work: "Lihat karya",
     contact: "Hubungi saya",
     sectionLabel: "Bidang yang diminati",
-    sectionTitle: "Beragam minat, satu ruang untuk berkarya.",
+    sectionTitle: "Beragam minat, satu ruang untuk berkarya",
     sectionDescription:
       "Beberapa bidang yang menjadi bagian dari perjalanan kreatif dan pengembangan kemampuan saya.",
     closingLabel: "Selanjutnya",
-    closingTitle: "Selalu ada ide baru untuk diwujudkan.",
+    closingTitle: "Selalu ada ide baru untuk diwujudkan",
     closingDescription:
       "Terbuka untuk kolaborasi kreatif, kesempatan profesional, dan percakapan menarik.",
     based: "Domisili",
