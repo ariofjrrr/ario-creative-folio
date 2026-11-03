@@ -7,7 +7,7 @@ import { site } from "@/content/site";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About — Ario Fajar Dharmawan" },
+      { title: "About - AFD" },
       {
         name: "description",
         content:
@@ -29,7 +29,7 @@ export const Route = createFileRoute("/about")({
 
 const translations = {
   ID: {
-    pageIndex: "02 / TENTANG",
+    pageIndex: "02 - TENTANG",
     pageTitle: "Tentang.",
     eyebrow: "Sedikit tentang saya",
     intro: "Halo, saya",
@@ -77,7 +77,7 @@ const translations = {
     ],
   },
   EN: {
-    pageIndex: "02 / ABOUT",
+    pageIndex: "02 - ABOUT",
     pageTitle: "About.",
     eyebrow: "A little about me",
     intro: "Hello, I'm",
@@ -127,16 +127,16 @@ const translations = {
 };
 
 function About() {
-  const [language, setLanguage] = useState<"ID" | "EN">("ID");
+  const [language, setLanguage] = useState<"ID" | "EN">("EN");
   const t = translations[language];
 
   return (
     <>
       <PageHeader index={t.pageIndex} title={t.pageTitle} />
 
-      <main className="container-page pb-10 md:pb-14">
+      <main className="container-page pt-0 pb-10 md:pb-14">
         {/* INTRO HEADER */}
-        <div className="mb-6 flex items-center justify-between border-b border-foreground/15 pb-3 md:mb-7">
+        <div className="mb-4 flex items-center justify-between border-b border-foreground/15 pb-2 md:mb-5">
           <p className="eyebrow">{t.eyebrow}</p>
 
           <div
@@ -188,7 +188,7 @@ function About() {
 
             <figcaption className="mt-2 flex items-center justify-between border-t border-foreground/15 pt-2 text-xs text-muted-foreground">
               <span>{site.short}</span>
-              <span>Portfolio / {site.year}</span>
+              <span>Portfolio {}</span>
             </figcaption>
           </figure>
 
