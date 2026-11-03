@@ -97,7 +97,7 @@ function Home() {
 
             <figcaption className="mt-2 flex justify-between border-t border-foreground/15 pt-2">
               <span className="eyebrow">{site.short}</span>
-              <span className="eyebrow">Portfolio / {site.year}</span>
+              <span className="eyebrow">Portfolio {}</span>
             </figcaption>
           </figure>
         </div>
