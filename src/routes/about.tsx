@@ -81,7 +81,7 @@ const translations = {
     pageTitle: "About.",
     eyebrow: "A little about me",
     intro: "Hello, I'm",
-    headline: "Turning ideas into something meaningful.",
+    headline: "Turning ideas into something meaningful",
     paragraphs: [
       "I'm Ario Fajar Dharmawan. I'm interested in creativity, communication, and technology, especially in how ideas can grow into work with purpose and meaning.",
       "I explore different fields, from writing and graphic design to web development. Each field offers its own way to communicate ideas, solve problems, and create experiences.",
@@ -90,11 +90,11 @@ const translations = {
     work: "Explore my work",
     contact: "Get in touch",
     sectionLabel: "Areas of interest",
-    sectionTitle: "Different interests, one space to create.",
+    sectionTitle: "Different interests, one space to create",
     sectionDescription:
       "Some of the fields that shape my creative journey and ongoing development.",
     closingLabel: "What's next?",
-    closingTitle: "There's always a new idea to bring to life.",
+    closingTitle: "There's always a new idea to bring to life",
     closingDescription:
       "Open to creative collaborations, professional opportunities, and meaningful conversations.",
     based: "Based in",
