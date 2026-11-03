@@ -37,7 +37,7 @@ function Home() {
   return (
     <main>
       {/* HERO */}
-      <section className="container-page pt-5 md:pt-6">
+      <section className="container-page pt-3 md:pt-6">
         <div className="grid items-center gap-8 py-7 sm:py-9 md:grid-cols-[minmax(0,1fr)_300px] md:gap-10 md:py-10 lg:grid-cols-[minmax(0,1fr)_350px] lg:gap-14 lg:py-12">
           <div className="fade-up">
             <p className="mb-5 text-sm font-medium tracking-tight text-muted-foreground">
