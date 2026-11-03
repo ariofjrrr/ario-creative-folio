@@ -37,13 +37,13 @@ function Home() {
   return (
     <main>
       {/* HERO */}
-      <section className="container-page pt-5 md:pt-8">
+      <section className="container-page pt-5 md:pt-6">
         <div className="flex items-center justify-between border-b border-foreground/15 pb-3">
           <span className="eyebrow">Independent Creative Portfolio</span>
           <span className="eyebrow">Based in Indonesia</span>
         </div>
 
-        <div className="grid items-center gap-9 py-10 sm:py-12 md:grid-cols-[minmax(0,1fr)_300px] md:gap-10 md:py-16 lg:grid-cols-[minmax(0,1fr)_350px] lg:gap-16 lg:py-20">
+        <div className="grid items-center gap-8 py-7 sm:py-9 md:grid-cols-[minmax(0,1fr)_300px] md:gap-10 md:py-10 lg:grid-cols-[minmax(0,1fr)_350px] lg:gap-14 lg:py-12">
           <div className="fade-up">
             <p className="mb-5 text-sm font-medium tracking-tight text-muted-foreground">
               Hello, I'm
@@ -95,7 +95,7 @@ function Home() {
               />
             </div>
 
-            <figcaption className="mt-3 flex justify-between border-t border-foreground/15 pt-3">
+            <figcaption className="mt-2 flex justify-between border-t border-foreground/15 pt-2">
               <span className="eyebrow">{site.short}</span>
               <span className="eyebrow">Portfolio / {site.year}</span>
             </figcaption>
