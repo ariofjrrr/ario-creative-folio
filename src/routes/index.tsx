@@ -125,8 +125,8 @@ function Home() {
       </section>
 
       {/* SELECTED WORKS */}
-      <section className="container-page pb-16 pt-16 md:pb-24 md:pt-20">
-        <div className="mb-8 flex items-end justify-between border-b border-foreground/15 pb-5">
+      <section className="container-page pb-12 pt-10 md:pb-16 md:pt-12">
+        <div className="mb-6 flex items-end justify-between border-b border-foreground/15 pb-4">
           <div>
             <p className="eyebrow mb-2">01 / Selected Projects</p>
             <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">
@@ -145,7 +145,7 @@ function Home() {
           </Link>
         </div>
 
-        <div className="grid gap-x-7 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-x-7 gap-y-9 sm:grid-cols-2 lg:grid-cols-3">
           {works.slice(0, 3).map((work, index) => (
             <WorkCard key={work.slug} work={work} index={index} />
           ))}
@@ -153,8 +153,8 @@ function Home() {
       </section>
 
       {/* ABOUT PREVIEW */}
-      <section className="container-page pb-16 md:pb-24">
-        <div className="grid gap-7 border-y border-foreground/15 py-9 md:grid-cols-[0.8fr_1.2fr] md:gap-16 md:py-12">
+      <section className="container-page pb-12 md:pb-16">
+        <div className="grid gap-6 border-y border-foreground/15 py-7 md:grid-cols-[0.8fr_1.2fr] md:gap-12 md:py-19">
           <div>
             <p className="eyebrow">02 / A Little About Me</p>
             <h2 className="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl">
@@ -171,7 +171,7 @@ function Home() {
 
             <Link
               to="/about"
-              className="mt-6 inline-flex items-center gap-3 border-b border-foreground/30 pb-2 text-sm font-medium transition-colors hover:border-accent hover:text-accent"
+              className="mt-5 inline-flex items-center gap-3 border-b border-foreground/30 pb-2 text-sm font-medium transition-colors hover:border-accent hover:text-accent"
             >
               More about me <span>↗</span>
             </Link>
@@ -180,10 +180,10 @@ function Home() {
       </section>
 
       {/* CONTACT */}
-      <section className="container-page pb-14 md:pb-20">
-        <div className="grid gap-8 bg-ink px-7 py-9 text-ink-foreground sm:px-10 sm:py-11 md:grid-cols-[1.2fr_0.8fr] md:items-end md:gap-12 md:px-12 md:py-14">
+      <section className="container-page pb-10 md:pb-14">
+        <div className="grid gap-7 bg-ink px-6 py-7 text-ink-foreground sm:px-9 sm:py-9 md:grid-cols-[1.2fr_0.8fr] md:items-end md:gap-10 md:px-10 md:py-11">
           <div>
-            <p className="eyebrow mb-5 text-ink-foreground/50">
+            <p className="eyebrow mb-4 text-ink-foreground/50">
               03 / Let's Connect
             </p>
 
@@ -200,7 +200,7 @@ function Home() {
 
             <Link
               to="/contact"
-              className="mt-6 inline-flex items-center gap-3 border-b border-accent pb-2 text-sm font-medium transition-colors hover:text-accent"
+              className="mt-5 inline-flex items-center gap-3 border-b border-accent pb-2 text-sm font-medium transition-colors hover:text-accent"
             >
               Start a Conversation <span>↗</span>
             </Link>
