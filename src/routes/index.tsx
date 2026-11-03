@@ -19,11 +19,11 @@ function Home() {
   return (
       <section className="container-page grid gap-10 pb-20 pt-0 md:grid-cols-12 md:pt-0">
         <div className="fade-up md:col-span-7 md:flex md:flex-col md:justify-between">
-          <div className="flex justify-between border-b pb-3">
+          <div className="flex justify-between border-b pb-2">
             <span className="eyebrow">Personal Portfolio {site.year}</span>
             <span className="eyebrow hidden sm:inline">Indonesia</span>
           </div>
-          <div className="py-10 md:py-0">
+          <div className="py-8 md:py-0">
             <p className="text-lg font-medium">{site.name}</p>
             <h1 className="mt-4 text-5xl font-bold leading-[0.95] tracking-tighter sm:text-6xl lg:text-8xl">
               Turning Ideas Into Meaningful Works<span className="text-accent">.</span>
