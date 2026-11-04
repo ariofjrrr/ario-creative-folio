@@ -96,7 +96,7 @@ function About() {
       <main className="container-page pt-0 pb-8 md:pb-10"> 
         
         {/* INTRO HEADER */}
-        <div className="mb-0 flex items-center justify-between border-b border-foreground/12 pb-1 md:mb-0">
+        <div className="mb-2 flex items-center justify-between border-b border-foreground/12 pb-1 md:mb-3">
           <p className="eyebrow">{t.eyebrow}</p>
           <div className="flex items-center gap-3 font-mono text-xs" aria-label="Language selection">
             <button
