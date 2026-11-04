@@ -140,7 +140,7 @@ function Certificates() {
           <p className="text-xs text-muted-foreground">
             Certificates & professional achievements
           </p>
-          <span className="font-mono text-xs text-muted-foreground">
+          <span className="mt-2 font-mono text-xs text-muted-foreground">
             AFD / {new Date().getFullYear()}
           </span>
         </div>
