@@ -65,7 +65,7 @@ function Certificates() {
       <main className="container-page pt-0 pb-14 md:pt-0 md:pb-16">
         {/* PAGE INTRODUCTION */}
         <div className="mb-0 border-b border-foreground/15 pb-0">
-          <div className="mt-2 mb-1 flex items-center justify-between">
+          <div className="mt-2 mb-3 flex items-center justify-between">
             <p className="eyebrow">CERTIFICATES</p>
             <span className="font-mono text-xs text-muted-foreground">
               AWARDS & ACHIEVEMENTS
