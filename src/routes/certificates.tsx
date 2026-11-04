@@ -112,17 +112,14 @@ function Certificates() {
                   className="group fade-up text-left"
                   style={{ animationDelay: `${index * 60}ms` }}
                 >
-                  <div className="aspect-[1.414/1] overflow-hidden border border-foreground/15 bg-muted">
-                    <div className="h-full w-full transition-transform duration-500 group-hover:scale-[1.03]">
-                      <img
-                        src={certificate.cover}
-                        alt={`Cover of ${certificate.title}`}
-                        loading="lazy"
-                        className="block h-auto w-full object-contain transition-transform duration-500 group-hover:scale-[1.02]"
-                      />
-                    </div>
+                  <div className="overflow-hidden border border-foreground/15 bg-muted/20">
+                    <img
+                      src={certificate.cover}
+                      alt={`Cover of ${certificate.title}`}
+                      loading="lazy"
+                      className="block h-auto w-full object-contain transition-transform duration-500 group-hover:scale-[1.02]"
+                    />
                   </div>
-
                   <h3 className="mt-4 font-semibold tracking-tight transition-colors group-hover:text-accent">
                     {certificate.title}
                   </h3>
