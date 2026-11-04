@@ -84,18 +84,9 @@ function Portfolio() {
         <div className="mb-3 flex items-center justify-between">
           <p className="eyebrow">PORTFOLIO</p>
           <span className="font-mono text-xs text-muted-foreground">
-            03 / SELECTED WORKS
+            SELECTED WORKS
           </span>
         </div>
-
-        <h1 className="text-5xl font-semibold tracking-tighter md:text-7xl">
-          Selected works<span className="text-accent">.</span>
-        </h1>
-
-        <p className="mt-4 max-w-xl text-sm leading-7 text-muted-foreground sm:text-base">
-          A collection of writing, design, web development, and creative
-          projects that reflect my interests and ongoing exploration.
-        </p>
       </div>
 
       {/* CATEGORY FILTER */}
