@@ -1,7 +1,6 @@
 
 import { useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { PageHeader } from "@/components/site/FilterBar";
 import { site } from "@/content/site";
 
 export const Route = createFileRoute("/about")({
@@ -29,9 +28,6 @@ export const Route = createFileRoute("/about")({
 
 const translations = {
   EN: {
-    pageIndex: "02 / ABOUT",
-    pageTitle: "About.",
-    eyebrow: "A little about me",
     intro: "Hello, I'm",
     headline: "Turning ideas into something meaningful",
     paragraphs: [
@@ -78,9 +74,6 @@ const translations = {
     ],
   },
   ID: {
-    pageIndex: "02 / TENTANG",
-    pageTitle: "Tentang.",
-    eyebrow: "Sedikit tentang saya",
     intro: "Halo, saya",
     headline: "Mengubah ide menjadi sesuatu yang bermakna",
     paragraphs: [
@@ -133,8 +126,6 @@ function About() {
   const t = translations[language];
 
   return (
-      <>
-      <PageHeader index={t.pageIndex} title={t.pageTitle} />
         
       <main className="container-page pt-0 pb-14 md:pt-0 md:pb-16">
         {/* INTRO HEADER */}
