@@ -80,7 +80,6 @@ function Portfolio() {
   return (
     <main className="container-page pt-0 pb-14 md:pt-0 md:pb-16">
       {/* PAGE INTRODUCTION */}
-      <!-- Menambahkan max-w-md agar lebar maksimalnya terbatas -->
       <div className="mb-0 border-b border-foreground/15 pb-4 max-w-md"> 
         <div className="mt-2 mb-2 flex items-center justify-between"> 
           <p className="eyebrow">PORTFOLIO</p> 
@@ -89,7 +88,7 @@ function Portfolio() {
       </div>
 
       {/* CATEGORY FILTER */}
-      <section className="mt-5">
+      <section className="mt-2">
         <div className="flex flex-wrap items-center justify-between gap-3">
           <p className="eyebrow">EXPLORE BY CATEGORY</p>
           <span className="font-mono text-xs text-muted-foreground">
