@@ -40,25 +40,17 @@ function Portfolio() {
       (work) => work.category !== "Writing"
     );
 
-    const writingWorks: Work[] = writings.map((writing) => {
-      // Menyelipkan kata '-portfolio' sebelum ekstensi file gambar
-      // Contoh: '/desain.jpg' otomatis diubah menjadi '/desain-portfolio.jpg'
-      const lastDotIndex = writing.cover.lastIndexOf(".");
-      const customPortfolioCover = 
-        lastDotIndex !== -1
-          ? `${writing.cover.substring(0, lastDotIndex)}-portfolio${writing.cover.substring(lastDotIndex)}`
-          : writing.cover;
-
-      return {
-        slug: writing.slug,
-        title: writing.title,
-        category: "Writing",
-        year: writing.year,
-        summary: writing.synopsis,
-        cover: customPortfolioCover, 
-        placeholder: false,
-      };
-    });
+    const writingWorks: Work[] = writings.map((writing) => ({
+      slug: writing.slug,
+      title: writing.title,
+      category: "Writing",
+      year: writing.year,
+      summary: writing.synopsis,
+      // Menggunakan portfolioCover jika diisi di file konten. 
+      // Jika tidak diisi, otomatis pakai cover utama (fallback).
+      cover: writing.portfolioCover || writing.cover, 
+      placeholder: false,
+    }));
 
     return [...writingWorks, ...otherWorks];
   }, []);
