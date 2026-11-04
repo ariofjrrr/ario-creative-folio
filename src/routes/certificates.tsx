@@ -136,7 +136,7 @@ function Certificates() {
         </section>
 
         {/* FOOTNOTE */}
-        <div className="mt-16 flex items-center justify-between border-t border-foreground/15 pt-4">
+        <div className="mt-14 flex items-center justify-between border-t border-foreground/15 pt-4">
           <p className="text-xs text-muted-foreground">
             Certificates & professional achievements
           </p>
