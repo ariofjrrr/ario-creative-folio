@@ -81,14 +81,14 @@ function Portfolio() {
     <main className="container-page pt-0 pb-10 md:pt-0 md:pb-12">
       {/* PAGE INTRODUCTION */}
       <div className="mb-0 border-b border-foreground/15 pb-0"> 
-        <div className="mt-2 mb-2 flex items-center justify-between"> 
+        <div className="mt-2 mb-3 flex items-center justify-between"> 
           <p className="eyebrow">PORTFOLIO</p> 
           <span className="font-mono text-xs text-muted-foreground"> SELECTED WORKS </span> 
         </div> 
       </div>
 
       {/* CATEGORY FILTER */}
-      <section className="mt-1">
+      <section className="mt-2">
         <div className="flex flex-wrap items-center justify-between gap-3">
           <p className="eyebrow">EXPLORE BY CATEGORY</p>
           <span className="font-mono text-xs text-muted-foreground">
