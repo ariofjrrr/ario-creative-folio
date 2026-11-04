@@ -88,7 +88,7 @@ function Portfolio() {
       </div>
 
       {/* CATEGORY FILTER */}
-      <section className="mt-2">
+      <section className="mt-1">
         <div className="flex flex-wrap items-center justify-between gap-3">
           <p className="eyebrow">EXPLORE BY CATEGORY</p>
           <span className="font-mono text-xs text-muted-foreground">
@@ -97,7 +97,7 @@ function Portfolio() {
           </span>
         </div>
 
-        <div className="mt-4">
+        <div className="mt-2">
           <FilterBar
             options={workCategories}
             value={category}
