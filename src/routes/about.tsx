@@ -93,7 +93,7 @@ function About() {
   return (
     <>
       <PageHeader index={t.pageIndex} title={t.pageTitle} />
-      <main className="container-page pt-0 pb-8 md:pb-10">
+      <main className="container-page pt-2 md:pt-4">
         
         {/* INTRO HEADER */}
         <div className="mb-2 flex items-center justify-between border-b border-foreground/12 pb-1 md:mb-3">
