@@ -1,68 +1,172 @@
+
 import { createFileRoute } from "@tanstack/react-router";
 import { useMemo, useState } from "react";
 import { certificates, certCategories } from "@/content/certificates";
 import type { Certificate } from "@/content/types";
-import { Cover } from "@/components/site/Cover";
-import { EmptyState, FilterBar, PageHeader } from "@/components/site/FilterBar";
+import { EmptyState, FilterBar } from "@/components/site/FilterBar";
 import { Lightbox } from "@/components/site/Lightbox";
 
 export const Route = createFileRoute("/certificates")({
   head: () => ({
     meta: [
       { title: "Certificates - AFD" },
-      { name: "description", content: "Certificates, awards, intellectual property and training records of Ario Fajar Dharmawan." },
-      { property: "og:title", content: "Certificates & Achievements — Ario Fajar Dharmawan" },
-      { property: "og:description", content: "Certificates, awards, intellectual property and training." },
+      {
+        name: "description",
+        content:
+          "Certificates, awards, intellectual property and training records of Ario Fajar Dharmawan.",
+      },
+      {
+        property: "og:title",
+        content: "Certificates & Achievements — Ario Fajar Dharmawan",
+      },
+      {
+        property: "og:description",
+        content: "Certificates, awards, intellectual property and training.",
+      },
     ],
   }),
   component: Certificates,
 });
 
 function Certificates() {
-  const [cat, setCat] = useState<(typeof certCategories)[number]>("All");
+  const [category, setCategory] =
+    useState<(typeof certCategories)[number]>("All");
   const [open, setOpen] = useState<Certificate | null>(null);
-  const list = useMemo(() => (cat === "All" ? certificates : certificates.filter((c) => c.category === cat)), [cat]);
+
+  const filteredCertificates = useMemo(
+    () =>
+      category === "All"
+        ? certificates
+        : certificates.filter((certificate) => certificate.category === category),
+    [category]
+  );
 
   return (
     <>
-      <PageHeader index="04 - Certificates" title="Certificates & achievements." />
-      <section className="container-page">
-        <FilterBar options={certCategories} value={cat} onChange={setCat} />
-        <div className="mt-12">
-          {list.length === 0 ? <EmptyState title="Nothing here yet." body="Verified items in this category will be added soon." /> : (
-            <div key={cat} className="grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
-              {list.map((c, i) => (
-                <button key={c.id} onClick={() => setOpen(c)} className="group fade-up text-left" style={{ animationDelay: `${i * 60}ms` }}>
-                <div className="aspect-[1.414/1] overflow-hidden border">
-                  <div className="h-full w-full transition-transform duration-500 group-hover:scale-[1.03]">
-                  <img
-                    src={c.image}
-                    alt={c.title}
-                    style={{
-                      display: "block",
-                      width: "100%",
-                      height: "100%",
-                      objectFit: "contain",
-                      minHeight: "100px",
-                      background: "#f0f0f0",
-                    }}
-                  />
+      <main className="container-page pt-0 pb-14 md:pt-0 md:pb-16">
+        {/* PAGE INTRODUCTION */}
+        <div className="mb-0 border-b border-foreground/15 pb-4">
+          <div className="mb-1 flex items-center justify-between">
+            <p className="eyebrow">CERTIFICATES</p>
+            <span className="font-mono text-xs text-muted-foreground">
+              AWARDS & ACHIEVEMENTS
+            </span>
+          </div>
+        </div>
+
+        {/* CATEGORY FILTER */}
+        <section className="mt-1">
+          <div className="flex flex-wrap items-center justify-between gap-3">
+            <p className="eyebrow">EXPLORE BY CATEGORY</p>
+            <span className="font-mono text-xs text-muted-foreground">
+              {filteredCertificates.length}{" "}
+              {filteredCertificates.length === 1 ? "RECORD" : "RECORDS"}
+            </span>
+          </div>
+
+          <div className="mt-2">
+            <FilterBar
+              options={certCategories}
+              value={category}
+              onChange={setCategory}
+            />
+          </div>
+        </section>
+
+        {/* CERTIFICATES GRID */}
+        <section className="mt-9">
+          {filteredCertificates.length === 0 ? (
+            <EmptyState
+              title="Nothing here yet."
+              body="Verified items in this category will be added soon."
+            />
+          ) : (
+            <div
+              key={category}
+              className="grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-3 lg:gap-y-14"
+            >
+              {filteredCertificates.map((certificate, index) => (
+                <button
+                  key={certificate.id}
+                  type="button"
+                  onClick={() => setOpen(certificate)}
+                  className="group fade-up text-left"
+                  style={{ animationDelay: `${index * 60}ms` }}
+                >
+                  <div className="aspect-[1.414/1] overflow-hidden border border-foreground/15 bg-muted">
+                    <div className="h-full w-full transition-transform duration-500 group-hover:scale-[1.03]">
+                      <img
+                        src={certificate.image}
+                        alt={certificate.title}
+                        loading="lazy"
+                        className="block h-full w-full object-contain"
+                      />
+                    </div>
                   </div>
-                </div>
-                  <h3 className="mt-4 font-semibold tracking-tight">{c.title}</h3>
-                  <p className="mt-1 text-sm text-muted-foreground">{[c.issuer, c.year].filter(Boolean).join(" · ") || c.category}</p>
+
+                  <h3 className="mt-4 font-semibold tracking-tight transition-colors group-hover:text-accent">
+                    {certificate.title}
+                  </h3>
+
+                  <p className="mt-1 text-sm text-muted-foreground">
+                    {[certificate.issuer, certificate.year]
+                      .filter(Boolean)
+                      .join(" · ") || certificate.category}
+                  </p>
                 </button>
               ))}
             </div>
           )}
+        </section>
+
+        {/* FOOTNOTE */}
+        <div className="mt-16 flex items-center justify-between border-t border-foreground/15 pt-4">
+          <p className="text-xs text-muted-foreground">
+            Certificates & professional achievements
+          </p>
+          <span className="font-mono text-xs text-muted-foreground">
+            AFD / {new Date().getFullYear()}
+          </span>
         </div>
-      </section>
+      </main>
+
+      {/* CERTIFICATE LIGHTBOX */}
       {open && (
-        <Lightbox src={open.image} pdf={open.pdf} title={open.title} onClose={() => setOpen(null)}>
+        <Lightbox
+          src={open.image}
+          pdf={open.pdf}
+          title={open.title}
+          onClose={() => setOpen(null)}
+        >
           <dl className="space-y-4">
-            {([["Category", open.category], ["Issuer", open.issuer], ["Year", open.year], ["Description", open.description], ["Verification", open.verification]] as const)
-              .filter(([, v]) => v).map(([k, v]) => (
-                <div key={k}><dt className="eyebrow">{k}</dt><dd className="mt-1 break-words">{v?.startsWith("http") ? <a href={v} target="_blank" rel="noreferrer" className="underline">{v}</a> : v}</dd></div>
+            {(
+              [
+                ["Category", open.category],
+                ["Issuer", open.issuer],
+                ["Year", open.year],
+                ["Description", open.description],
+                ["Verification", open.verification],
+              ] as const
+            )
+              .filter(([, value]) => value)
+              .map(([label, value]) => (
+                <div key={label}>
+                  <dt className="eyebrow">{label}</dt>
+                  <dd className="mt-1 break-words">
+                    {value?.startsWith("http") ? (
+                      <a
+                        href={value}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="underline transition-colors hover:text-accent"
+                      >
+                        {value}
+                      </a>
+                    ) : (
+                      value
+                    )}
+                  </dd>
+                </div>
               ))}
           </dl>
         </Lightbox>
