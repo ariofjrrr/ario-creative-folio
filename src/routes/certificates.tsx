@@ -33,19 +33,38 @@ function Certificates() {
     useState<(typeof certCategories)[number]>("All");
   const [open, setOpen] = useState<Certificate | null>(null);
 
+  // FILTERED CERTIFICATES
   const filteredCertificates = useMemo(
     () =>
       category === "All"
         ? certificates
-        : certificates.filter((certificate) => certificate.category === category),
+        : certificates.filter(
+            (certificate) => certificate.category === category
+          ),
     [category]
+  );
+
+  // CATEGORY COUNTS
+  const counts = useMemo(
+    () =>
+      Object.fromEntries(
+        certCategories.map((item) => [
+          item,
+          item === "All"
+            ? certificates.length
+            : certificates.filter(
+                (certificate) => certificate.category === item
+              ).length,
+        ])
+      ),
+    []
   );
 
   return (
     <>
       <main className="container-page pt-0 pb-14 md:pt-0 md:pb-16">
         {/* PAGE INTRODUCTION */}
-        <div className="mb-0 border-b border-foreground/15 pb-4">
+        <div className="mb-0 border-b border-foreground/15 pb-0">
           <div className="mt-2 mb-1 flex items-center justify-between">
             <p className="eyebrow">CERTIFICATES</p>
             <span className="font-mono text-xs text-muted-foreground">
@@ -69,6 +88,7 @@ function Certificates() {
               options={certCategories}
               value={category}
               onChange={setCategory}
+              counts={counts}
             />
           </div>
         </section>
