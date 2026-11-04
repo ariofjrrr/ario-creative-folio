@@ -93,11 +93,10 @@ function About() {
   return (
     <>
       <PageHeader index={t.pageIndex} title={t.pageTitle} />
-      {/* 1. Menambahkan -mt-4 untuk menarik konten ke atas mendekati PageHeader */}
-      <main className="container-page -mt-4 pt-0 pb-6 md:pb-8">
+      <main className="container-page pt-0 pb-8 md:pb-10">
         
         {/* INTRO HEADER */}
-        <div className="mb-2 flex items-center justify-between border-b border-foreground/12 pb-1">
+        <div className="mb-2 flex items-center justify-between border-b border-foreground/12 pb-1 md:mb-3">
           <p className="eyebrow">{t.eyebrow}</p>
           <div className="flex items-center gap-3 font-mono text-xs" aria-label="Language selection">
             <button
@@ -121,9 +120,8 @@ function About() {
         </div>
 
         {/* MAIN PROFILE */}
-        {/* 2. Mengurangi gap grid utama (gap-4 md:gap-6) agar kolom text & foto lebih rapat */}
-        <section className="grid items-start gap-4 md:grid-cols-[minmax(0,0.78fr)_minmax(0,1.22fr)] md:gap-6 lg:gap-10">
-          <figure className="mx-auto w-full max-w-[280px] md:mx-0">
+        <section className="grid items-start gap-6 md:grid-cols-[minmax(0,0.78fr)_minmax(0,1.22fr)] md:gap-8 lg:gap-12">
+          <figure className="mx-auto w-full max-w-[320px] md:mx-0">
             <div className="overflow-hidden bg-muted">
               <img
                 src={site.portrait}
@@ -133,65 +131,62 @@ function About() {
                 className="aspect-[4/5] w-full object-cover object-center grayscale transition-transform duration-700 hover:scale-[1.025]"
               />
             </div>
-            <figcaption className="mt-1.5 flex items-center justify-between border-t border-foreground/15 pt-1.5 text-xs text-muted-foreground">
+            <figcaption className="mt-2 flex items-center justify-between border-t border-foreground/15 pt-2 text-xs text-muted-foreground">
               <span>{site.short}</span>
               <span>Portfolio {new Date().getFullYear()}</span>
             </figcaption>
           </figure>
 
           <div className="flex min-w-0 flex-col pt-0">
-            <p className="eyebrow mb-1">{t.intro}</p>
-            {/* 3. Mengencangkan leading judul utama (leading-[1.02]) agar tidak memakan ruang vertikal */}
-            <h2 className="max-w-2xl text-[1.85rem] font-semibold leading-[1.02] tracking-[-0.04em] sm:text-3xl lg:text-[2.75rem]">
+            <p className="eyebrow mb-1.5">{t.intro}</p>
+            <h2 className="max-w-2xl text-[2rem] font-semibold leading-[1.1] tracking-[-0.045em] sm:text-4xl lg:text-[3rem]">
               {t.headline}<span className="text-accent">.</span>
             </h2>
-            <div className="mt-2.5 max-w-[590px] space-y-1.5 text-sm leading-5 text-muted-foreground sm:text-base sm:leading-6">
+            <div className="mt-3.5 max-w-[590px] space-y-2.5 text-sm leading-6 text-muted-foreground sm:text-base sm:leading-7">
               {t.paragraphs.map((paragraph, index) => (
                 <p key={`${language}-${index}`}>{paragraph}</p>
               ))}
             </div>
-            <div className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-1">
-              <Link to="/portfolio" className="inline-flex items-center gap-1.5 border-b border-foreground/40 pb-0.5 text-sm font-medium transition-colors hover:border-accent hover:text-accent">
+            <div className="mt-4 flex flex-wrap items-center gap-x-5 gap-y-2">
+              <Link to="/portfolio" className="inline-flex items-center gap-2 border-b border-foreground/40 pb-1 text-sm font-medium transition-colors hover:border-accent hover:text-accent">
                 {t.work} <span>↗</span>
               </Link>
-              <Link to="/contact" className="inline-flex items-center gap-1.5 text-sm font-medium text-muted-foreground transition-colors hover:text-accent">
+              <Link to="/contact" className="inline-flex items-center gap-2 text-sm font-medium text-muted-foreground transition-colors hover:text-accent">
                 {t.contact} <span>↗</span>
               </Link>
             </div>
 
             {/* PROFILE INFORMATION */}
-            <div className="mt-4 grid max-w-[590px] grid-cols-2 gap-3 border-t border-foreground/15 pt-2.5">
+            <div className="mt-5 grid max-w-[590px] grid-cols-2 gap-4 border-t border-foreground/15 pt-3">
               <div>
-                <p className="eyebrow mb-0.5">{t.based}</p>
-                <p className="text-xs font-medium sm:text-sm">{t.basedValue}</p>
+                <p className="eyebrow mb-1">{t.based}</p>
+                <p className="text-sm font-medium">{t.basedValue}</p>
               </div>
               <div>
-                <p className="eyebrow mb-0.5">{t.focus}</p>
-                <p className="text-xs font-medium sm:text-sm">{t.focusValue}</p>
+                <p className="eyebrow mb-1">{t.focus}</p>
+                <p className="text-sm font-medium">{t.focusValue}</p>
               </div>
             </div>
           </div>
         </section>
 
         {/* INTERESTS */}
-        {/* 4. Memotong margin top antar section secara drastis (mt-5 md:mt-6) dan padding (pt-3) */}
-        <section className="mt-5 border-t border-foreground/15 pt-3 md:mt-6">
-          <div className="grid gap-3 md:grid-cols-[0.85fr_1.15fr] md:gap-6 lg:gap-10">
+        <section className="mt-7 border-t border-foreground/15 pt-4 md:mt-10 md:pt-5">
+          <div className="grid gap-5 md:grid-cols-[0.85fr_1.15fr] md:gap-8 lg:gap-12">
             <div>
               <p className="eyebrow">01 / {t.sectionLabel}</p>
-              <h2 className="mt-1 max-w-sm text-lg font-semibold leading-[1.1] tracking-tight sm:text-xl">
+              <h2 className="mt-2 max-w-sm text-xl font-semibold leading-[1.2] tracking-tight sm:text-2xl">
                 {t.sectionTitle}<span className="text-accent">.</span>
               </h2>
-              <p className="mt-1 max-w-xs text-xs leading-4 text-muted-foreground">
+              <p className="mt-2 max-w-xs text-xs leading-5 text-muted-foreground sm:text-sm">
                 {t.sectionDescription}
               </p>
             </div>
             <div>
               {t.interests.map((interest, index) => (
-                /* 5. Mengurangi padding baris list (py-1.5) */
-                <div key={interest.title} className="group flex items-center justify-between gap-3 border-b border-foreground/15 py-1.5 first:border-t">
-                  <div className="flex min-w-0 items-start gap-2.5">
-                    <span className="mt-0.5 font-mono text-[9px] text-muted-foreground">
+                <div key={interest.title} className="group flex items-center justify-between gap-4 border-b border-foreground/15 py-2.5 first:border-t">
+                  <div className="flex min-w-0 items-start gap-3">
+                    <span className="mt-0.5 font-mono text-[10px] text-muted-foreground">
                       {String(index + 1).padStart(2, '0')}
                     </span>
                     <div className="min-w-0">
