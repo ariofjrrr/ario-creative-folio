@@ -136,11 +136,11 @@ function Certificates() {
         </section>
 
         {/* FOOTNOTE */}
-        <div className="mt-14 flex items-center justify-between border-t border-foreground/15 pt-4">
+        <div className="mt-14 mb-2 flex items-center justify-between border-t border-foreground/15 pt-4">
           <p className="text-xs text-muted-foreground">
             Certificates & professional achievements
           </p>
-          <span className="mt-2 font-mono text-xs text-muted-foreground">
+          <span className="font-mono text-xs text-muted-foreground">
             AFD / {new Date().getFullYear()}
           </span>
         </div>
