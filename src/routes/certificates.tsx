@@ -74,7 +74,7 @@ function Certificates() {
         </div>
 
         {/* CATEGORY FILTER */}
-        <section className="mt-1">
+        <section className="mt-4">
           <div className="flex flex-wrap items-center justify-between gap-3">
             <p className="eyebrow">EXPLORE BY CATEGORY</p>
             <span className="font-mono text-xs text-muted-foreground">
