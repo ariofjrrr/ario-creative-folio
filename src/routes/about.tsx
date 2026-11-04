@@ -133,7 +133,9 @@ function About() {
   const t = translations[language];
 
   return (
-      <></>
+      <>
+      <PageHeader index={t.pageIndex} title={t.pageTitle} />
+        
       <main className="container-page pt-0 pb-14 md:pt-0 md:pb-16">
         {/* INTRO HEADER */}
         <div className="mb-7 flex items-center justify-between border-b border-foreground/15 pb-3 md:mb-8">
