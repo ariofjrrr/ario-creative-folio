@@ -80,13 +80,12 @@ function Portfolio() {
   return (
     <main className="container-page pt-0 pb-14 md:pt-0 md:pb-16">
       {/* PAGE INTRODUCTION */}
-      <div className="mb-0 border-b border-foreground/15 pb-4">
-        <div className="mb-1 flex items-center justify-between">
-          <p className="eyebrow">PORTFOLIO</p>
-          <span className="font-mono text-xs text-muted-foreground">
-            SELECTED WORKS
-          </span>
-        </div>
+      <!-- Menambahkan max-w-md agar lebar maksimalnya terbatas -->
+      <div className="mb-0 border-b border-foreground/15 pb-4 max-w-md"> 
+        <div className="mt-2 mb-2 flex items-center justify-between"> 
+          <p className="eyebrow">PORTFOLIO</p> 
+          <span className="font-mono text-xs text-muted-foreground"> SELECTED WORKS </span> 
+        </div> 
       </div>
 
       {/* CATEGORY FILTER */}
