@@ -47,6 +47,7 @@ export interface Certificate {
   category: CertCategory;
   issuer: string;
   year: string;
+  cover?: string;
   description: string;
   image?: string;
   pdf?: string;
