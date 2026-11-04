@@ -91,7 +91,7 @@ function Portfolio() {
       <section className="mt-2">
         <div className="flex flex-wrap items-center justify-between gap-3">
           <p className="eyebrow">EXPLORE BY CATEGORY</p>
-          <span className="font-mono text-xs text-muted-foreground">
+          <span className="font-mono text-s text-muted-foreground">
             {filteredWorks.length}{" "}
             {filteredWorks.length === 1 ? "PROJECT" : "PROJECTS"}
           </span>
