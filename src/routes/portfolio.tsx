@@ -1,10 +1,11 @@
+
 import { createFileRoute, Outlet, useMatchRoute } from "@tanstack/react-router";
 import { useMemo, useState } from "react";
 import { works, workCategories } from "@/content/works";
 import { writings } from "@/content/writing";
 import type { Work } from "@/content/types";
 import { WorkCard } from "@/components/site/WorkCard";
-import { EmptyState, FilterBar, PageHeader } from "@/components/site/FilterBar";
+import { EmptyState, FilterBar } from "@/components/site/FilterBar";
 
 export const Route = createFileRoute("/portfolio")({
   head: () => ({
@@ -32,7 +33,7 @@ function Portfolio() {
   const matchRoute = useMatchRoute();
   const isDetail = matchRoute({ to: "/portfolio/$slug", fuzzy: true });
 
-  const [cat, setCat] =
+  const [category, setCategory] =
     useState<(typeof workCategories)[number]>("All Works");
 
   const portfolioWorks = useMemo<Work[]>(() => {
@@ -46,33 +47,29 @@ function Portfolio() {
       category: "Writing",
       year: writing.year,
       summary: writing.synopsis,
-      // Menggunakan portfolioCover jika diisi di file konten. 
-      // Jika tidak diisi, otomatis pakai cover utama (fallback).
-      cover: writing.portfolioCover || writing.cover, 
+      cover: writing.portfolioCover || writing.cover,
       placeholder: false,
     }));
 
     return [...writingWorks, ...otherWorks];
   }, []);
 
-  const list = useMemo(
+  const filteredWorks = useMemo(
     () =>
-      cat === "All Works"
+      category === "All Works"
         ? portfolioWorks
-        : portfolioWorks.filter((work) => work.category === cat),
-    [cat, portfolioWorks]
+        : portfolioWorks.filter((work) => work.category === category),
+    [category, portfolioWorks]
   );
 
   const counts = useMemo(
     () =>
       Object.fromEntries(
-        workCategories.map((category) => [
-          category,
-          category === "All Works"
+        workCategories.map((item) => [
+          item,
+          item === "All Works"
             ? portfolioWorks.length
-            : portfolioWorks.filter(
-                (work) => work.category === category
-              ).length,
+            : portfolioWorks.filter((work) => work.category === item).length,
         ])
       ),
     [portfolioWorks]
@@ -81,39 +78,74 @@ function Portfolio() {
   if (isDetail) return <Outlet />;
 
   return (
-    <>
-      <PageHeader
-        index="03 - Portfolio"
-        title="Selected works."
-        intro="A collection of writing, design, web and project work."
-      />
+    <main className="container-page pt-0 pb-14 md:pt-0 md:pb-16">
+      {/* PAGE INTRODUCTION */}
+      <div className="mb-8 border-b border-foreground/15 pb-4">
+        <div className="mb-3 flex items-center justify-between">
+          <p className="eyebrow">PORTFOLIO</p>
+          <span className="font-mono text-xs text-muted-foreground">
+            03 / SELECTED WORKS
+          </span>
+        </div>
 
-      <section className="container-page">
-        <FilterBar
-          options={workCategories}
-          value={cat}
-          onChange={setCat}
-          counts={counts}
-        />
+        <h1 className="text-5xl font-semibold tracking-tighter md:text-7xl">
+          Selected works<span className="text-accent">.</span>
+        </h1>
 
-        <div className="mt-12">
-          {list.length === 0 ? (
-            <EmptyState
-              title="Nothing here yet."
-              body="Works in this category will appear here once they're added."
-            />
-          ) : (
-            <div
-              key={cat}
-              className="grid gap-x-8 gap-y-14 sm:grid-cols-2 lg:grid-cols-3"
-            >
-              {list.map((work, index) => (
-                <WorkCard key={work.slug} work={work} index={index} />
-              ))}
-            </div>
-          )}
+        <p className="mt-4 max-w-xl text-sm leading-7 text-muted-foreground sm:text-base">
+          A collection of writing, design, web development, and creative
+          projects that reflect my interests and ongoing exploration.
+        </p>
+      </div>
+
+      {/* CATEGORY FILTER */}
+      <section>
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <p className="eyebrow">EXPLORE BY CATEGORY</p>
+          <span className="font-mono text-xs text-muted-foreground">
+            {filteredWorks.length}{" "}
+            {filteredWorks.length === 1 ? "PROJECT" : "PROJECTS"}
+          </span>
+        </div>
+
+        <div className="mt-4">
+          <FilterBar
+            options={workCategories}
+            value={category}
+            onChange={setCategory}
+            counts={counts}
+          />
         </div>
       </section>
-    </>
+
+      {/* WORKS GRID */}
+      <section className="mt-9">
+        {filteredWorks.length === 0 ? (
+          <EmptyState
+            title="Nothing here yet."
+            body="Works in this category will appear here once they're added."
+          />
+        ) : (
+          <div
+            key={category}
+            className="grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-3 lg:gap-y-14"
+          >
+            {filteredWorks.map((work, index) => (
+              <WorkCard key={work.slug} work={work} index={index} />
+            ))}
+          </div>
+        )}
+      </section>
+
+      {/* FOOTNOTE */}
+      <div className="mt-16 flex items-center justify-between border-t border-foreground/15 pt-4">
+        <p className="text-xs text-muted-foreground">
+          Selected works & creative explorations
+        </p>
+        <span className="font-mono text-xs text-muted-foreground">
+          AFD / {new Date().getFullYear()}
+        </span>
+      </div>
+    </main>
   );
 }
