@@ -13,7 +13,7 @@ export const writings: Writing[] = [
     excerpt:
       "Kekuasaan tidak selalu datang sebagai perintah. Kadang ia datang sebagai kebiasaan.",
     cover: "/wanita-kehilangan-kendali.png",
-    portfolioCover: "/desain-grafis.jpg",
+    portfolioCover: "/cover-buku-portofolio",
     pdf: "/sungguh-beruntung-wanita-hari-ini.pdf",
   },
 ];
