@@ -118,7 +118,7 @@ function Certificates() {
                         src={certificate.cover}
                         alt={`Cover of ${certificate.title}`}
                         loading="lazy"
-                        className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                        className="block h-auto w-full object-contain transition-transform duration-500 group-hover:scale-[1.02]"
                       />
                     </div>
                   </div>
