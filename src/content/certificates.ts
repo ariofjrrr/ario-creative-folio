@@ -19,6 +19,7 @@ export const certificates: Certificate[] = [
       "Karya di bidang ilmu pengetahuan berupa modul Mesin Pengering Padi Berbasis IoT, tercatat sebagai ciptaan berdasarkan Surat Pencatatan Ciptaan. Pencatatan ini menjadi bagian dari dokumentasi kekayaan intelektual dalam pengembangan teknologi pertanian.",
     image: "/haki-iot-rice-dryer.jpg",
     verification: "001070555",
+    cover: "/cover-hki.png",
     placeholder: false,
   },
   {
@@ -31,6 +32,7 @@ export const certificates: Certificate[] = [
       "Meraih Medali Emas pada ajang National Heroes Competition (NHC) 2024 dalam bidang Fisika, tingkat perguruan tinggi, dengan predikat A+. Kompetisi tingkat nasional ini diselenggarakan pada 3 November 2024 di Sumatera Utara.",
     image: "/piag-fisika-nhc-2024.jpg",
     verification: "1632470/BHM-FOSNAS/NHC-P/XI/2024",
+    cover: "/cover-nhc.png",
     placeholder: false,
   },
 
