@@ -27,6 +27,7 @@ export interface Writing {
   synopsis: string;
   status: WritingStatus;
   cover?: string;
+  portfolioCover?: string;
   excerpt?: string; // only publicly permitted excerpt
   pdf?: string;
   link?: string;
