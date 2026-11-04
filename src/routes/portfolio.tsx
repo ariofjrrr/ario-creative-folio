@@ -1,4 +1,3 @@
-
 import { createFileRoute, Outlet, useMatchRoute } from "@tanstack/react-router";
 import { useMemo, useState } from "react";
 import { works, workCategories } from "@/content/works";
@@ -41,15 +40,25 @@ function Portfolio() {
       (work) => work.category !== "Writing"
     );
 
-    const writingWorks: Work[] = writings.map((writing) => ({
-      slug: writing.slug,
-      title: writing.title,
-      category: "Writing",
-      year: writing.year,
-      summary: writing.synopsis,
-      cover: writing.cover,
-      placeholder: false,
-    }));
+    const writingWorks: Work[] = writings.map((writing) => {
+      // Menyelipkan kata '-portfolio' sebelum ekstensi file gambar
+      // Contoh: '/desain.jpg' otomatis diubah menjadi '/desain-portfolio.jpg'
+      const lastDotIndex = writing.cover.lastIndexOf(".");
+      const customPortfolioCover = 
+        lastDotIndex !== -1
+          ? `${writing.cover.substring(0, lastDotIndex)}-portfolio${writing.cover.substring(lastDotIndex)}`
+          : writing.cover;
+
+      return {
+        slug: writing.slug,
+        title: writing.title,
+        category: "Writing",
+        year: writing.year,
+        summary: writing.synopsis,
+        cover: customPortfolioCover, 
+        placeholder: false,
+      };
+    });
 
     return [...writingWorks, ...otherWorks];
   }, []);
