@@ -35,7 +35,7 @@ export function EmptyState({ title, body }: { title: string; body?: string }) {
 
 export function PageHeader({ index, title, intro }: { index: string; title: string; intro?: string }) {
   return (
-    <header className="container-page fade-up pb-0 pt-6 md:pb-0 md:pt-8">
+    <header className="container-page fade-up pb-0 pt-4 md:pb-0 md:pt-6">
       <p className="eyebrow">{index}</p>
       <h1 className="mt-2 text-5xl font-semibold tracking-tighter md:text-7xl">{title}</h1>
       {intro && <p className="mt-5 max-w-xl text-lg text-muted-foreground">{intro}</p>}
