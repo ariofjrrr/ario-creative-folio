@@ -33,7 +33,6 @@ function Certificates() {
     useState<(typeof certCategories)[number]>("All");
   const [open, setOpen] = useState<Certificate | null>(null);
 
-  // FILTERED CERTIFICATES
   const filteredCertificates = useMemo(
     () =>
       category === "All"
@@ -44,7 +43,6 @@ function Certificates() {
     [category]
   );
 
-  // CATEGORY COUNTS
   const counts = useMemo(
     () =>
       Object.fromEntries(
@@ -74,7 +72,7 @@ function Certificates() {
         </div>
 
         {/* CATEGORY FILTER */}
-        <section className="mt-4">
+        <section className="mt-1">
           <div className="flex flex-wrap items-center justify-between gap-3">
             <p className="eyebrow">EXPLORE BY CATEGORY</p>
             <span className="font-mono text-xs text-muted-foreground">
@@ -110,29 +108,93 @@ function Certificates() {
                   key={certificate.id}
                   type="button"
                   onClick={() => setOpen(certificate)}
+                  aria-label={`View certificate: ${certificate.title}`}
                   className="group fade-up text-left"
                   style={{ animationDelay: `${index * 60}ms` }}
                 >
-                  <div className="aspect-[1.414/1] overflow-hidden border border-foreground/15 bg-muted">
-                    <div className="h-full w-full transition-transform duration-500 group-hover:scale-[1.03]">
-                      <img
-                        src={certificate.image}
-                        alt={certificate.title}
-                        loading="lazy"
-                        className="block h-full w-full object-contain"
+                  {/* CUSTOM CERTIFICATE COVER */}
+                  <div className="relative aspect-[1.414/1] overflow-hidden border border-foreground/15 bg-muted p-5 sm:p-6">
+                    <div className="relative flex h-full flex-col justify-between overflow-hidden">
+                      {/* DECORATIVE BACKGROUND */}
+                      <div
+                        aria-hidden="true"
+                        className="pointer-events-none absolute -right-10 -top-14 h-44 w-44 rounded-full border border-foreground/10 transition-transform duration-700 group-hover:scale-110"
                       />
+                      <div
+                        aria-hidden="true"
+                        className="pointer-events-none absolute -right-3 -top-7 h-28 w-28 rounded-full border border-foreground/10"
+                      />
+
+                      {/* COVER HEADER */}
+                      <div className="relative flex items-center justify-between border-b border-foreground/15 pb-3">
+                        <span className="font-mono text-[10px] tracking-[0.2em] text-muted-foreground">
+                          AFD / CREDENTIALS
+                        </span>
+
+                        <span className="font-mono text-[10px] text-muted-foreground">
+                          {String(index + 1).padStart(2, "0")}
+                        </span>
+                      </div>
+
+                      {/* COVER CONTENT */}
+                      <div className="relative py-3">
+                        <p className="mb-3 font-mono text-[10px] uppercase tracking-[0.18em] text-accent">
+                          {certificate.category}
+                        </p>
+
+                        <h3 className="max-w-[90%] text-xl font-semibold leading-tight tracking-[-0.04em] sm:text-2xl">
+                          {certificate.title}
+                          <span className="text-accent">.</span>
+                        </h3>
+
+                        {certificate.issuer && (
+                          <p className="mt-3 line-clamp-1 text-xs text-muted-foreground">
+                            {certificate.issuer}
+                          </p>
+                        )}
+                      </div>
+
+                      {/* COVER FOOTER */}
+                      <div className="relative flex items-end justify-between border-t border-foreground/15 pt-3">
+                        <div>
+                          <p className="font-mono text-[9px] tracking-[0.16em] text-muted-foreground">
+                            CERTIFICATE RECORD
+                          </p>
+                          {certificate.year && (
+                            <p className="mt-1 text-xs font-medium">
+                              {certificate.year}
+                            </p>
+                          )}
+                        </div>
+
+                        <span className="flex items-center gap-2 text-[10px] font-medium uppercase tracking-wider transition-colors group-hover:text-accent">
+                          View
+                          <span className="text-sm transition-transform duration-300 group-hover:translate-x-1">
+                            ↗
+                          </span>
+                        </span>
+                      </div>
                     </div>
                   </div>
 
-                  <h3 className="mt-4 font-semibold tracking-tight transition-colors group-hover:text-accent">
-                    {certificate.title}
-                  </h3>
+                  {/* CERTIFICATE INFORMATION */}
+                  <div className="mt-4 flex items-start justify-between gap-3">
+                    <div className="min-w-0">
+                      <h3 className="font-semibold tracking-tight transition-colors group-hover:text-accent">
+                        {certificate.title}
+                      </h3>
 
-                  <p className="mt-1 text-sm text-muted-foreground">
-                    {[certificate.issuer, certificate.year]
-                      .filter(Boolean)
-                      .join(" · ") || certificate.category}
-                  </p>
+                      <p className="mt-1 text-sm text-muted-foreground">
+                        {[certificate.issuer, certificate.year]
+                          .filter(Boolean)
+                          .join(" · ") || certificate.category}
+                      </p>
+                    </div>
+
+                    <span className="mt-1 shrink-0 text-sm text-muted-foreground transition-transform duration-300 group-hover:translate-x-1 group-hover:text-accent">
+                      ↗
+                    </span>
+                  </div>
                 </button>
               ))}
             </div>
@@ -150,7 +212,7 @@ function Certificates() {
         </div>
       </main>
 
-      {/* CERTIFICATE LIGHTBOX */}
+      {/* ORIGINAL CERTIFICATE LIGHTBOX */}
       {open && (
         <Lightbox
           src={open.image}
