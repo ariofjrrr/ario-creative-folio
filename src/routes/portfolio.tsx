@@ -88,8 +88,8 @@ function Portfolio() {
       </div>
 
       {/* CATEGORY FILTER */}
-      <section className="mt-2">
-        <div className="text-l flex flex-wrap items-center justify-between gap-3">
+      <section className="mt-4">
+        <div className="flex flex-wrap items-center justify-between gap-3">
           <p className="eyebrow">EXPLORE BY CATEGORY</p>
           <span className="font-mono text-xs text-muted-foreground">
             {filteredWorks.length}{" "}
@@ -108,7 +108,7 @@ function Portfolio() {
       </section>
 
       {/* WORKS GRID */}
-      <section className="mt-9">
+      <section className="mt-7">
         {filteredWorks.length === 0 ? (
           <EmptyState
             title="Nothing here yet."
