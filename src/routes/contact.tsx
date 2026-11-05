@@ -60,7 +60,8 @@ function Contact() {
               <br />
               something
               <br />
-              <span className="text-muted-foreground">meaningful.</span>
+              <span className="text-muted-foreground">meaningful</span>
+              <span className="text-accent">.</span>
             </h1>
           </div>
 
