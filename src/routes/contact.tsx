@@ -60,6 +60,7 @@ function Contact() {
               something
               <br />
               meaningful
+              <span className="text-accent">.</span>
             </h1>
           </div>
 
