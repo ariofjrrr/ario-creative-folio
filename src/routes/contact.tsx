@@ -72,52 +72,50 @@ function Contact() {
         </div>
       </section>
 
-      {/* CONTACT */}
-      <section className="grid gap-10 py-12 md:grid-cols-12 md:py-16">
-        <div className="md:col-span-4">
-          <p className="eyebrow">FIND ME HERE</p>
-          <h2 className="mt-3 text-2xl font-semibold tracking-tight">
-            Let's connect.
-          </h2>
-          <p className="mt-3 max-w-xs text-sm leading-relaxed text-muted-foreground">
-            Choose your preferred platform. I'm looking forward to hearing
-            from you.
-          </p>
+      
+      {/* CONTACT LINKS */}
+      <section className="py-14 md:py-20">
+        <div className="mb-8 flex items-end justify-between">
+          <div>
+            <p className="eyebrow">CONTACT DIRECTORY</p>
+            <h2 className="mt-2 text-2xl font-semibold tracking-tight">
+              Find me across the web.
+            </h2>
+          </div>
+          <span className="hidden font-mono text-xs text-muted-foreground sm:block">
+            {String(links.length).padStart(2, "0")} PLATFORMS
+          </span>
         </div>
 
-        <div className="md:col-span-8">
-          {links.length === 0 ? (
-            <p className="py-8 text-sm text-muted-foreground">
-              Contact details will be available soon.
-            </p>
-          ) : (
-            links.map((link, index) => (
-              <a
-                key={link.label}
-                href={link.href}
-                target="_blank"
-                rel="noreferrer"
-                className="group flex items-center justify-between gap-5 border-b border-foreground/15 py-5 first:border-t transition-colors hover:text-accent"
-              >
-                <div className="flex min-w-0 items-center gap-5">
-                  <span className="font-mono text-xs text-muted-foreground">
-                    0{index + 1}
-                  </span>
-
-                  <div className="min-w-0">
-                    <p className="eyebrow">{link.label}</p>
-                    <p className="mt-1 truncate text-base font-medium md:text-lg">
-                      {link.value}
-                    </p>
-                  </div>
-                </div>
-
-                <span className="shrink-0 text-lg transition-transform group-hover:translate-x-1">
-                  ↗
+        <div className="grid gap-3 sm:grid-cols-2">
+          {links.map((link, index) => (
+            <a
+              key={link.label}
+              href={link.href}
+              target="_blank"
+              rel="noreferrer"
+              className="group flex min-w-0 items-center justify-between gap-4 border border-foreground/15 p-5 transition-all duration-300 hover:border-foreground hover:bg-foreground hover:text-background md:p-6"
+            >
+              <div className="flex min-w-0 items-center gap-4">
+                <span className="font-mono text-xs text-muted-foreground transition-colors group-hover:text-background/60">
+                  {String(index + 1).padStart(2, "0")}
                 </span>
-              </a>
-            ))
-          )}
+
+                <div className="min-w-0">
+                  <p className="text-sm font-semibold tracking-tight">
+                    {link.label}
+                  </p>
+                  <p className="mt-1 truncate text-xs text-muted-foreground transition-colors group-hover:text-background/65 md:text-sm">
+                    {link.value}
+                  </p>
+                </div>
+              </div>
+
+              <span className="flex size-9 shrink-0 items-center justify-center rounded-full border border-foreground/15 text-sm transition-all duration-300 group-hover:translate-x-1 group-hover:border-background/40">
+                ↗
+              </span>
+            </a>
+          ))}
         </div>
       </section>
 
