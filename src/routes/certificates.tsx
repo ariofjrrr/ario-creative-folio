@@ -121,7 +121,7 @@ function Certificates() {
                     />
                   </div>
                   <div className="mt-13 border-t border-foreground/15 pt-3">
-                    <h3 className="mt-2 font-semibold tracking-tight transition-colors group-hover:text-accent">
+                    <h3 className="mt-1 font-semibold tracking-tight transition-colors group-hover:text-accent">
                       {certificate.title}
                     </h3>
 
