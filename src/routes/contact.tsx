@@ -14,7 +14,7 @@ import {
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact - Ario Fajar Dharmawan" },
+      { title: "Contact - AFD" },
       {
         name: "description",
         content:
@@ -44,13 +44,13 @@ function Contact() {
         <div className="mt-2 mb-3 flex items-center justify-between">
           <p className="eyebrow">CONTACT</p>
           <span className="font-mono text-xs text-muted-foreground">
-            06 / SAY HELLO
+            SAY HELLO
           </span>
         </div>
       </div>
 
       {/* HERO */}
-      <section className="relative overflow-hidden border-b border-foreground/15 py-16 md:py-24">
+      <section className="mb-15 relative overflow-hidden border-b border-foreground/15 py-16 md:py-24">
         <div className="flex flex-col justify-between gap-10 md:flex-row md:items-end">
           <div className="max-w-4xl">
             <p className="eyebrow mb-6">THE NEXT STEP STARTS HERE</p>
