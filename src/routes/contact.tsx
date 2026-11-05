@@ -1,4 +1,3 @@
-
 import { createFileRoute } from "@tanstack/react-router";
 import { site, socialLinks } from "@/content/site";
 import {
@@ -40,7 +39,7 @@ function Contact() {
   return (
     <main className="container-page fade-up pt-0 pb-14 md:pb-16">
       {/* HEADER */}
-      <div className="mt-2 border-b border-foreground/15">
+      <div className="border-b border-foreground/15">
         <div className="mt-2 mb-3 flex items-center justify-between">
           <p className="eyebrow">CONTACT</p>
           <span className="font-mono text-xs text-muted-foreground">
@@ -50,10 +49,10 @@ function Contact() {
       </div>
 
       {/* HERO */}
-      <section className="relative overflow-hidden border-b border-foreground/15 py-16 md:py-24">
+      <section className="mb-15 relative overflow-hidden border-b border-foreground/15 py-16 md:py-24">
         <div className="flex flex-col justify-between gap-10 md:flex-row md:items-end">
           <div className="max-w-4xl">
-            <p className="eyebrow mb-4">THE NEXT STEP STARTS HERE</p>
+            <p className="eyebrow mb-6">THE NEXT STEP STARTS HERE</p>
 
             <h1 className="text-5xl font-semibold leading-[0.98] tracking-[-0.065em] md:text-8xl">
               Let's make
@@ -61,7 +60,6 @@ function Contact() {
               something
               <br />
               meaningful
-              <span className="text-accent">.</span>
             </h1>
           </div>
 
@@ -71,10 +69,10 @@ function Contact() {
               interested in connecting with people who value good ideas and
               thoughtful work.
             </p>
-          </div> 
+          </div>
         </div>
 
-        <div className="mt-10 flex items-center justify-between border-t border-foreground/15 pt-4">
+        <div className="mt-12 flex items-center justify-between border-t border-foreground/15 pt-4">
           <span className="eyebrow">CREATIVE / DIGITAL / COMMUNICATION</span>
           <span className="font-mono text-xs text-muted-foreground">
             MALANG, INDONESIA
@@ -85,10 +83,10 @@ function Contact() {
       
       {/* CONTACT LINKS */}
       <section className="py-14 md:py-20">
-        <div className="mb-4 flex items-end justify-between">
+        <div className="mb-8 flex items-end justify-between">
           <div>
             <p className="eyebrow">CONNECT</p>
-            <h2 className="text-2xl font-semibold tracking-tight">
+            <h2 className="mt-2 text-2xl font-semibold tracking-tight">
               Find me across the web.
             </h2>
           </div>
