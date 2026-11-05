@@ -71,7 +71,7 @@ function Contact() {
               interested in connecting with people who value good ideas and
               thoughtful work.
             </p>
-          </div>
+          </div> 
         </div>
 
         <div className="mt-12 flex items-center justify-between border-t border-foreground/15 pt-4">
