@@ -37,8 +37,13 @@ export function WorkCard({
             <span className="font-mono text-xs text-muted-foreground">
               {work.year}
             </span>
-          )}
+          )}    
         </div>
+        <span className="mt-3 inline-flex items-center gap-1 text-sm font-medium">
+          {work.category === "Writing" ? "View Writing" : "View Project"}
+          <span className="transition-transform group-hover:translate-x-1 group-hover:text-accent">
+          </span>
+        </span>
       </div>
     </>
   );
