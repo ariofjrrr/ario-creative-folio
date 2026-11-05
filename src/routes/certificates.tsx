@@ -120,7 +120,7 @@ function Certificates() {
                       className="block h-auto w-full object-contain transition-transform duration-500 group-hover:scale-[1.02]"
                     />
                   </div>
-                  <div className="mt-15 border-t border-foreground/15 pt-3">
+                  <div className="mt-12 border-t border-foreground/15 pt-3">
                     <h3 className="mt-4 font-semibold tracking-tight transition-colors group-hover:text-accent">
                       {certificate.title}
                     </h3>
