@@ -55,7 +55,7 @@ function Contact() {
           <div className="max-w-4xl">
             <p className="eyebrow mb-4">THE NEXT STEP STARTS HERE</p>
 
-            <h1 className="mb-8 text-5xl font-semibold leading-[0.98] tracking-[-0.065em] md:text-8xl">
+            <h1 className="mb-10 text-5xl font-semibold leading-[0.98] tracking-[-0.065em] md:text-8xl">
               Let's make
               <br />
               something
