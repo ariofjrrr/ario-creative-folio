@@ -50,7 +50,7 @@ function Contact() {
       </div>
 
       {/* HERO */}
-      <section className="mt-2 mb-6 relative overflow-hidden border-b border-foreground/15 py-16 md:py-24">
+      <section className="mb-6 relative overflow-hidden border-b border-foreground/15 py-16 md:py-24">
         <div className="flex flex-col justify-between gap-10 md:flex-row md:items-end">
           <div className="max-w-4xl">
             <p className="eyebrow mb-6">THE NEXT STEP STARTS HERE</p>
@@ -74,7 +74,7 @@ function Contact() {
           </div> 
         </div>
 
-        <div className="mt-6 flex items-center justify-between border-t border-foreground/15 pt-4">
+        <div className="flex items-center justify-between border-t border-foreground/15 pt-4">
           <span className="eyebrow">CREATIVE / DIGITAL / COMMUNICATION</span>
           <span className="font-mono text-xs text-muted-foreground">
             MALANG, INDONESIA
@@ -88,7 +88,7 @@ function Contact() {
         <div className="mb-6 flex items-end justify-between">
           <div>
             <p className="eyebrow">CONNECT</p>
-            <h2 className="mt-2 text-2xl font-semibold tracking-tight">
+            <h2 className="text-2xl font-semibold tracking-tight">
               Find me across the web.
             </h2>
           </div>
