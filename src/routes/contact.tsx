@@ -65,7 +65,7 @@ function Contact() {
             </h1>
           </div>
 
-          <div className="mb-4 max-w-xs pb-2 md:pb-3">
+          <div className="max-w-xs pb-2 md:pb-3">
             <p className="text-sm leading-relaxed text-muted-foreground md:text-base">
               Have an idea, a project, or an opportunity in mind? I'm always
               interested in connecting with people who value good ideas and
@@ -85,7 +85,7 @@ function Contact() {
       
       {/* CONTACT LINKS */}
       <section className="py-14 md:py-20">
-        <div className="mb-6 flex items-end justify-between">
+        <div className="flex items-end justify-between">
           <div>
             <p className="eyebrow">CONNECT</p>
             <h2 className="text-2xl font-semibold tracking-tight">
