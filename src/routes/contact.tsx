@@ -51,9 +51,9 @@ function Contact() {
 
       {/* HERO */}
       <section className="relative overflow-hidden border-b border-foreground/15 py-16 md:py-24">
-        <div className="mb-6 flex flex-col justify-between gap-10 md:flex-row md:items-end">
+        <div className="flex flex-col justify-between gap-10 md:flex-row md:items-end">
           <div className="max-w-4xl">
-            <p className="eyebrow mb-6">THE NEXT STEP STARTS HERE</p>
+            <p className="eyebrow mb-4">THE NEXT STEP STARTS HERE</p>
 
             <h1 className="mb-8 text-5xl font-semibold leading-[0.98] tracking-[-0.065em] md:text-8xl">
               Let's make
