@@ -93,7 +93,7 @@ function Certificates() {
         </section>
 
         {/* CERTIFICATES GRID */}
-        <section className="mt-9">
+        <section className="mt-15">
           {filteredCertificates.length === 0 ? (
             <EmptyState
               title="Nothing here yet."
