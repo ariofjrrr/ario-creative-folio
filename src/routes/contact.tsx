@@ -40,7 +40,7 @@ function Contact() {
   return (
     <main className="container-page fade-up pt-0 pb-14 md:pb-16">
       {/* HEADER */}
-      <div className="border-b border-foreground/15">
+      <div className="mt-2 border-b border-foreground/15">
         <div className="mt-2 mb-3 flex items-center justify-between">
           <p className="eyebrow">CONTACT</p>
           <span className="font-mono text-xs text-muted-foreground">
