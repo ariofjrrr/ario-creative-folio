@@ -55,7 +55,7 @@ function Contact() {
           <div className="max-w-4xl">
             <p className="eyebrow mb-4">THE NEXT STEP STARTS HERE</p>
 
-            <h1 className="mb-10 text-5xl font-semibold leading-[0.98] tracking-[-0.065em] md:text-8xl">
+            <h1 className="mb-6 text-5xl font-semibold leading-[0.98] tracking-[-0.065em] md:text-8xl">
               Let's make
               <br />
               something
@@ -65,7 +65,7 @@ function Contact() {
             </h1>
           </div>
 
-          <div className="max-w-xs pb-2 md:pb-3">
+          <div className="mb-4 max-w-xs pb-2 md:pb-3">
             <p className="text-sm leading-relaxed text-muted-foreground md:text-base">
               Have an idea, a project, or an opportunity in mind? I'm always
               interested in connecting with people who value good ideas and
