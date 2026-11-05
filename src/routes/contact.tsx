@@ -71,53 +71,58 @@ function Contact() {
           </span>
         </div>
       </section>
-
-      
+ 
       {/* CONTACT LINKS */}
       <section className="py-14 md:py-20">
         <div className="mb-8 flex items-end justify-between">
           <div>
-            <p className="eyebrow">CONTACT DIRECTORY</p>
+            <p className="eyebrow">CONNECT</p>
             <h2 className="mt-2 text-2xl font-semibold tracking-tight">
               Find me across the web.
             </h2>
           </div>
-          <span className="hidden font-mono text-xs text-muted-foreground sm:block">
+          <span className="font-mono text-xs text-muted-foreground">
             {String(links.length).padStart(2, "0")} PLATFORMS
           </span>
         </div>
-
+      
         <div className="grid gap-3 sm:grid-cols-2">
-          {links.map((link, index) => (
-            <a
-              key={link.label}
-              href={link.href}
-              target="_blank"
-              rel="noreferrer"
-              className="group flex min-w-0 items-center justify-between gap-4 border border-foreground/15 p-5 transition-all duration-300 hover:border-foreground hover:bg-foreground hover:text-background md:p-6"
-            >
-              <div className="flex min-w-0 items-center gap-4">
-                <span className="font-mono text-xs text-muted-foreground transition-colors group-hover:text-background/60">
-                  {String(index + 1).padStart(2, "0")}
-                </span>
-
-                <div className="min-w-0">
-                  <p className="text-sm font-semibold tracking-tight">
-                    {link.label}
-                  </p>
-                  <p className="mt-1 truncate text-xs text-muted-foreground transition-colors group-hover:text-background/65 md:text-sm">
-                    {link.value}
-                  </p>
+          {links.map((link) => {
+            const label = link.label.toLowerCase();
+      
+            const icon =
+              label.includes("instagram") ? "instagram" :
+              label.includes("linkedin") ? "linkedin" :
+              label.includes("github") ? "github" :
+              label.includes("email") || label.includes("mail") ? "mail" :
+              label.includes("whatsapp") ? "message-circle" :
+              "globe";
+      
+            return (
+              <a
+                key={link.label}
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={link.label}
+                className="group flex items-center justify-between gap-4 border border-foreground/15 p-5 transition-all duration-300 hover:border-foreground hover:bg-foreground hover:text-background"
+              >
+                <div className="flex items-center gap-4">
+                  <icon className="flex size-10 items-center justify-center border border-foreground/15 transition-colors group-hover:border-background/30">
+                    <span className="text-lg">{/* icon placeholder */}</span>
+                  </icon>
+                  <span className="font-medium">{link.label}</span>
                 </div>
-              </div>
-
-              <span className="flex size-9 shrink-0 items-center justify-center rounded-full border border-foreground/15 text-sm transition-all duration-300 group-hover:translate-x-1 group-hover:border-background/40">
-                ↗
-              </span>
-            </a>
-          ))}
+      
+                <span className="text-lg transition-transform group-hover:translate-x-1">
+                  ↗
+                </span>
+              </a>
+            );
+          })}
         </div>
       </section>
+
 
       {/* WHATSAPP CTA */}
       {wa && (
