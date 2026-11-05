@@ -55,7 +55,7 @@ function Contact() {
           <div className="max-w-4xl">
             <p className="eyebrow mb-4">THE NEXT STEP STARTS HERE</p>
 
-            <h1 className="mb-6 text-5xl font-semibold leading-[0.98] tracking-[-0.065em] md:text-8xl">
+            <h1 className="text-5xl font-semibold leading-[0.98] tracking-[-0.065em] md:text-8xl">
               Let's make
               <br />
               something
@@ -74,7 +74,7 @@ function Contact() {
           </div> 
         </div>
 
-        <div className="flex items-center justify-between border-t border-foreground/15 pt-4">
+        <div className="mt-10 flex items-center justify-between border-t border-foreground/15 pt-4">
           <span className="eyebrow">CREATIVE / DIGITAL / COMMUNICATION</span>
           <span className="font-mono text-xs text-muted-foreground">
             MALANG, INDONESIA
@@ -85,7 +85,7 @@ function Contact() {
       
       {/* CONTACT LINKS */}
       <section className="py-14 md:py-20">
-        <div className="flex items-end justify-between">
+        <div className="mb-4 flex items-end justify-between">
           <div>
             <p className="eyebrow">CONNECT</p>
             <h2 className="text-2xl font-semibold tracking-tight">
