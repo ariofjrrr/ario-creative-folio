@@ -113,29 +113,33 @@ function Contact() {
                       : Globe;
       
             return (
+              
               <a
                 key={link.label}
                 href={link.href}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={link.label}
-                className="group flex items-center justify-between gap-4 border border-foreground/15 p-5 transition-all duration-300 hover:border-foreground hover:bg-foreground hover:text-background"
+                className="group flex items-center justify-between gap-4 border border-foreground/15 bg-background p-5 text-foreground transition-all duration-300 hover:border-foreground hover:bg-foreground hover:text-background"
               >
                 <div className="flex items-center gap-4">
                   <Icon
                     size={21}
                     strokeWidth={1.6}
-                    className="shrink-0 transition-transform duration-300 group-hover:scale-110"
+                    className="shrink-0 text-foreground transition-colors duration-300 group-hover:text-background"
                   />
-                  <span className="font-medium">{link.label}</span>
+                  <span className="font-medium text-foreground transition-colors duration-300 group-hover:text-background">
+                    {link.label}
+                  </span>
                 </div>
-      
+              
                 <ArrowUpRight
                   size={18}
                   strokeWidth={1.5}
-                  className="shrink-0 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
+                  className="shrink-0 text-muted-foreground transition-all duration-300 group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:text-background"
                 />
               </a>
+
             );
           })}
         </div>
