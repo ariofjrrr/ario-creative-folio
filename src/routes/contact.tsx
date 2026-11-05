@@ -9,7 +9,7 @@ export const Route = createFileRoute("/contact")({
       {
         name: "description",
         content:
-          "Let's connect and create something meaningful through design, writing, and digital projects.",
+          "Get in touch for creative collaborations, design, writing, and digital projects.",
       },
       {
         property: "og:title",
@@ -17,7 +17,7 @@ export const Route = createFileRoute("/contact")({
       },
       {
         property: "og:description",
-        content: "Let's connect and create something meaningful.",
+        content: "Ideas are better when shared.",
       },
     ],
   }),
@@ -29,119 +29,127 @@ function Contact() {
   const wa = site.contact.whatsapp;
 
   return (
-    <main className="container-page fade-up pt-0 pb-14 md:pt-0 md:pb-16">
-      {/* PAGE HEADER */}
+    <main className="container-page fade-up pt-0 pb-14 md:pb-16">
+      {/* HEADER */}
       <div className="border-b border-foreground/15">
         <div className="mt-2 mb-3 flex items-center justify-between">
           <p className="eyebrow">CONTACT</p>
           <span className="font-mono text-xs text-muted-foreground">
-            LET'S CONNECT
+            06 / SAY HELLO
           </span>
         </div>
       </div>
 
       {/* HERO */}
-      <section className="grid gap-8 py-14 md:grid-cols-12 md:gap-8 md:py-20">
-        <div className="md:col-span-8">
-          <p className="eyebrow mb-5">HAVE SOMETHING IN MIND?</p>
+      <section className="relative overflow-hidden border-b border-foreground/15 py-16 md:py-24">
+        <div className="flex flex-col justify-between gap-10 md:flex-row md:items-end">
+          <div className="max-w-4xl">
+            <p className="eyebrow mb-6">THE NEXT STEP STARTS HERE</p>
 
-          <h1 className="max-w-4xl text-4xl font-semibold leading-[1.08] tracking-tighter md:text-7xl">
-            Good ideas start with a{" "}
-            <span className="text-muted-foreground">conversation.</span>
-          </h1>
+            <h1 className="text-5xl font-semibold leading-[0.98] tracking-[-0.065em] md:text-8xl">
+              Let's make
+              <br />
+              something
+              <br />
+              <span className="text-muted-foreground">meaningful.</span>
+            </h1>
+          </div>
+
+          <div className="max-w-xs pb-2 md:pb-3">
+            <p className="text-sm leading-relaxed text-muted-foreground md:text-base">
+              Have an idea, a project, or an opportunity in mind? I'm always
+              interested in connecting with people who value good ideas and
+              thoughtful work.
+            </p>
+          </div>
         </div>
 
-        <div className="flex flex-col justify-end md:col-span-4">
-          <p className="max-w-sm text-base leading-relaxed text-muted-foreground">
-            Whether you have a project to develop, a story to tell, or an idea
-            worth exploring, I'd be glad to hear from you.
-          </p>
-
-          <p className="mt-5 text-sm font-medium">
-            Open to creative collaborations, freelance work, and meaningful
-            opportunities.
-          </p>
+        <div className="mt-12 flex items-center justify-between border-t border-foreground/15 pt-4">
+          <span className="eyebrow">CREATIVE / DIGITAL / COMMUNICATION</span>
+          <span className="font-mono text-xs text-muted-foreground">
+            MALANG, INDONESIA
+          </span>
         </div>
       </section>
 
-      {/* CONTACT DETAILS */}
-      <section className="border-t border-foreground/15">
-        <div className="grid gap-6 py-7 md:grid-cols-12">
-          <div className="md:col-span-4">
-            <p className="eyebrow">GET IN TOUCH</p>
-            <p className="mt-2 text-sm text-muted-foreground">
-              Find me through these platforms.
-            </p>
-          </div>
+      {/* CONTACT */}
+      <section className="grid gap-10 py-12 md:grid-cols-12 md:py-16">
+        <div className="md:col-span-4">
+          <p className="eyebrow">FIND ME HERE</p>
+          <h2 className="mt-3 text-2xl font-semibold tracking-tight">
+            Let's connect.
+          </h2>
+          <p className="mt-3 max-w-xs text-sm leading-relaxed text-muted-foreground">
+            Choose your preferred platform. I'm looking forward to hearing
+            from you.
+          </p>
+        </div>
 
-          <div className="md:col-span-8">
-            {links.length === 0 ? (
-              <p className="py-4 text-muted-foreground">
-                Contact details will be available soon.
-              </p>
-            ) : (
-              links.map((l, index) => (
-                <a
-                  key={l.label}
-                  href={l.href}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="group grid grid-cols-[2rem_6rem_minmax(0,1fr)_auto] items-center gap-3 border-b border-foreground/15 py-5 first:border-t md:grid-cols-[2.5rem_8rem_minmax(0,1fr)_auto] md:gap-4"
-                >
+        <div className="md:col-span-8">
+          {links.length === 0 ? (
+            <p className="py-8 text-sm text-muted-foreground">
+              Contact details will be available soon.
+            </p>
+          ) : (
+            links.map((link, index) => (
+              <a
+                key={link.label}
+                href={link.href}
+                target="_blank"
+                rel="noreferrer"
+                className="group flex items-center justify-between gap-5 border-b border-foreground/15 py-5 first:border-t transition-colors hover:text-accent"
+              >
+                <div className="flex min-w-0 items-center gap-5">
                   <span className="font-mono text-xs text-muted-foreground">
                     0{index + 1}
                   </span>
 
-                  <span className="eyebrow">{l.label}</span>
+                  <div className="min-w-0">
+                    <p className="eyebrow">{link.label}</p>
+                    <p className="mt-1 truncate text-base font-medium md:text-lg">
+                      {link.value}
+                    </p>
+                  </div>
+                </div>
 
-                  <span className="truncate text-base font-medium transition-colors group-hover:text-accent md:text-lg">
-                    {l.value}
-                  </span>
-
-                  <span className="text-muted-foreground transition-all group-hover:translate-x-1 group-hover:text-accent">
-                    ↗
-                  </span>
-                </a>
-              ))
-            )}
-          </div>
+                <span className="shrink-0 text-lg transition-transform group-hover:translate-x-1">
+                  ↗
+                </span>
+              </a>
+            ))
+          )}
         </div>
       </section>
 
-      {/* DIRECT MESSAGE */}
+      {/* WHATSAPP CTA */}
       {wa && (
-        <section className="mt-12 border border-foreground/15 p-6 md:mt-16 md:p-10">
-          <div className="flex flex-col justify-between gap-7 md:flex-row md:items-end">
-            <div className="max-w-xl">
-              <p className="eyebrow">PREFER A DIRECT CONVERSATION?</p>
+        <section className="bg-primary px-6 py-10 text-primary-foreground md:px-12 md:py-14">
+          <div className="flex flex-col justify-between gap-8 md:flex-row md:items-end">
+            <div>
+              <p className="eyebrow opacity-70">HAVE A PROJECT IN MIND?</p>
 
-              <h2 className="mt-3 text-2xl font-semibold tracking-tight md:text-3xl">
-                Let's talk about your next idea.
+              <h2 className="mt-4 max-w-2xl text-3xl font-semibold tracking-tight md:text-5xl">
+                Your idea deserves a conversation.
               </h2>
-
-              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                Send me a message and tell me a little about what you're
-                working on.
-              </p>
             </div>
 
             <a
               href={`https://wa.me/${wa}`}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex shrink-0 items-center justify-center gap-3 bg-primary px-6 py-4 text-sm font-medium text-primary-foreground transition-colors hover:bg-accent"
+              className="inline-flex w-fit items-center gap-5 border border-primary-foreground/40 px-6 py-4 text-sm font-medium transition-colors hover:bg-primary-foreground hover:text-primary"
             >
-              Start a conversation
+              Chat on WhatsApp
               <span>↗</span>
             </a>
           </div>
         </section>
       )}
 
-      {/* FOOTNOTE */}
-      <div className="mt-16 flex items-center justify-between border-t border-foreground/15 pt-4">
+      {/* FOOTER */}
+      <div className="mt-12 flex items-center justify-between border-t border-foreground/15 pt-4">
         <p className="text-xs text-muted-foreground">
-          Thanks for stopping by.
+          Thanks for being here.
         </p>
 
         <span className="font-mono text-xs text-muted-foreground">
