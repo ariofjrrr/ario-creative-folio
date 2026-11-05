@@ -61,7 +61,7 @@ function Certificates() {
 
   return (
     <>
-      <main className="container-page pt-0 pb-14 md:pt-0 md:pb-16">
+      <main className="container-page pt-0 pb-10 md:pt-0 md:pb-12">
         {/* PAGE INTRODUCTION */}
         <div className="mb-0 border-b border-foreground/15 pb-0">
           <div className="mt-2 mb-3 flex items-center justify-between">
