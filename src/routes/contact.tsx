@@ -1,6 +1,15 @@
 
 import { createFileRoute } from "@tanstack/react-router";
 import { site, socialLinks } from "@/content/site";
+import {
+  Instagram,
+  Linkedin,
+  Github,
+  Mail,
+  MessageCircle,
+  Globe,
+  ArrowUpRight,
+} from "lucide-react";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -72,6 +81,7 @@ function Contact() {
         </div>
       </section>
  
+      
       {/* CONTACT LINKS */}
       <section className="py-14 md:py-20">
         <div className="mb-8 flex items-end justify-between">
@@ -90,13 +100,17 @@ function Contact() {
           {links.map((link) => {
             const label = link.label.toLowerCase();
       
-            const icon =
-              label.includes("instagram") ? "instagram" :
-              label.includes("linkedin") ? "linkedin" :
-              label.includes("github") ? "github" :
-              label.includes("email") || label.includes("mail") ? "mail" :
-              label.includes("whatsapp") ? "message-circle" :
-              "globe";
+            const Icon = label.includes("instagram")
+              ? Instagram
+              : label.includes("linkedin")
+                ? Linkedin
+                : label.includes("github")
+                  ? Github
+                  : label.includes("email") || label.includes("mail")
+                    ? Mail
+                    : label.includes("whatsapp")
+                      ? MessageCircle
+                      : Globe;
       
             return (
               <a
@@ -108,20 +122,25 @@ function Contact() {
                 className="group flex items-center justify-between gap-4 border border-foreground/15 p-5 transition-all duration-300 hover:border-foreground hover:bg-foreground hover:text-background"
               >
                 <div className="flex items-center gap-4">
-                  <icon className="flex size-10 items-center justify-center border border-foreground/15 transition-colors group-hover:border-background/30">
-                    <span className="text-lg">{/* icon placeholder */}</span>
-                  </icon>
+                  <Icon
+                    size={21}
+                    strokeWidth={1.6}
+                    className="shrink-0 transition-transform duration-300 group-hover:scale-110"
+                  />
                   <span className="font-medium">{link.label}</span>
                 </div>
       
-                <span className="text-lg transition-transform group-hover:translate-x-1">
-                  ↗
-                </span>
+                <ArrowUpRight
+                  size={18}
+                  strokeWidth={1.5}
+                  className="shrink-0 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
+                />
               </a>
             );
           })}
         </div>
       </section>
+
 
 
       {/* WHATSAPP CTA */}
