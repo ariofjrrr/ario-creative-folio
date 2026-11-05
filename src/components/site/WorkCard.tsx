@@ -40,14 +40,6 @@ export function WorkCard({
           )}
         </div>
       </div>
-
-      {/* LINK LABEL */}
-      <span className="mt-3 inline-flex items-center gap-1 text-sm font-medium">
-        {work.category === "Writing" ? "View Writing" : "View Project"}
-        <span className="transition-transform group-hover:translate-x-1 group-hover:text-accent">
-          →
-        </span>
-      </span>
     </>
   );
 
