@@ -132,7 +132,7 @@ function Portfolio() {
           Selected works & creative explorations
         </p>
         <span className="font-mono text-xs text-muted-foreground">
-          AFD / {new Date().getFullYear()}
+          AFD
         </span>
       </div>
     </main>
