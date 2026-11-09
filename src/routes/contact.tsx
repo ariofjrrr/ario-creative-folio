@@ -73,7 +73,7 @@ function Contact() {
           </div>
         </div>
 
-        <div className="mt-12 flex items-center justify-between border-t border-foreground/15 pt-4">
+        <div className="mt-8 flex items-center justify-between border-t border-foreground/15 pt-4">
           <span className="eyebrow">CREATIVE / DIGITAL / COMMUNICATION</span>
           <span className="font-mono text-xs text-muted-foreground">
             MALANG, INDONESIA
