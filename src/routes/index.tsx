@@ -40,7 +40,16 @@ function Home() {
       <section className="container-page pt-2 md:pt-4">
         <div className="grid items-center gap-8 py-4 sm:py-5 md:grid-cols-[minmax(0,1fr)_300px] md:gap-10 md:py-6 lg:grid-cols-[minmax(0,1fr)_350px] lg:gap-14 lg:py-8">
           <div className="fade-up">
-            <p className="mb-5 text-sm font-medium tracking-tight text-muted-foreground">
+            <div className="mb-4 flex items-center gap-2">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+              </span>
+              <span className="text-xs font-mono text-muted-foreground uppercase tracking-wider">
+                Available for Freelance
+              </span>
+            </div>
+            <p className="mb-3 text-sm font-medium tracking-tight text-muted-foreground">
               Hello, I'm
             </p>
 
