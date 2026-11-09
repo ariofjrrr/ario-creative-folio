@@ -83,7 +83,7 @@ function Contact() {
  
       
       {/* CONTACT LINKS */}
-      <section className="py-14 md:py-20">
+      <section className="py-10 md:py-14">
         <div className="mb-8 flex items-end justify-between">
           <div>
             <p className="eyebrow">CONNECT</p>
