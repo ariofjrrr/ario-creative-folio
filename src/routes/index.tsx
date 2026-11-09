@@ -110,26 +110,28 @@ function Home() {
       {/* DISCIPLINES */}
       <section className="container-page">
         <div className="grid grid-cols-1 border-y border-foreground/15 sm:grid-cols-3">
-          {disciplines.map((item, index) => (
-            <div
-              key={item.number}
-              className={`flex items-start gap-3 py-3 sm:py-4 ${
-                index !== 2
-                  ? "border-b border-foreground/15 sm:border-b-0 sm:border-r"
-                  : ""
-              } ${index > 0 ? "sm:pl-5" : ""}`}
-            >
-              <span className="mt-1 font-mono text-xs text-muted-foreground">
-                {item.number}
-              </span>
-              <div>
-                <p className="text-sm font-medium">{item.title}</p>
-                <p className="mt-0.5 text-xs text-muted-foreground">
-                  {item.detail}
-                </p>
+            {disciplines.map((item, index) => (
+              <div 
+                key={item.number} 
+                className={`group flex items-start gap-3 py-4 transition-all duration-300 hover:bg-foreground/[0.02] cursor-default
+                  ${index !== 2 ? 'border-b border-foreground/15 sm:border-b-0 sm:border-r' : ''} 
+                  ${index > 0 ? 'sm:pl-5' : ''} 
+                  ${index < 2 ? 'sm:pr-5' : ''}`}
+              >
+                <span className="mt-1 font-mono text-xs text-muted-foreground transition-colors group-hover:text-blue-600">
+                  {item.number}
+                </span>
+                <div>
+                  {/* Teks judul akan bergeser sedikit ke kanan saat di-hover */}
+                  <p className="text-sm font-medium transition-transform duration-300 group-hover:translate-x-1">
+                    {item.title}
+                  </p>
+                  <p className="mt-0.5 text-xs text-muted-foreground">
+                    {item.detail}
+                  </p>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
         </div>
       </section>
 
