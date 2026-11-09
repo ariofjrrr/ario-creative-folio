@@ -127,7 +127,7 @@ function Portfolio() {
       </section>
 
       {/* FOOTNOTE */}
-      <div className="mt-16 flex items-center justify-between border-t border-foreground/15 pt-4">
+      <div className="mt-10 flex items-center justify-between border-t border-foreground/15 pt-4">
         <p className="text-xs text-muted-foreground">
           Selected works & creative explorations
         </p>
