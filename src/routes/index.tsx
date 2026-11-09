@@ -209,7 +209,7 @@ function Home() {
 
             <Link
               to="/contact"
-              className="mt-5 inline-flex items-center gap-3 border-b border-accent pb-2 text-sm font-medium transition-colors hover:text-accent"
+              className="mt-3 mb-0 inline-flex items-center gap-3 border-b border-accent pb-2 text-sm font-medium transition-colors hover:text-accent"
             >
               Start a Conversation <span>↗</span>
             </Link>
