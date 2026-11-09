@@ -173,13 +173,13 @@ function Contact() {
       )}
 
       {/* FOOTER */}
-      <div className="mt-12 flex items-center justify-between border-t border-foreground/15 pt-4">
+      <div className="mt-12 mb-0 flex items-center justify-between border-t border-foreground/15 pt-4">
         <p className="text-xs text-muted-foreground">
           Thanks for being here.
         </p>
 
         <span className="font-mono text-xs text-muted-foreground">
-          AFD / {new Date().getFullYear()}
+          AFD
         </span>
       </div>
     </main>
