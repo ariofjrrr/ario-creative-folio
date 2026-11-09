@@ -75,7 +75,7 @@ function About() {
 
           <figcaption className="mt-2 flex items-center justify-between border-t border-foreground/15 pt-2 text-xs text-muted-foreground">
             <span>{site.short}</span>
-            <span>Portfolio / {new Date().getFullYear()}</span>
+            <span>PORTFOLIO</span>
           </figcaption>
         </figure>
 
