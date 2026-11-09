@@ -216,9 +216,6 @@ function Home() {
             >
               Start a Conversation <span>↗</span>
             </Link>
-            <p className="mt-5 max-w-[440px] text-xs font-mono tracking-tight text-muted-foreground/80">
-              <span className="text-foreground">Tools:</span> React, TypeScript, Tailwind, Figma, Notion.
-            </p>
           </div>
         </div>
       </section>
