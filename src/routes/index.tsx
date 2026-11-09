@@ -189,7 +189,7 @@ function Home() {
       </section>
 
       {/* CONTACT */}
-      <section className="container-page pb-10 md:pb-14">
+      <section className="container-page pb-6 md:pb-10">
         <div className="grid gap-7 bg-ink px-6 py-7 text-ink-foreground sm:px-9 sm:py-9 md:grid-cols-[1.2fr_0.8fr] md:items-end md:gap-10 md:px-10 md:py-11">
           <div>
             <p className="eyebrow mb-4 text-ink-foreground/50">
