@@ -190,6 +190,11 @@ function Home() {
         </div>
       </section>
 
+      <p className="mt-5 max-w-[440px] text-xs font-mono tracking-tight text-muted-foreground/80">
+        <span className="text-foreground">Tools:</span> React, TypeScript, Tailwind, Figma, Notion.
+      </p>
+
+
       {/* CONTACT */}
       <section className="container-page pb-4 md:pb-8">
         <div className="grid gap-7 bg-ink px-6 py-7 text-ink-foreground sm:px-9 sm:py-9 md:grid-cols-[1.2fr_0.8fr] md:items-end md:gap-10 md:px-10 md:py-11">
